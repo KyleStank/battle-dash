@@ -1,0 +1,170 @@
+fileFormatVersion: 2
+guid: 0b774f8d94ca9304c82e4305b16e3fc8
+timeCreated: 1487572370
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: ArmD_L
+    100004: ArmD_R
+    100006: ArmU_L
+    100008: ArmU_R
+    100010: BodyTemplate
+    100012: Fing1_L
+    100014: Fing1_R
+    100016: Fing2_L
+    100018: Fing2_R
+    100020: Fing3_L
+    100022: Fing3_R
+    100024: Foot_L
+    100026: Foot_R
+    100028: Hand_L
+    100030: Hand_R
+    100032: Head
+    100034: Hips
+    100036: LegD_L
+    100038: LegD_R
+    100040: LegU_L
+    100042: LegU_R
+    100044: //RootNode
+    100046: Thumb_L
+    100048: Thumb_R
+    100050: Torso
+    100052: _Archer_Armor_1
+    100054: _Warrior_Armor_1
+    100056: Head_0
+    100058: Item_Shield
+    100060: Item_Sword
+    100062: Plane_001
+    100064: Props
+    100066: _Mage_Armor_1
+    100068: Head_001
+    400000: Armature
+    400002: ArmD_L
+    400004: ArmD_R
+    400006: ArmU_L
+    400008: ArmU_R
+    400010: BodyTemplate
+    400012: Fing1_L
+    400014: Fing1_R
+    400016: Fing2_L
+    400018: Fing2_R
+    400020: Fing3_L
+    400022: Fing3_R
+    400024: Foot_L
+    400026: Foot_R
+    400028: Hand_L
+    400030: Hand_R
+    400032: Head
+    400034: Hips
+    400036: LegD_L
+    400038: LegD_R
+    400040: LegU_L
+    400042: LegU_R
+    400044: //RootNode
+    400046: Thumb_L
+    400048: Thumb_R
+    400050: Torso
+    400052: _Archer_Armor_1
+    400054: _Warrior_Armor_1
+    400056: Head_0
+    400058: Item_Shield
+    400060: Item_Sword
+    400062: Plane_001
+    400064: Props
+    400066: _Mage_Armor_1
+    400068: Head_001
+    2300000: Plane_001
+    2300002: Props
+    3300000: Plane_001
+    3300002: Props
+    4300000: BodyTemplate
+    4300002: Plane_001
+    4300004: Item_Shield
+    4300006: Item_Sword
+    4300008: _Archer_Armor_1
+    4300010: Head
+    4300012: _Warrior_Armor_1
+    4300014: Props
+    4300016: Head_001
+    4300018: _Mage_Armor_1
+    7400000: Default Take
+    7400002: PoseLib
+    9500000: //RootNode
+    13700000: BodyTemplate
+    13700002: _Archer_Armor_1
+    13700004: _Warrior_Armor_1
+    13700006: Head
+    13700008: Item_Shield
+    13700010: Item_Sword
+    13700012: _Mage_Armor_1
+    13700014: Head_001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

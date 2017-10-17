@@ -1,0 +1,250 @@
+fileFormatVersion: 2
+guid: 800eb51b421fabf4ba89044d00743d6f
+timeCreated: 1496381337
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: _Archer_Armor_1
+    100002: _Mage_Armor_1
+    100004: _Warrior_Armor_1
+    100006: Armature
+    100008: ArmD_L
+    100010: ArmD_L_0
+    100012: ArmD_R
+    100014: ArmD_R_0
+    100016: ArmU_L
+    100018: ArmU_L_0
+    100020: ArmU_R
+    100022: ArmU_R_0
+    100024: BodyTemplate
+    100026: Fing1_L
+    100028: Fing1_L_0
+    100030: Fing1_R
+    100032: Fing1_R_0
+    100034: Fing2_L
+    100036: Fing2_L_0
+    100038: Fing2_R
+    100040: Fing2_R_0
+    100042: Fing3_L
+    100044: Fing3_L_0
+    100046: Fing3_R
+    100048: Fing3_R_0
+    100050: Foot_L
+    100052: Foot_L_0
+    100054: Foot_R
+    100056: Foot_R_0
+    100058: Hand_L
+    100060: Hand_L_0
+    100062: Hand_R
+    100064: Hand_R_0
+    100066: Head
+    100068: Head_0
+    100070: Head_1
+    100072: heel_02_L
+    100074: heel_02_R
+    100076: heel_L
+    100078: heel_R
+    100080: Hips
+    100082: Hips_0
+    100084: Item_Shield
+    100086: Item_Sword
+    100088: LegD_L
+    100090: LegD_L_0
+    100092: LegD_R
+    100094: LegD_R_0
+    100096: LegU_L
+    100098: LegU_L_0
+    100100: LegU_R
+    100102: LegU_R_0
+    100104: metarig
+    100106: neck
+    100108: palm_01_L
+    100110: palm_01_R
+    100112: Plane_001
+    100114: //RootNode
+    100116: Props
+    100118: shoulder_L
+    100120: shoulder_R
+    100122: spine
+    100124: spine_002
+    100126: thumb_02_L
+    100128: thumb_02_R
+    100130: thumb_03_L
+    100132: thumb_03_R
+    100134: Thumb_L
+    100136: Thumb_L_0
+    100138: Thumb_R
+    100140: Thumb_R_0
+    100142: toe_L
+    100144: toe_R
+    100146: Torso
+    100148: Torso_0
+    400000: _Archer_Armor_1
+    400002: _Mage_Armor_1
+    400004: _Warrior_Armor_1
+    400006: Armature
+    400008: ArmD_L
+    400010: ArmD_L_0
+    400012: ArmD_R
+    400014: ArmD_R_0
+    400016: ArmU_L
+    400018: ArmU_L_0
+    400020: ArmU_R
+    400022: ArmU_R_0
+    400024: BodyTemplate
+    400026: Fing1_L
+    400028: Fing1_L_0
+    400030: Fing1_R
+    400032: Fing1_R_0
+    400034: Fing2_L
+    400036: Fing2_L_0
+    400038: Fing2_R
+    400040: Fing2_R_0
+    400042: Fing3_L
+    400044: Fing3_L_0
+    400046: Fing3_R
+    400048: Fing3_R_0
+    400050: Foot_L
+    400052: Foot_L_0
+    400054: Foot_R
+    400056: Foot_R_0
+    400058: Hand_L
+    400060: Hand_L_0
+    400062: Hand_R
+    400064: Hand_R_0
+    400066: Head
+    400068: Head_0
+    400070: Head_1
+    400072: heel_02_L
+    400074: heel_02_R
+    400076: heel_L
+    400078: heel_R
+    400080: Hips
+    400082: Hips_0
+    400084: Item_Shield
+    400086: Item_Sword
+    400088: LegD_L
+    400090: LegD_L_0
+    400092: LegD_R
+    400094: LegD_R_0
+    400096: LegU_L
+    400098: LegU_L_0
+    400100: LegU_R
+    400102: LegU_R_0
+    400104: metarig
+    400106: neck
+    400108: palm_01_L
+    400110: palm_01_R
+    400112: Plane_001
+    400114: //RootNode
+    400116: Props
+    400118: shoulder_L
+    400120: shoulder_R
+    400122: spine
+    400124: spine_002
+    400126: thumb_02_L
+    400128: thumb_02_R
+    400130: thumb_03_L
+    400132: thumb_03_R
+    400134: Thumb_L
+    400136: Thumb_L_0
+    400138: Thumb_R
+    400140: Thumb_R_0
+    400142: toe_L
+    400144: toe_R
+    400146: Torso
+    400148: Torso_0
+    2300000: Plane_001
+    2300002: Props
+    3300000: Plane_001
+    3300002: Props
+    4300000: Plane_001
+    4300002: Item_Shield
+    4300004: Item_Sword
+    4300006: Head
+    4300008: _Mage_Armor_1
+    4300010: _Archer_Armor_1
+    4300012: _Warrior_Armor_1
+    4300014: BodyTemplate
+    4300016: Props
+    7400000: Default Take
+    7400002: PoseLib
+    9500000: //RootNode
+    13700000: _Archer_Armor_1
+    13700002: _Mage_Armor_1
+    13700004: _Warrior_Armor_1
+    13700006: BodyTemplate
+    13700008: Head
+    13700010: Item_Shield
+    13700012: Item_Sword
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

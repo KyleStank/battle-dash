@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 30cfc92e44565024499ec1db604eefd8
+timeCreated: 1493323550
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Glass Houses
+  fontNames:
+  - Glass Houses
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,158 @@
+fileFormatVersion: 2
+guid: 560889841df9a4d47add649f48d0419a
+timeCreated: 1489444402
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: ArmD_L
+    100002: ArmD_R
+    100004: ArmU_L
+    100006: ArmU_R
+    100008: //RootNode
+    100010: Boss1
+    100012: Bossarma
+    100014: BossHead
+    100016: BossTemplate
+    100018: Fing1_L
+    100020: Fing1_R
+    100022: Fing2_L
+    100024: Fing2_R
+    100026: Fing3_L
+    100028: Fing3_R
+    100030: Foot_L
+    100032: Foot_R
+    100034: Hand_L
+    100036: Hand_R
+    100038: Head
+    100040: Hips
+    100042: Item_Shield
+    100044: Item_Sword
+    100046: LegD_L
+    100048: LegD_R
+    100050: LegU_L
+    100052: LegU_R
+    100054: Plane_001
+    100056: Props
+    100058: Thumb_L
+    100060: Thumb_R
+    100062: Torso
+    400000: ArmD_L
+    400002: ArmD_R
+    400004: ArmU_L
+    400006: ArmU_R
+    400008: //RootNode
+    400010: Boss1
+    400012: Bossarma
+    400014: BossHead
+    400016: BossTemplate
+    400018: Fing1_L
+    400020: Fing1_R
+    400022: Fing2_L
+    400024: Fing2_R
+    400026: Fing3_L
+    400028: Fing3_R
+    400030: Foot_L
+    400032: Foot_R
+    400034: Hand_L
+    400036: Hand_R
+    400038: Head
+    400040: Hips
+    400042: Item_Shield
+    400044: Item_Sword
+    400046: LegD_L
+    400048: LegD_R
+    400050: LegU_L
+    400052: LegU_R
+    400054: Plane_001
+    400056: Props
+    400058: Thumb_L
+    400060: Thumb_R
+    400062: Torso
+    2300000: Plane_001
+    2300002: Props
+    3300000: Plane_001
+    3300002: Props
+    4300000: Plane_001
+    4300002: Item_Shield
+    4300004: Item_Sword
+    4300006: BossHead
+    4300008: Boss1
+    4300010: BossTemplate
+    4300012: Props
+    7400000: Default Take
+    7400002: PoseLib
+    9500000: //RootNode
+    13700000: Boss1
+    13700002: BossHead
+    13700004: BossTemplate
+    13700006: Item_Shield
+    13700008: Item_Sword
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
