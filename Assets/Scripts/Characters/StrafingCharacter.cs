@@ -1,94 +1,154 @@
 ﻿using UnityEngine;
 
-namespace TurmoilStudios.BattleDash {
+namespace TurmoilStudios.BattleDash
+{
     /// <summary>
     /// Class of the character that moves left, right, up, and down.
     /// </summary>
     [AddComponentMenu("Battle Dash/Characters/Strafing Character")]
-    public class StrafingCharacter : PlayableCharacter {
+    public class StrafingCharacter : PlayableCharacter
+    {
+        [Header("Strafing Character")]
         [SerializeField]
-        float laneSwitchAmount = 2.5f;
+        private float m_LaneSwitchAmount = 2.5f;
+        [SerializeField]
+        private float m_LaneSwitchDuration = 0.2f;
 
-        public float LaneSwitchDuration;
-        bool isSwitchingLanes;
-        float currentLaneSwitchTimer;
-        float laneSwitchStartX;
-        float laneSwitchTargetX;
+        [SerializeField]
+        private float m_SlideDuration = 0.2f;
 
-        public float SlideDuration;
-        public CapsuleCollider DestinationCollider;
-        public CapsuleCollider RunCollider;
-        public CapsuleCollider SlideCollider;
-        bool isSliding;
-        float currentSlideTimer;
+        [SerializeField]
+        private CapsuleCollider m_DestinationCollider = null;
+        [SerializeField]
+        private CapsuleCollider m_RunCollider = null;
+        [SerializeField]
+        private CapsuleCollider m_SlideCollider = null;
 
-        float damping = 0.0f;
-        
-        public Transform GroundRayOrigin;
-        public float GroundRayLength;
-        public float GroundRayResolutionLength;
-        public LayerMask GroundLayer;
+        private bool m_IsSwitchingLanes = false;
+        private float m_CurrentLaneSwitchTimer = 0.0f;
+        private float m_LaneSwitchStartX = 0.0f;
+        private float m_LaneSwitchTargetX = 0.0f;
 
-        public float GravityAcceleration;
+        private bool m_IsSliding = false;
+        private float m_CurrentSlideTimer = 0.0f;
 
-        public bool IsJumping;
-        public float JumpSpeed;
-        public float MoveSpeed = .01f;
+        private float m_Damping = 0.0f;
 
         #region Methods
 
         #region Unity methods
-        protected virtual void FixedUpdate() {
-            if (canMove)
+        protected override void Update()
+        {
+            base.Update();
+
+            if(m_CanMove)
+            {
                 HandleMovement();
+            }
+
+            if(m_IsSwitchingLanes)
+            {
+                m_CurrentLaneSwitchTimer += Time.deltaTime;
+                float ipo = m_CurrentLaneSwitchTimer / m_LaneSwitchDuration;
+
+                if(m_CurrentLaneSwitchTimer >= m_LaneSwitchDuration)
+                {
+                    m_IsSwitchingLanes = false;
+                    m_CurrentLaneSwitchTimer = 0;
+                    ipo = 1;
+                    //SetBooleanAnimation("movingLeft", false);
+                    //SetBooleanAnimation("movingRight", false);
+                }
+
+                float ipoX = Mathf.Lerp(m_LaneSwitchStartX, m_LaneSwitchTargetX, ipo);
+                transform.position = new Vector3(ipoX, transform.position.y, transform.position.z);
+            }
+
+            if(m_IsSliding)
+            {
+                m_CurrentSlideTimer += Time.deltaTime;
+                if(m_CurrentSlideTimer >= m_SlideDuration)
+                {
+                    m_IsSliding = false;
+                    CopyCapsuleCollider(m_RunCollider, m_DestinationCollider);
+                }
+            }
         }
         #endregion
 
         #region Public methods
         /// <summary>
+        /// Makes the character start moving forward.
+        /// </summary>
+        public override void StartMoving()
+        {
+            base.StartMoving();
+
+            //Set the velocity
+            m_Velocity.z = m_MoveSpeed;
+        }
+
+        /// <summary>
+        /// Makes the character's movement stop.
+        /// </summary>
+        public override void StopMoving()
+        {
+            base.StopMoving();
+
+            m_Velocity = Vector3.zero;
+            m_Damping = 0.0f;
+            //anim.SetFloat("runSpeed", damping);
+        }
+
+        /// <summary>
         /// Makes the character jump.
         /// </summary>
-        public override void UpMotion() {
+        public override void UpMotion()
+        {
             base.UpMotion();
 
             //print("Jump!");
-            if (!isGrounded)
+            if(!m_CharacterController.isGrounded)
                 return;
 
-            Velocity.y = JumpSpeed;
-            IsJumping = true;
-            isGrounded = false;
+            m_Velocity.y = m_JumpSpeed;
+            m_IsJumping = true;
 
             //Set animation
-            SetTriggerAnimation("jump");
+            m_Animator.SetBool("IsJumping", true);
+            //SetTriggerAnimation("jump");
         }
 
         /// <summary>
         /// Makes the character move left smoothly.
         /// </summary>
-        public override void LeftMotion() {
+        public override void LeftMotion()
+        {
             base.LeftMotion();
 
-            if (isSwitchingLanes)
+            if(m_IsSwitchingLanes)
                 return;
 
             //print("Move left!");
             Vector3 newPos = transform.position;
-            newPos.x -= laneSwitchAmount;
+            newPos.x -= m_LaneSwitchAmount;
 
             //Only move if there are no obstacles in the way
-            if (!CheckForObstacle(Vector3.left, laneSwitchAmount) && transform.position.x > -laneSwitchAmount) {
+            if(!CheckForObstacle(Vector3.left, m_LaneSwitchAmount) && transform.position.x > -m_LaneSwitchAmount)
+            {
 
-                isSwitchingLanes = true;
-                currentLaneSwitchTimer = 0;
-                laneSwitchStartX = transform.position.x;
-                laneSwitchTargetX = newPos.x;
-                
+                m_IsSwitchingLanes = true;
+                m_CurrentLaneSwitchTimer = 0;
+                m_LaneSwitchStartX = transform.position.x;
+                m_LaneSwitchTargetX = newPos.x;
 
-                SetBooleanAnimation("movingLeft", true);
+
+                //SetBooleanAnimation("movingLeft", true);
                 //Play animation
                 //PlayerManager.SetTriggerAnimation("switchLeft");
-            } else {
+            }
+            else
+            {
                 LeftObstacleHit();
             }
         }
@@ -96,83 +156,50 @@ namespace TurmoilStudios.BattleDash {
         /// <summary>
         /// Make the character move right smoothly.
         /// </summary>
-        public override void RightMotion() {
+        public override void RightMotion()
+        {
             base.RightMotion();
-            
-            if (isSwitchingLanes)
+
+            if(m_IsSwitchingLanes)
                 return;
 
             //print("Move right!");
             Vector3 newPos = transform.position;
-            newPos.x += laneSwitchAmount;
+            newPos.x += m_LaneSwitchAmount;
 
             //Only move if there are no obstacles in the way
-            if (!CheckForObstacle(Vector3.right, laneSwitchAmount) && transform.position.x < laneSwitchAmount) {
+            if(!CheckForObstacle(Vector3.right, m_LaneSwitchAmount) && transform.position.x < m_LaneSwitchAmount)
+            {
                 //transform.position = newPos;
-                
-                isSwitchingLanes = true;
-                currentLaneSwitchTimer = 0;
-                laneSwitchStartX = transform.position.x;
-                laneSwitchTargetX = newPos.x;
-                
 
-                SetBooleanAnimation("movingRight", true);
+                m_IsSwitchingLanes = true;
+                m_CurrentLaneSwitchTimer = 0;
+                m_LaneSwitchStartX = transform.position.x;
+                m_LaneSwitchTargetX = newPos.x;
+
+
+                //SetBooleanAnimation("movingRight", true);
                 //Play animation
                 //PlayerManager.SetTriggerAnimation("switchRight");
-            } else {
+            }
+            else
+            {
                 RightObstacleHit();
             }
         }
 
-        public override void DownMotion() {
+        public override void DownMotion()
+        {
             base.DownMotion();
-            if (IsJumping || isSliding)
+            if(m_IsJumping || m_IsSliding)
                 return;
 
 
-            isSliding = true;
-            currentSlideTimer = 0;
-            CopyCapsuleCollider(SlideCollider,DestinationCollider);
+            m_IsSliding = true;
+            m_CurrentSlideTimer = 0;
+            CopyCapsuleCollider(m_SlideCollider, m_DestinationCollider);
 
-            SetTriggerAnimation("slide");
-        }
-
-
-        protected override void Update() {
-            //do not use base ground checking
-
-            if (isSwitchingLanes) {
-                currentLaneSwitchTimer += Time.deltaTime;
-                float ipo = currentLaneSwitchTimer / LaneSwitchDuration;
-
-                if (currentLaneSwitchTimer >= LaneSwitchDuration) {
-                    isSwitchingLanes = false;
-                    currentLaneSwitchTimer = 0;
-                    ipo = 1;
-                    SetBooleanAnimation("movingLeft", false);
-                    SetBooleanAnimation("movingRight", false);
-                }
-
-                float ipoX = Mathf.Lerp(laneSwitchStartX, laneSwitchTargetX, ipo);
-                transform.position = new Vector3(ipoX, transform.position.y, transform.position.z);
-            }
-            if (isSliding) {
-                currentSlideTimer += Time.deltaTime;
-                if (currentSlideTimer >= SlideDuration) {
-                    isSliding = false;
-                    CopyCapsuleCollider(RunCollider, DestinationCollider);
-                }
-            }
-        }
-        /// <summary>
-        /// Makes the character's movement stop.
-        /// </summary>
-        public override void StopMoving() {
-            base.StopMoving();
-            
-            Velocity = Vector3.zero;
-            damping = 0.0f;
-            anim.SetFloat("runSpeed", damping);
+            //SetTriggerAnimation("slide");
         }
         #endregion
 
@@ -180,32 +207,41 @@ namespace TurmoilStudios.BattleDash {
         /// <summary>
         /// Handles the character movement.
         /// </summary>
-        void HandleMovement() {
-            Velocity += -transform.up * GravityAcceleration;
+        private void HandleMovement()
+        {
+            m_Velocity.y += Physics.gravity.y * Time.fixedDeltaTime;
+
+            m_CharacterController.Move(m_Velocity * Time.fixedDeltaTime);
 
             //ensure player forward speed is consistent (always equal to MoveSpeed * damping)
-            float forwardSpeed = Vector3.Dot(Velocity, transform.forward);
-            Velocity -= forwardSpeed * transform.forward;
-            Velocity += transform.forward * MoveSpeed * damping;
+            //float forwardSpeed = Vector3.Dot(m_Velocity, transform.forward);
+            //m_Velocity -= forwardSpeed * transform.forward;
+            //m_Velocity += transform.forward * m_MoveSpeed * m_Damping;
 
-            transform.position += Velocity;
-            UpdateGroundState();
+            //Set the new position
+            //transform.position += m_Velocity * Time.fixedDeltaTime;
+
+            //Make sure character sticks to ground when needed
+            //StickToGround();
+
             //Handle the animation
-            HandleAnimation();
+            //HandleAnimation();
         }
 
         /// <summary>
         /// Handles the animation for the running of the character.
         /// </summary>
-        void HandleAnimation() {
+        private void HandleAnimation()
+        {
             //Smooth out the movement
-            if (damping < 1.0f) {
-                damping += Time.deltaTime;
-                damping = Mathf.Clamp(damping, 0.0f, 1.0f);
+            if(m_Damping < 1.0f)
+            {
+                m_Damping += Time.deltaTime;
+                m_Damping = Mathf.Clamp(m_Damping, 0.0f, 1.0f);
             }
 
             //Play the run animation
-            SetFloatAnimation("runSpeed", damping);
+            //SetFloatAnimation("runSpeed", damping);
         }
 
         /// <summary>
@@ -214,7 +250,8 @@ namespace TurmoilStudios.BattleDash {
         /// <param name="rayDirection">Direction of ray.</param>
         /// <param name="maxRayLength">Length of ray.</param>
         /// <returns>True if there is an obstacle, false if not.</returns>
-        bool CheckForObstacle(Vector3 rayDirection, float maxRayLength) {
+        private bool CheckForObstacle(Vector3 rayDirection, float maxRayLength)
+        {
             //Set ray's position
             Vector3 rayPos = transform.position;
             rayPos.y = Height / 2.0f;
@@ -225,7 +262,7 @@ namespace TurmoilStudios.BattleDash {
 
             //Check if an obstacle is next to the character.
             RaycastHit hitInfo;
-            if (Physics.Raycast(rayPos, rayDirection, out hitInfo, maxRayLength))
+            if(Physics.Raycast(rayPos, rayDirection, out hitInfo, maxRayLength))
                 return hitInfo.transform.tag == "Obstacle";
 
             return false;
@@ -234,42 +271,21 @@ namespace TurmoilStudios.BattleDash {
         /// <summary>
         /// Character hits an obstacle on the left.
         /// </summary>
-        void LeftObstacleHit() {
+        private void LeftObstacleHit()
+        {
             print("Left obstacle hit!");
         }
 
         /// <summary>
         /// Character hits an obstacle on the right.
         /// </summary>
-        void RightObstacleHit() {
+        private void RightObstacleHit()
+        {
             print("Right obstacle hit!");
         }
 
-        private void UpdateGroundState() {
-            RaycastHit hit;
-            if (Physics.Raycast(GroundRayOrigin.position, -Vector3.up, out hit, GroundRayLength, GroundLayer.value)) {
-                /*
-                 * When jumping, only resolve the ground collision if the player goes through the ground.
-                 * When not jumping, snap or magnetize the player to the ground.
-                 */
-                if (!IsJumping || hit.distance < GroundRayResolutionLength) {
-
-                    float resolveOverlapOffset = GroundRayResolutionLength - hit.distance;
-                    transform.position += Vector3.up * resolveOverlapOffset;
-                    Velocity.y = 0;
-                    IsJumping = false;
-                    isGrounded = true;
-                }
-            }
-            else isGrounded = false;
-        }
-        private void OnDrawGizmosSelected() {
-            if (GroundRayOrigin) {
-                Debug.DrawRay(GroundRayOrigin.position, -Vector3.up * GroundRayResolutionLength, Color.green);
-                Debug.DrawRay(GroundRayOrigin.position - Vector3.up * GroundRayResolutionLength, -Vector3.up * (GroundRayLength - GroundRayResolutionLength), Color.red);
-            }
-        }
-        private void CopyCapsuleCollider(CapsuleCollider src,CapsuleCollider dst) {
+        private void CopyCapsuleCollider(CapsuleCollider src, CapsuleCollider dst)
+        {
             dst.radius = src.radius;
             dst.height = src.height;
             dst.direction = src.direction;

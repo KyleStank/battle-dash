@@ -1,62 +1,110 @@
 ﻿using UnityEngine;
 using TurmoilStudios.Utils;
 
-namespace TurmoilStudios.BattleDash {
+namespace TurmoilStudios.BattleDash
+{
     /// <summary>
     /// This class should be extended for all possible types of playable characters.
     /// This allows us to add weird and different gameplay if needed.
     /// </summary>
-    [RequireComponent(typeof(Rigidbody))]
-    public class PlayableCharacter : MonoBehaviour {
-        protected Animator anim;
-        protected new Collider collider;
-        protected Vector3 initialPosition;
-        protected bool canMove = false;
-        protected bool isGrounded = false;
-        protected float groundRayLength;
-        
-        public Vector3 Velocity;
+    [RequireComponent(typeof(CharacterController))]
+    public class PlayableCharacter : MonoBehaviour
+    {
+        [Header("References")]
+        [Tooltip("Animator that the character will use for Animation.")]
+        [SerializeField]
+        protected Animator m_Animator = null;
+
+        protected CharacterController m_CharacterController = null;
+        protected Collider m_Collider = null;
+        protected Vector3 m_InitialPosition = Vector3.zero;
+        protected Vector3 m_Velocity = Vector3.zero;
+        protected bool m_CanMove = false;
+
+        private float m_RunningDamping = 0.0f;
+        private float m_JumpingDamping = 0.0f;
+
+        [Header("Base Settings")]
+        [SerializeField]
+        protected float m_MoveSpeed = 0.5f;
+        [SerializeField]
+        protected float m_JumpSpeed = 1.0f;
+        [SerializeField]
+        protected bool m_IsJumping = false;
 
         #region Properties
         /// <summary>
         /// Returns the initial position of the character.
         /// </summary>
-        public Vector3 InitialPosition { get { return initialPosition; } }
+        public Vector3 InitialPosition
+        {
+            get { return m_InitialPosition; }
+        }
 
         /// <summary>
         /// Tells us if the player is able to move or not.
         /// </summary>
-        public bool CanMove {
-            get { return canMove; }
-            set { canMove = value; }
+        public bool CanMove
+        {
+            get { return m_CanMove; }
+            set { m_CanMove = value; }
         }
-        
 
         /// <summary>
         /// Returns the height of the character by getting the bounds of its collider.
         /// </summary>
-        public float Height { get { return collider.bounds.size.y; } }
-
-        /// <summary>
-        /// Returns true if the character is grounded, false otherwise.
-        /// </summary>
-        public bool IsGrounded { get { return isGrounded; } }
+        public float Height
+        {
+            get { return m_Collider.bounds.size.y; }
+        }
         #endregion
 
         #region Methods
 
         #region Unity methods
-        protected virtual void Awake() {
-            Initialize();
+        protected virtual void Awake()
+        {
+            /* Initialize character */
+            //Grab references
+            m_Collider = GetComponent<Collider>();
+            m_CharacterController = GetComponent<CharacterController>();
+
+            //Null checks
+            if(m_Animator == null)
+            {
+                Debug.LogError("No Animator was assigned! Make sure to assign it in the Inspector!");
+            }
+
+            if(m_Collider == null)
+            {
+                Debug.LogError("No collider was found! Make sure to attach on to the GameObject in the inspector!");
+            }
+
+            //Set origin of character
+            SetOrigin(transform.position);
         }
 
-        protected virtual void Update() {
-            isGrounded = CheckForGround();
+        protected virtual void Update()
+        {
+            //Update animations
+            //Smooth out the movement
+            if(m_RunningDamping < 1.0f)
+            {
+                m_RunningDamping += (m_Velocity.z / m_MoveSpeed) * Time.deltaTime;
+                m_RunningDamping = Mathf.Clamp(m_RunningDamping, 0.0f, 1.0f);
+            }
+
+            //Play the run animation
+            if(m_Animator != null)
+            {
+                m_Animator.SetFloat("MoveSpeed", m_RunningDamping);
+            }
         }
 
-        protected virtual void OnEnable() {
+        protected virtual void OnEnable()
+        {
             //Subscribe to events
-            EventManager.StartListening(Constants.EVENT_GAMESTART, () => canMove = true);
+            EventManager.StartListening(Constants.EVENT_GAMESTART, () => StartMoving());
 
             EventManager.StartListening(Constants.EVENT_INPUTUP, UpMotion);
             EventManager.StartListening(Constants.EVENT_INPUTDOWN, DownMotion);
@@ -66,9 +114,10 @@ namespace TurmoilStudios.BattleDash {
             EventManager.StartListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, ResetXYPosition);
         }
 
-        protected virtual void OnDisable() {
+        protected virtual void OnDisable()
+        {
             //Unsubscribe from events
-            EventManager.StopListening(Constants.EVENT_GAMESTART, () => canMove = true);
+            EventManager.StopListening(Constants.EVENT_GAMESTART, () => StartMoving());
 
             EventManager.StopListening(Constants.EVENT_INPUTUP, UpMotion);
             EventManager.StopListening(Constants.EVENT_INPUTDOWN, DownMotion);
@@ -81,133 +130,103 @@ namespace TurmoilStudios.BattleDash {
 
         #region Public methods
         /// <summary>
-        /// Sets the initial position of the character.
+        /// Sets the origin of the character.
         /// </summary>
-        /// <param name="pos">The new initial position.</param>
-        public virtual void SetInitialPosition(Vector3 pos) {
-            initialPosition = pos;
+        /// <param name="pos">The new origin.</param>
+        public virtual void SetOrigin(Vector3 pos)
+        {
+            m_InitialPosition = pos;
         }
 
         /// <summary>
         /// Resets the character's position to the initial position.
         /// </summary>
-        public virtual void ResetPosition() {
-            transform.position = initialPosition;
+        public virtual void ResetPosition()
+        {
+            transform.position = m_InitialPosition;
         }
 
         /// <summary>
         /// Resets the character's X and Y position to the initial X and Y position.
         /// </summary>
-        public virtual void ResetXYPosition() {
+        public virtual void ResetXYPosition()
+        {
             Vector3 pos = transform.position;
 
-            pos.x = initialPosition.x;
-            pos.y = initialPosition.y;
+            pos.x = m_InitialPosition.x;
+            pos.y = m_InitialPosition.y;
 
             transform.position = pos;
         }
-        
+
         /// <summary>
         /// Makes the character start moving.
         /// </summary>
-        public virtual void StartMoving() {
-            canMove = true;
+        public virtual void StartMoving()
+        {
+           m_CanMove = true;
         }
 
         /// <summary>
         /// Makes the character stop moving.
         /// </summary>
-        public virtual void StopMoving() {
-            canMove = false;
-            Velocity = Vector3.zero;
+        public virtual void StopMoving()
+        {
+            m_CanMove = false;
+            m_Velocity = Vector3.zero;
         }
 
         #region Movement methods
         /// <summary>
         /// Invokes when the character moves up.
         /// </summary>
-        public virtual void UpMotion() { }
+        public virtual void UpMotion()
+        {
+            if(m_Animator != null)
+            {
+                if(m_IsJumping)
+                {
+                    Debug.Log("Jump!");
+                }
+            }
+        }
 
         /// <summary>
         /// Invokes when the character moves down.
         /// </summary>
-        public virtual void DownMotion() { }
+        public virtual void DownMotion()
+        {
+            if(m_Animator != null)
+            {
+                Debug.Log("Slide!");
+            }
+        }
 
         /// <summary>
         /// Invokes when the character moves to the left.
         /// </summary>
-        public virtual void LeftMotion() { }
+        public virtual void LeftMotion()
+        {
+            if(m_Animator != null)
+            {
+                Debug.Log("Roll Left!");
+                m_Animator.SetTrigger("RollLeft");
+            }
+        }
 
         /// <summary>
         /// Invokes when the character moves to the right.
         /// </summary>
-        public virtual void RightMotion() { }
+        public virtual void RightMotion()
+        {
+            if(m_Animator != null)
+            {
+                Debug.Log("Roll Right!");
+                m_Animator.SetTrigger("RollRight");
+            }
+        }
         #endregion
 
-        #region Animation methods
-        /// <summary>
-        /// Sets a trigger for the animator on the character.
-        /// </summary>
-        /// <param name="triggerName">Name of the trigger to set.</param>
-        public void SetTriggerAnimation(string triggerName) {
-            if(anim != null)
-                anim.SetTrigger(triggerName);
-            else
-                Debug.LogError("An animator was not found on the character!");
-        }
-
-        /// <summary>
-        /// Sets a float value for the animator on the character.
-        /// </summary>
-        /// <param name="floatName">Name of the float</param>
-        /// <param name="value">Value to set.</param>
-        public void SetFloatAnimation(string floatName, float value) {
-            if(anim != null)
-                anim.SetFloat(floatName, value);
-            else
-                Debug.LogError("An animator was not found on the character!");
-        }
-        public void SetBooleanAnimation(string boolName, bool value) {
-             if(anim != null)
-                anim.SetBool(boolName, value);
-            else
-                Debug.LogError("An animator was not found on the character!");
-         }
-        #endregion
-
-        #endregion
-
-        #region Private methods
-        /// <summary>
-        /// Initializes some important things for the character.
-        /// </summary>
-        protected virtual void Initialize() {
-            anim = GetComponent<Animator>();
-            collider = GetComponent<Collider>();
-            SetInitialPosition(transform.position);
-            groundRayLength = collider.bounds.extents.y;
-        }
-
-        /// <summary>
-        /// Detects for a ground below the character.
-        /// </summary>
-        protected virtual bool CheckForGround() {
-            //Set ray's position
-            Vector3 rayPos = transform.localPosition;
-            rayPos.y = rayPos.y + (collider.bounds.extents.y);
-            Vector3 rayDir = -(transform.up);
-
-#if UNITY_EDITOR
-            Debug.DrawRay(rayPos, rayDir * groundRayLength, Color.red, 0.01f);
-#endif
-
-            //Check if ray hit the ground
-            RaycastHit hitInfo;
-            if(Physics.Raycast(rayPos, rayDir, out hitInfo, groundRayLength))
-                return hitInfo.transform.tag == "Ground";
-
-            return false;
-        }
         #endregion
 
         #endregion

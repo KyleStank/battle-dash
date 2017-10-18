@@ -7,7 +7,7 @@ namespace TurmoilStudios.BattleDash {
         UnityEvent OnHit = null;
 
         PlayableCharacter character;
-        Animator anim;
+        //Animator anim;
         bool isDead = false;
 
         /// <summary>
@@ -21,7 +21,7 @@ namespace TurmoilStudios.BattleDash {
         void Awake() {
             //Get some references
             character = GetComponent<PlayableCharacter>();
-            anim = character.gameObject.GetComponent<Animator>();
+            //anim = character.gameObject.GetComponent<Animator>();
 
             Utils.EventManager.StartListening(Constants.EVENT_GAMESTART, () => isDead = false);
         }
@@ -33,8 +33,8 @@ namespace TurmoilStudios.BattleDash {
                 character.StopMoving();
                 
                 //Play animation
-                if(anim != null)
-                    anim.SetTrigger("obstacleHit");
+                //if(anim != null)
+                    //anim.SetTrigger("obstacleHit");
 
                 OnHit.Invoke();
             }

@@ -39,6 +39,7 @@ namespace TurmoilStudios.BattleDash {
         protected override void PowerupUpdate() {
             //Lerp items towards attraction point
             for(int i = 0; i < attractedCollectables.Count; i++) {
+                //TODO this gives a null error. Reproduce it, then fix it.
                 attractedCollectables[i].position = Vector3.Lerp(attractedCollectables[i].position, attractionPoint.position, lerpPerStep);
             }
         }

@@ -24,7 +24,7 @@ namespace TurmoilStudios.BattleDash {
         protected bool isVunerable = false;
 
         [HideInInspector]
-        public Animator anim;
+        //public Animator anim;
         
         [Tooltip("Percentage of health that should be left when this fighter is ready to be defeated.")]
         public float healthDefeatMultiplyer = 0.0f;
@@ -56,7 +56,7 @@ namespace TurmoilStudios.BattleDash {
 
         #region Unity methods
         protected virtual void Awake() {
-            anim = GetComponent<Animator>();
+            //anim = GetComponent<Animator>();
             health = maxHealth;
         }
 		#endregion
@@ -109,8 +109,8 @@ namespace TurmoilStudios.BattleDash {
             }
 
             //Play the take animation if damage was taken and the figher has not died
-            if(anim != null && prevHealth != health && !isDefending)
-                anim.SetTrigger("getHit");
+            //if(anim != null && prevHealth != health && !isDefending)
+                //anim.SetTrigger("getHit");
         }
 
         /// <summary>
@@ -130,8 +130,8 @@ namespace TurmoilStudios.BattleDash {
         /// Makes the figher die. Mainly used for animation purposes only.
         /// </summary>
         public void Die() {
-            if(anim != null)
-                anim.SetTrigger("die");
+            //if(anim != null)
+                //anim.SetTrigger("die");
         }
 
         /// <summary>
@@ -139,8 +139,8 @@ namespace TurmoilStudios.BattleDash {
         /// </summary>
         public void StartAttack() {
             //Play the attack animation
-            if(anim != null)
-                anim.SetTrigger("attack");
+            //if(anim != null)
+                //anim.SetTrigger("attack");
         }
         
         /// <summary>
@@ -159,8 +159,8 @@ namespace TurmoilStudios.BattleDash {
             StartCoroutine(StartDefending());
 
             //Play animation
-            if(anim != null)
-                anim.SetTrigger("defend");
+            //if(anim != null)
+                //anim.SetTrigger("defend");
         }
 
         /// <summary>
