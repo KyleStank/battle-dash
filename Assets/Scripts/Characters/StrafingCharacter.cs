@@ -41,6 +41,11 @@ namespace TurmoilStudios.BattleDash
         {
             base.Update();
 
+            ApplyGravity();
+
+            //Determine if the player is jumping or not
+            m_IsJumping = !(m_CharacterController.isGrounded);
+
             if(m_CanMove)
             {
                 HandleMovement();
@@ -113,10 +118,6 @@ namespace TurmoilStudios.BattleDash
 
             m_Velocity.y = m_JumpSpeed;
             m_IsJumping = true;
-
-            //Set animation
-            m_Animator.SetBool("IsJumping", true);
-            //SetTriggerAnimation("jump");
         }
 
         /// <summary>
@@ -142,10 +143,13 @@ namespace TurmoilStudios.BattleDash
                 m_LaneSwitchStartX = transform.position.x;
                 m_LaneSwitchTargetX = newPos.x;
 
-
-                //SetBooleanAnimation("movingLeft", true);
                 //Play animation
-                //PlayerManager.SetTriggerAnimation("switchLeft");
+                if(m_Animator != null)
+                {
+                    m_Animator.ResetTrigger("RollLeft");
+                    m_Animator.ResetTrigger("RollRight");
+                    m_Animator.SetTrigger("RollLeft");
+                }
             }
             else
             {
@@ -176,11 +180,14 @@ namespace TurmoilStudios.BattleDash
                 m_CurrentLaneSwitchTimer = 0;
                 m_LaneSwitchStartX = transform.position.x;
                 m_LaneSwitchTargetX = newPos.x;
-
-
-                //SetBooleanAnimation("movingRight", true);
+                
                 //Play animation
-                //PlayerManager.SetTriggerAnimation("switchRight");
+                if(m_Animator != null)
+                {
+                    m_Animator.ResetTrigger("RollLeft");
+                    m_Animator.ResetTrigger("RollRight");
+                    m_Animator.SetTrigger("RollRight");
+                }
             }
             else
             {
@@ -205,12 +212,18 @@ namespace TurmoilStudios.BattleDash
 
         #region Private methods
         /// <summary>
+        /// Applies gravity to the character.
+        /// </summary>
+        private void ApplyGravity()
+        {
+            m_Velocity.y += Physics.gravity.y * Time.fixedDeltaTime;
+        }
+
+        /// <summary>
         /// Handles the character movement.
         /// </summary>
         private void HandleMovement()
         {
-            m_Velocity.y += Physics.gravity.y * Time.fixedDeltaTime;
-
             m_CharacterController.Move(m_Velocity * Time.fixedDeltaTime);
 
             //ensure player forward speed is consistent (always equal to MoveSpeed * damping)

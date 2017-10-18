@@ -94,10 +94,11 @@ namespace TurmoilStudios.BattleDash
                 m_RunningDamping = Mathf.Clamp(m_RunningDamping, 0.0f, 1.0f);
             }
 
-            //Play the run animation
+            //Set aniamtion parameters
             if(m_Animator != null)
             {
                 m_Animator.SetFloat("MoveSpeed", m_RunningDamping);
+                m_Animator.SetBool("IsJumping", m_IsJumping);
             }
         }
 
@@ -210,7 +211,7 @@ namespace TurmoilStudios.BattleDash
             if(m_Animator != null)
             {
                 Debug.Log("Roll Left!");
-                m_Animator.SetTrigger("RollLeft");
+                //m_Animator.SetTrigger("RollLeft");
             }
         }
 
@@ -222,7 +223,7 @@ namespace TurmoilStudios.BattleDash
             if(m_Animator != null)
             {
                 Debug.Log("Roll Right!");
-                m_Animator.SetTrigger("RollRight");
+                //m_Animator.SetTrigger("RollRight");
             }
         }
         #endregion

@@ -569,7 +569,7 @@ MonoBehaviour:
   maxChunksPerBoss: 5
   currentCharacter: {fileID: 0}
   disableAllColliders: 0
-  noBosses: 0
+  noBosses: 1
   onlyBosses: 0
 --- !u!114 &114247374126492816
 MonoBehaviour:

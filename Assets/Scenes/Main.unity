@@ -374,16 +374,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114026513464645300, guid: 0d165191ee07ad44c9904808f0941822,
+    - target: {fileID: 114313304624273356, guid: 0d165191ee07ad44c9904808f0941822,
         type: 2}
       propertyPath: startingChunk
       value: 
       objectReference: {fileID: 1073544085}
-    - target: {fileID: 114026513464645300, guid: 0d165191ee07ad44c9904808f0941822,
+    - target: {fileID: 114313304624273356, guid: 0d165191ee07ad44c9904808f0941822,
         type: 2}
       propertyPath: currentCharacter
       value: 
       objectReference: {fileID: 17758107}
+    - target: {fileID: 114921719327783352, guid: 0d165191ee07ad44c9904808f0941822,
+        type: 2}
+      propertyPath: debugContent
+      value: 
+      objectReference: {fileID: 409482527}
     - target: {fileID: 114542692200130068, guid: 0d165191ee07ad44c9904808f0941822,
         type: 2}
       propertyPath: mainCanvas
@@ -414,36 +419,16 @@ Prefab:
       propertyPath: inGameCoinsText
       value: 
       objectReference: {fileID: 1572496663}
-    - target: {fileID: 114921719327783352, guid: 0d165191ee07ad44c9904808f0941822,
-        type: 2}
-      propertyPath: debugContent
-      value: 
-      objectReference: {fileID: 409482527}
-    - target: {fileID: 114313304624273356, guid: 0d165191ee07ad44c9904808f0941822,
+    - target: {fileID: 114026513464645300, guid: 0d165191ee07ad44c9904808f0941822,
         type: 2}
       propertyPath: startingChunk
       value: 
       objectReference: {fileID: 1073544085}
-    - target: {fileID: 114313304624273356, guid: 0d165191ee07ad44c9904808f0941822,
+    - target: {fileID: 114026513464645300, guid: 0d165191ee07ad44c9904808f0941822,
         type: 2}
       propertyPath: currentCharacter
       value: 
       objectReference: {fileID: 17758107}
-    - target: {fileID: 114026513464645300, guid: 0d165191ee07ad44c9904808f0941822,
-        type: 2}
-      propertyPath: noBosses
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114026513464645300, guid: 0d165191ee07ad44c9904808f0941822,
-        type: 2}
-      propertyPath: disableAllColliders
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114026513464645300, guid: 0d165191ee07ad44c9904808f0941822,
-        type: 2}
-      propertyPath: onlyBosses
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d165191ee07ad44c9904808f0941822, type: 2}
   m_IsPrefabParent: 0
@@ -877,6 +862,11 @@ Prefab:
       propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 226685012}
+    - target: {fileID: 114365203598726080, guid: 3e4a0ca04ee99544c81b4b8863853320,
+        type: 2}
+      propertyPath: m_JumpSpeed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3e4a0ca04ee99544c81b4b8863853320, type: 2}
   m_IsPrefabParent: 0
