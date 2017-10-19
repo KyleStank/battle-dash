@@ -62,13 +62,21 @@ namespace TurmoilStudios.BattleDash {
         protected virtual void OnEnable()
         {
             //Subscribe to events
-            //EventManager.StartListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, )
+            if(m_Animator != null)
+            {
+                EventManager.StartListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, () => m_Animator.ResetTrigger("UnsheathL"));
+                EventManager.StartListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, () => m_Animator.SetTrigger("UnsheathL"));
+            }
         }
 
         protected virtual void OnDisable()
         {
             //Unsubscribe to events
-
+            if(m_Animator != null)
+            {
+                EventManager.StopListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, () => m_Animator.ResetTrigger("UnsheathL"));
+                EventManager.StopListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, () => m_Animator.SetTrigger("UnsheathL"));
+            }
         }
         #endregion
 
@@ -121,7 +129,9 @@ namespace TurmoilStudios.BattleDash {
 
             //Play the take animation if damage was taken and the figher has not died
             if(m_Animator != null && prevHealth != health && !isDefending)
+            {
                 m_Animator.SetTrigger("getHit");
+            }
         }
 
         /// <summary>
@@ -151,7 +161,9 @@ namespace TurmoilStudios.BattleDash {
         public void StartAttack() {
             //Play the attack animation
             if(m_Animator != null)
+            {
                 m_Animator.SetTrigger("AttackL1");
+            }
         }
         
         /// <summary>
@@ -160,7 +172,9 @@ namespace TurmoilStudios.BattleDash {
         public void AttackOpponent() {
             //Attack
             if(currentOpponent != null)
+            {
                 currentOpponent.TakeDamage(attackDamage * damageMultiplyer);
+            }
         }
 
         /// <summary>
@@ -171,7 +185,9 @@ namespace TurmoilStudios.BattleDash {
 
             //Play animation
             if(m_Animator != null)
-                m_Animator.SetTrigger("defend");
+            {
+                m_Animator.SetTrigger("Defend");
+            }
         }
 
         /// <summary>

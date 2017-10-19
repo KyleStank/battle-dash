@@ -1400,6 +1400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventName: ObstacleHit
   objectTag: Player
+  disableOnActivation: 1
   ignoreTag: 0
   boundaryColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1001 &1896871716
