@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using TurmoilStudios.Utils;
 
 namespace TurmoilStudios.BattleDash
 {
@@ -9,6 +10,9 @@ namespace TurmoilStudios.BattleDash
     public class StrafingCharacter : PlayableCharacter
     {
         [Header("Strafing Character")]
+        [SerializeField]
+        private float m_MoveSpeedAccelerationTime = 60.0f;
+
         [SerializeField]
         private float m_LaneSwitchAmount = 2.5f;
         [SerializeField]
@@ -24,6 +28,8 @@ namespace TurmoilStudios.BattleDash
         [SerializeField]
         private CapsuleCollider m_SlideCollider = null;
 
+        private float m_MoveSpeedTime = 0.0f;
+
         private bool m_IsSwitchingLanes = false;
         private float m_CurrentLaneSwitchTimer = 0.0f;
         private float m_LaneSwitchStartX = 0.0f;
@@ -37,12 +43,33 @@ namespace TurmoilStudios.BattleDash
         #region Methods
 
         #region Unity methods
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+
+            //Subscribe to events
+            EventManager.StartListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, () => m_Animator.SetFloat("MoveSpeed", 0.0f));
+        }
+
+        protected override void OnDisable()
+        {
+            base.OnDisable();
+
+            //Unsubscribe from events
+            EventManager.StopListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, () => m_Animator.SetFloat("MoveSpeed", 0.0f));
+        }
+
         protected override void Update()
         {
             base.Update();
 
+            ApplyGravity();
+
             if(m_CanMove)
             {
+                //Determine if the player is jumping or not
+                m_IsJumping = !(m_CharacterController.isGrounded);
+
                 HandleMovement();
             }
 
@@ -85,7 +112,8 @@ namespace TurmoilStudios.BattleDash
             base.StartMoving();
 
             //Set the velocity
-            m_Velocity.z = m_MoveSpeed;
+            m_Velocity.z = m_MinMoveSpeed;
+            m_MoveSpeedTime = 0.0f;
         }
 
         /// <summary>
@@ -113,10 +141,6 @@ namespace TurmoilStudios.BattleDash
 
             m_Velocity.y = m_JumpSpeed;
             m_IsJumping = true;
-
-            //Set animation
-            m_Animator.SetBool("IsJumping", true);
-            //SetTriggerAnimation("jump");
         }
 
         /// <summary>
@@ -142,10 +166,13 @@ namespace TurmoilStudios.BattleDash
                 m_LaneSwitchStartX = transform.position.x;
                 m_LaneSwitchTargetX = newPos.x;
 
-
-                //SetBooleanAnimation("movingLeft", true);
                 //Play animation
-                //PlayerManager.SetTriggerAnimation("switchLeft");
+                if(m_Animator != null)
+                {
+                    m_Animator.ResetTrigger("RollLeft");
+                    m_Animator.ResetTrigger("RollRight");
+                    m_Animator.SetTrigger("RollLeft");
+                }
             }
             else
             {
@@ -176,11 +203,14 @@ namespace TurmoilStudios.BattleDash
                 m_CurrentLaneSwitchTimer = 0;
                 m_LaneSwitchStartX = transform.position.x;
                 m_LaneSwitchTargetX = newPos.x;
-
-
-                //SetBooleanAnimation("movingRight", true);
+                
                 //Play animation
-                //PlayerManager.SetTriggerAnimation("switchRight");
+                if(m_Animator != null)
+                {
+                    m_Animator.ResetTrigger("RollLeft");
+                    m_Animator.ResetTrigger("RollRight");
+                    m_Animator.SetTrigger("RollRight");
+                }
             }
             else
             {
@@ -205,13 +235,23 @@ namespace TurmoilStudios.BattleDash
 
         #region Private methods
         /// <summary>
+        /// Applies gravity to the character.
+        /// </summary>
+        private void ApplyGravity()
+        {
+            m_Velocity.y += Physics.gravity.y * Time.deltaTime;
+        }
+
+        
+        /// <summary>
         /// Handles the character movement.
         /// </summary>
         private void HandleMovement()
         {
-            m_Velocity.y += Physics.gravity.y * Time.fixedDeltaTime;
-
-            m_CharacterController.Move(m_Velocity * Time.fixedDeltaTime);
+            //currentSpeed = Mathf.SmoothStep(minSpeed, maxSpeed, time / accelerationTime );
+            m_Velocity.z = Mathf.SmoothStep(m_MinMoveSpeed, m_MaxMoveSpeed, m_MoveSpeedTime / m_MoveSpeedAccelerationTime);
+            m_CharacterController.Move(m_Velocity * Time.deltaTime);
+            m_MoveSpeedTime += Time.deltaTime;
 
             //ensure player forward speed is consistent (always equal to MoveSpeed * damping)
             //float forwardSpeed = Vector3.Dot(m_Velocity, transform.forward);

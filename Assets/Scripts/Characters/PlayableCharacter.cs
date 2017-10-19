@@ -21,14 +21,17 @@ namespace TurmoilStudios.BattleDash
         protected Vector3 m_Velocity = Vector3.zero;
         protected bool m_CanMove = false;
 
+        //protected float m_MoveSpeed = 10.0f;
         private float m_RunningDamping = 0.0f;
         private float m_JumpingDamping = 0.0f;
 
         [Header("Base Settings")]
         [SerializeField]
-        protected float m_MoveSpeed = 0.5f;
+        protected float m_MinMoveSpeed = 10.0f;
         [SerializeField]
-        protected float m_JumpSpeed = 1.0f;
+        protected float m_MaxMoveSpeed = 10.0f;
+        [SerializeField]
+        protected float m_JumpSpeed = 10.0f;
         [SerializeField]
         protected bool m_IsJumping = false;
 
@@ -88,16 +91,21 @@ namespace TurmoilStudios.BattleDash
         {
             //Update animations
             //Smooth out the movement
-            if(m_RunningDamping < 1.0f)
+            if(m_CanMove)
             {
-                m_RunningDamping += (m_Velocity.z / m_MoveSpeed) * Time.deltaTime;
+                m_RunningDamping += (m_Velocity.z) * Time.deltaTime;
                 m_RunningDamping = Mathf.Clamp(m_RunningDamping, 0.0f, 1.0f);
             }
+            else
+            {
+                m_RunningDamping = 0.0f;
+            }
 
-            //Play the run animation
+            //Set aniamtion parameters
             if(m_Animator != null)
             {
                 m_Animator.SetFloat("MoveSpeed", m_RunningDamping);
+                m_Animator.SetBool("IsJumping", m_IsJumping);
             }
         }
 
@@ -210,7 +218,7 @@ namespace TurmoilStudios.BattleDash
             if(m_Animator != null)
             {
                 Debug.Log("Roll Left!");
-                m_Animator.SetTrigger("RollLeft");
+                //m_Animator.SetTrigger("RollLeft");
             }
         }
 
@@ -222,7 +230,7 @@ namespace TurmoilStudios.BattleDash
             if(m_Animator != null)
             {
                 Debug.Log("Roll Right!");
-                m_Animator.SetTrigger("RollRight");
+                //m_Animator.SetTrigger("RollRight");
             }
         }
         #endregion

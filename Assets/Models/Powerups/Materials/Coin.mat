@@ -74,7 +74,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _V_CW_SecondaryTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
+    - V_CW_CW_OPTIONS: 0
     - V_CW_Label_Albedo: 0
     - V_CW_Label_Modes: 0
     - V_CW_Label_Tag: 0
@@ -112,3 +117,4 @@ Material:
     - _V_CW_MainTex_Scroll: {r: 0, g: 0, b: 0, a: 0}
     - _V_CW_ReflectColor: {r: 1, g: 1, b: 1, a: 1}
     - _V_CW_Rim_Color: {r: 1, g: 1, b: 1, a: 1}
+    - _V_CW_SecondaryTex_Scroll: {r: 0, g: 0, b: 0, a: 0}

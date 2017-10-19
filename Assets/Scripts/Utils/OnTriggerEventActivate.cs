@@ -12,6 +12,8 @@ namespace TurmoilStudios.Utils {
         [Tooltip("Tag of the object that will trigger event when passed through.")]
         protected string objectTag = "";
         [SerializeField]
+        protected bool disableOnActivation = true;
+        [SerializeField]
         [Tooltip("If true, the tag above will be ignored and anything that passes through the object will trigger the event.")]
         protected bool ignoreTag = false;
 
@@ -37,6 +39,11 @@ namespace TurmoilStudios.Utils {
             if(col.tag == objectTag || ignoreTag) {
                 print("Trigger the \"" + eventName.ToString() + "\" event!");
                 EventManager.TriggerEvent(eventName.ToString());
+
+                if(disableOnActivation)
+                {
+                    gameObject.SetActive(false);
+                }
             }
         }
 
@@ -50,6 +57,6 @@ namespace TurmoilStudios.Utils {
 #endif
         #endregion
 
-#endregion
+        #endregion
     }
 }

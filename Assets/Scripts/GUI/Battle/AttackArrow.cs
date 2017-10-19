@@ -75,7 +75,7 @@ namespace TurmoilStudios.BattleDash {
         /// <param name="eventData">Swipe data.</param>
         public new void OnDrag(PointerEventData eventData) {
             base.OnDrag(eventData);
-
+            
             if(!interactable)
                 return;
 
@@ -101,6 +101,7 @@ namespace TurmoilStudios.BattleDash {
                 hasAttacked = true;
 
                 //Attack the boss
+                Debug.Log("Start attack!");
                 BattleManager.Instance.PlayerCharacter.StartAttack();
 
                 //Disable the arrow

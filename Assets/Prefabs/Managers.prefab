@@ -186,7 +186,7 @@ GameObject:
   m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1939125752284348
 GameObject:
   m_ObjectHideFlags: 1
@@ -570,7 +570,7 @@ MonoBehaviour:
   currentCharacter: {fileID: 0}
   disableAllColliders: 0
   noBosses: 0
-  onlyBosses: 0
+  onlyBosses: 1
 --- !u!114 &114247374126492816
 MonoBehaviour:
   m_ObjectHideFlags: 1
