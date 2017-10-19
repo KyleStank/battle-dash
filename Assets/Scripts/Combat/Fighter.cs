@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using TurmoilStudios.Utils;
 
 namespace TurmoilStudios.BattleDash {
     /// <summary>
@@ -8,6 +9,8 @@ namespace TurmoilStudios.BattleDash {
     /// </summary>
     [AddComponentMenu("Battle Dash/Combat/Fighter (Temp)")]
 	public class Fighter : MonoBehaviour {
+        [SerializeField]
+        protected Animator m_Animator = null;
         [SerializeField]
         protected float maxHealth = 100.0f;
         [SerializeField]
@@ -22,9 +25,6 @@ namespace TurmoilStudios.BattleDash {
         protected float damageMultiplyer = 1.0f;
         protected bool isDefending = false;
         protected bool isVunerable = false;
-
-        [HideInInspector]
-        //public Animator anim;
         
         [Tooltip("Percentage of health that should be left when this fighter is ready to be defeated.")]
         public float healthDefeatMultiplyer = 0.0f;
@@ -56,12 +56,23 @@ namespace TurmoilStudios.BattleDash {
 
         #region Unity methods
         protected virtual void Awake() {
-            //anim = GetComponent<Animator>();
             health = maxHealth;
         }
-		#endregion
-		
-		#region Public methods
+
+        protected virtual void OnEnable()
+        {
+            //Subscribe to events
+            //EventManager.StartListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, )
+        }
+
+        protected virtual void OnDisable()
+        {
+            //Unsubscribe to events
+
+        }
+        #endregion
+
+        #region Public methods
         /// <summary>
         /// Sets the current opponent of this fighter.
         /// </summary>
@@ -109,8 +120,8 @@ namespace TurmoilStudios.BattleDash {
             }
 
             //Play the take animation if damage was taken and the figher has not died
-            //if(anim != null && prevHealth != health && !isDefending)
-                //anim.SetTrigger("getHit");
+            if(m_Animator != null && prevHealth != health && !isDefending)
+                m_Animator.SetTrigger("getHit");
         }
 
         /// <summary>
@@ -130,8 +141,8 @@ namespace TurmoilStudios.BattleDash {
         /// Makes the figher die. Mainly used for animation purposes only.
         /// </summary>
         public void Die() {
-            //if(anim != null)
-                //anim.SetTrigger("die");
+            if(m_Animator != null)
+                m_Animator.SetTrigger("die");
         }
 
         /// <summary>
@@ -139,8 +150,8 @@ namespace TurmoilStudios.BattleDash {
         /// </summary>
         public void StartAttack() {
             //Play the attack animation
-            //if(anim != null)
-                //anim.SetTrigger("attack");
+            if(m_Animator != null)
+                m_Animator.SetTrigger("AttackL1");
         }
         
         /// <summary>
@@ -159,8 +170,8 @@ namespace TurmoilStudios.BattleDash {
             StartCoroutine(StartDefending());
 
             //Play animation
-            //if(anim != null)
-                //anim.SetTrigger("defend");
+            if(m_Animator != null)
+                m_Animator.SetTrigger("defend");
         }
 
         /// <summary>

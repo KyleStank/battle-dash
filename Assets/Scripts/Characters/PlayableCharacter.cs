@@ -21,14 +21,17 @@ namespace TurmoilStudios.BattleDash
         protected Vector3 m_Velocity = Vector3.zero;
         protected bool m_CanMove = false;
 
+        //protected float m_MoveSpeed = 10.0f;
         private float m_RunningDamping = 0.0f;
         private float m_JumpingDamping = 0.0f;
 
         [Header("Base Settings")]
         [SerializeField]
-        protected float m_MoveSpeed = 0.5f;
+        protected float m_MinMoveSpeed = 10.0f;
         [SerializeField]
-        protected float m_JumpSpeed = 1.0f;
+        protected float m_MaxMoveSpeed = 10.0f;
+        [SerializeField]
+        protected float m_JumpSpeed = 10.0f;
         [SerializeField]
         protected bool m_IsJumping = false;
 
@@ -88,10 +91,14 @@ namespace TurmoilStudios.BattleDash
         {
             //Update animations
             //Smooth out the movement
-            if(m_RunningDamping < 1.0f)
+            if(m_CanMove)
             {
-                m_RunningDamping += (m_Velocity.z / m_MoveSpeed) * Time.deltaTime;
+                m_RunningDamping += (m_Velocity.z) * Time.deltaTime;
                 m_RunningDamping = Mathf.Clamp(m_RunningDamping, 0.0f, 1.0f);
+            }
+            else
+            {
+                m_RunningDamping = 0.0f;
             }
 
             //Set aniamtion parameters

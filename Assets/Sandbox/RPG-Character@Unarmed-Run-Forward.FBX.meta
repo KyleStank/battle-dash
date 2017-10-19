@@ -303,7 +303,8 @@ ModelImporter:
       - time: 0.35228273
         functionName: FootR
         data: 
-        objectReferenceParameter: {instanceID: 0}
+        objectReferenceParameter: {fileID: 11500000, guid: 56c06cac11b4035428203979ed706ced,
+          type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
