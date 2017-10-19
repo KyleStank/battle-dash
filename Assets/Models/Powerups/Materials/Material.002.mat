@@ -8,8 +8,8 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Material.002
   m_Shader: {fileID: 4800000, guid: f7742757fa2e3d34f860c2a3539f739e, type: 3}
-  m_ShaderKeywords: _EMISSION
-  m_LightmapFlags: 2
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -86,7 +86,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
@@ -108,7 +108,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.093058966, g: 0.69387186, b: 0.93868583, a: 1}
-    - _EmissionColor: {r: 0.08109862, g: 0.35683382, b: 0.5514706, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _V_CW_MainTex_Scroll: {r: 0, g: 0, b: 0, a: 0}
     - _V_CW_ReflectColor: {r: 1, g: 1, b: 1, a: 1}
     - _V_CW_Rim_Color: {r: 1, g: 1, b: 1, a: 1}

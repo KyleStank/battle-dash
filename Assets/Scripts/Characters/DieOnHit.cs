@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using TurmoilStudios.Utils;
 
 namespace TurmoilStudios.BattleDash {
     public class DieOnHit : MonoBehaviour {
@@ -23,18 +24,14 @@ namespace TurmoilStudios.BattleDash {
             character = GetComponent<PlayableCharacter>();
             //anim = character.gameObject.GetComponent<Animator>();
 
-            Utils.EventManager.StartListening(Constants.EVENT_GAMESTART, () => isDead = false);
+            EventManager.StartListening(Constants.EVENT_GAMESTART, () => isDead = false);
         }
         
         private void OnTriggerEnter(Collider other) {
             if(!IsInvincible && !isDead && other.tag == "Obstacle") {
                 isDead = true;
                 GameManager.Instance.SetStatus(GameManager.GameStatus.ObstacleHit);
-                character.StopMoving();
-                
-                //Play animation
-                //if(anim != null)
-                    //anim.SetTrigger("obstacleHit");
+                EventManager.TriggerEvent(Constants.EVENT_OBSTACLEHIT);
 
                 OnHit.Invoke();
             }

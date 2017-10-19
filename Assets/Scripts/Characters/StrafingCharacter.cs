@@ -29,6 +29,7 @@ namespace TurmoilStudios.BattleDash
         private CapsuleCollider m_SlideCollider = null;
 
         private float m_MoveSpeedTime = 0.0f;
+        private float m_LastVelocity = 0.0f;
 
         private bool m_IsSwitchingLanes = false;
         private float m_CurrentLaneSwitchTimer = 0.0f;
@@ -43,12 +44,19 @@ namespace TurmoilStudios.BattleDash
         #region Methods
 
         #region Unity methods
+        protected override void Awake()
+        {
+            base.Awake();
+
+            m_LastVelocity = m_MinMoveSpeed;
+        }
+
         protected override void OnEnable()
         {
             base.OnEnable();
 
             //Subscribe to events
-            EventManager.StartListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, () => m_Animator.SetFloat("MoveSpeed", 0.0f));
+            EventManager.StartListening(Constants.EVENT_OBSTACLEHIT, () => m_LastVelocity = m_MinMoveSpeed);
         }
 
         protected override void OnDisable()
@@ -56,7 +64,7 @@ namespace TurmoilStudios.BattleDash
             base.OnDisable();
 
             //Unsubscribe from events
-            EventManager.StopListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, () => m_Animator.SetFloat("MoveSpeed", 0.0f));
+            EventManager.StopListening(Constants.EVENT_OBSTACLEHIT, () => m_LastVelocity = m_MinMoveSpeed);
         }
 
         protected override void Update()
@@ -83,8 +91,6 @@ namespace TurmoilStudios.BattleDash
                     m_IsSwitchingLanes = false;
                     m_CurrentLaneSwitchTimer = 0;
                     ipo = 1;
-                    //SetBooleanAnimation("movingLeft", false);
-                    //SetBooleanAnimation("movingRight", false);
                 }
 
                 float ipoX = Mathf.Lerp(m_LaneSwitchStartX, m_LaneSwitchTargetX, ipo);
@@ -109,11 +115,11 @@ namespace TurmoilStudios.BattleDash
         /// </summary>
         public override void StartMoving()
         {
-            base.StartMoving();
-
             //Set the velocity
-            m_Velocity.z = m_MinMoveSpeed;
+            m_Velocity.z = m_LastVelocity;
             m_MoveSpeedTime = 0.0f;
+
+            base.StartMoving();
         }
 
         /// <summary>
@@ -121,11 +127,11 @@ namespace TurmoilStudios.BattleDash
         /// </summary>
         public override void StopMoving()
         {
-            base.StopMoving();
-
+            m_LastVelocity = m_Velocity.z;
             m_Velocity = Vector3.zero;
             m_Damping = 0.0f;
-            //anim.SetFloat("runSpeed", damping);
+
+            base.StopMoving();
         }
 
         /// <summary>
@@ -239,7 +245,10 @@ namespace TurmoilStudios.BattleDash
         /// </summary>
         private void ApplyGravity()
         {
-            m_Velocity.y += Physics.gravity.y * Time.deltaTime;
+            if(!m_CharacterController.isGrounded)
+            {
+                m_Velocity.y += Physics.gravity.y * Time.deltaTime;
+            }
         }
 
         
@@ -249,7 +258,7 @@ namespace TurmoilStudios.BattleDash
         private void HandleMovement()
         {
             //currentSpeed = Mathf.SmoothStep(minSpeed, maxSpeed, time / accelerationTime );
-            m_Velocity.z = Mathf.SmoothStep(m_MinMoveSpeed, m_MaxMoveSpeed, m_MoveSpeedTime / m_MoveSpeedAccelerationTime);
+            m_Velocity.z = Mathf.SmoothStep(m_LastVelocity, m_MaxMoveSpeed, m_MoveSpeedTime / m_MoveSpeedAccelerationTime);
             m_CharacterController.Move(m_Velocity * Time.deltaTime);
             m_MoveSpeedTime += Time.deltaTime;
 

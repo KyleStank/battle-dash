@@ -123,7 +123,7 @@ AvatarMask:
   - m_Path: SF_Character_Undead_Heavy
     m_Weight: 0
   - m_Path: SF_Character_Undead_King
-    m_Weight: 0
+    m_Weight: 1
   - m_Path: SF_Character_Undead_Rogue
     m_Weight: 0
   - m_Path: SF_Character_Undead_Skeleton
