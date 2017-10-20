@@ -130,7 +130,7 @@ namespace TurmoilStudios.BattleDash {
             //Play the take animation if damage was taken and the figher has not died
             if(m_Animator != null && prevHealth != health && !isDefending)
             {
-                m_Animator.SetTrigger("getHit");
+                m_Animator.SetTrigger("GetHit");
             }
         }
 
@@ -150,9 +150,13 @@ namespace TurmoilStudios.BattleDash {
         /// <summary>
         /// Makes the figher die. Mainly used for animation purposes only.
         /// </summary>
-        public void Die() {
+        public void Die()
+        {
             if(m_Animator != null)
-                m_Animator.SetTrigger("die");
+            {
+                m_Animator.ResetTrigger("Die");
+                m_Animator.SetTrigger("Die");
+            }
         }
 
         /// <summary>
@@ -162,6 +166,7 @@ namespace TurmoilStudios.BattleDash {
             //Play the attack animation
             if(m_Animator != null)
             {
+                m_Animator.ResetTrigger("AttackL1");
                 m_Animator.SetTrigger("AttackL1");
             }
         }
@@ -186,6 +191,7 @@ namespace TurmoilStudios.BattleDash {
             //Play animation
             if(m_Animator != null)
             {
+                m_Animator.ResetTrigger("Defend");
                 m_Animator.SetTrigger("Defend");
             }
         }
@@ -199,7 +205,9 @@ namespace TurmoilStudios.BattleDash {
 
             //Randomly choose a hit particle to spawn
             if(currentOpponent.hitParticleSpawnLocation != null && hitParticlesToSpawn != null)
+            {
                 Instantiate(hitParticlesToSpawn[Random.Range(0, hitParticlesToSpawn.Length)].gameObject, currentOpponent.hitParticleSpawnLocation.position, Quaternion.identity);
+            }
         }
         #endregion
 

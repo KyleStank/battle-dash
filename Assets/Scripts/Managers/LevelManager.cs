@@ -88,17 +88,6 @@ namespace TurmoilStudios.BattleDash {
             if(GameManager.Instance.Status == GameManager.GameStatus.GameInProgress)
                 HandleGeneration();
         }
-
-        void OnEnable() {
-            //Subscribe to events
-            EventManager.StartListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, currentCharacter.StopMoving);
-
-        }
-
-        void OnDisable() {
-            //Unsubscribe to events
-            EventManager.StopListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, currentCharacter.StopMoving);
-        }
         #endregion
 
         #region Public methods

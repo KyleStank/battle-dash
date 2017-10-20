@@ -245,7 +245,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1202726595984678
 GameObject:
   m_ObjectHideFlags: 1
@@ -2325,7 +2325,7 @@ MonoBehaviour:
   _debugUnityActivateToggle: 0
   duration: 5
   isActive: 0
-  attractionPoint: {fileID: 0}
+  attractionPoint: {fileID: 4232430915318476}
   lerpPerStep: 0.2
 --- !u!114 &114365203598726080
 MonoBehaviour:

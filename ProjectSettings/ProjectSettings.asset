@@ -6,7 +6,7 @@ PlayerSettings:
   serializedVersion: 13
   productGUID: 2f7721a4f00be4e4fab1e303b75e78b3
   AndroidProfiler: 0
-  AndroidFilterTouchesWhenObscured: 0
+  AndroidFilterTouchesWhenObscured: 1
   defaultScreenOrientation: 0
   targetDevice: 2
   useOnDemandResources: 0
@@ -158,13 +158,13 @@ PlayerSettings:
   AndroidBundleVersionCode: 5
   AndroidMinSdkVersion: 16
   AndroidTargetSdkVersion: 0
-  AndroidPreferredInstallLocation: 2
+  AndroidPreferredInstallLocation: 0
   aotOptions: 
-  stripEngineCode: 0
+  stripEngineCode: 1
   iPhoneStrippingLevel: 1
   iPhoneScriptCallOptimization: 0
   ForceInternetPermission: 0
-  ForceSDCardPermission: 0
+  ForceSDCardPermission: 1
   CreateWallpaper: 0
   APKExpansionFiles: 0
   keepLoadedShadersAlive: 1
@@ -637,7 +637,7 @@ PlayerSettings:
     iOS: 2
     tvOS: 1
   scriptingBackend:
-    Android: 0
+    Android: 1
     Metro: 2
     Standalone: 0
     WebGL: 1

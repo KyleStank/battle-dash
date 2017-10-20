@@ -14,22 +14,13 @@ MonoBehaviour:
   CollectableGroups:
   - Type: 0
     PossibleCollectables:
-    - CollectablePrefab: {fileID: 114301502972853816, guid: 98bdd8f5155bb6440a1ff85a766c0d7c,
+    - CollectablePrefab: {fileID: 114437695381468046, guid: 98bdd8f5155bb6440a1ff85a766c0d7c,
         type: 2}
       Frequency: 100
-    - CollectablePrefab: {fileID: 114637969855113920, guid: 6ef0da27015709a49bf324d677f48614,
+    - CollectablePrefab: {fileID: 114542422575734792, guid: 6ef0da27015709a49bf324d677f48614,
         type: 2}
-      Frequency: 94
-    - CollectablePrefab: {fileID: 114271378029842210, guid: a0f5efd1b523e5447af0811c0142b297,
+      Frequency: 25
+    - CollectablePrefab: {fileID: 114400464112559586, guid: a0f5efd1b523e5447af0811c0142b297,
         type: 2}
-      Frequency: 5
-    - CollectablePrefab: {fileID: 114271378029842210, guid: a70dc3334f2b3b44980689daf4ba9aa8,
-        type: 2}
-      Frequency: 1
-    TotalFrequency: 200
-  - Type: 1
-    PossibleCollectables:
-    - CollectablePrefab: {fileID: 114374027700600702, guid: cfc34d8fa6f4ab640a002733478c68f0,
-        type: 2}
-      Frequency: 100
-    TotalFrequency: 100
+      Frequency: 25
+    TotalFrequency: 150

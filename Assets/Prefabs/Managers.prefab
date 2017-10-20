@@ -92,22 +92,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1398132035795768
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 4109983272310588}
-  - component: {fileID: 114313304624273356}
-  m_Layer: 0
-  m_Name: Level Manager (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
 --- !u!1 &1411053071491864
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,19 +213,6 @@ Transform:
   m_Father: {fileID: 4878759350006262}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4109983272310588
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1398132035795768}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4341076401835078}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4168457991210510
 Transform:
   m_ObjectHideFlags: 1
@@ -285,7 +256,6 @@ Transform:
   - {fileID: 4583641268230538}
   - {fileID: 4168457991210510}
   - {fileID: 4781359729642740}
-  - {fileID: 4109983272310588}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -565,12 +535,12 @@ MonoBehaviour:
   startingChunk: {fileID: 0}
   generationOffeset: 4
   initialChunksAmount: 2
-  minChunksPerBoss: 3
-  maxChunksPerBoss: 5
+  minChunksPerBoss: 4
+  maxChunksPerBoss: 7
   currentCharacter: {fileID: 0}
   disableAllColliders: 0
   noBosses: 0
-  onlyBosses: 1
+  onlyBosses: 0
 --- !u!114 &114247374126492816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -583,39 +553,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   color: {r: 0, g: 1, b: 0.8344829, a: 1}
---- !u!114 &114313304624273356
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1398132035795768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 070c5fe5ce454794bac6dcc7d6cb9b49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chunksPool:
-    poolObjects:
-    - {fileID: 1705064041903168, guid: 50027c120e67b1a41b9bef7e71f86cd1, type: 2}
-    poolHolder: {fileID: 1398132035795768}
-    objectSize: 1
-    willGrow: 1
-  bossChunksPool:
-    poolObjects:
-    - {fileID: 1087900061916084, guid: f2503676812584246ab2e16ef2e170e3, type: 2}
-    - {fileID: 1839681850620522, guid: c1661d776c9c53b4ca74eca8b4dc3fab, type: 2}
-    poolHolder: {fileID: 1398132035795768}
-    objectSize: 1
-    willGrow: 1
-  startingChunk: {fileID: 0}
-  generationOffeset: 4
-  initialChunksAmount: 2
-  minChunksPerBoss: 3
-  maxChunksPerBoss: 5
-  currentCharacter: {fileID: 0}
-  disableAllColliders: 0
-  noBosses: 1
-  onlyBosses: 0
 --- !u!114 &114542692200130068
 MonoBehaviour:
   m_ObjectHideFlags: 1

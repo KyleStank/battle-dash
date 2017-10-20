@@ -119,6 +119,9 @@ namespace TurmoilStudios.BattleDash
             EventManager.StartListening(Constants.EVENT_INPUTLEFT, LeftMotion);
             EventManager.StartListening(Constants.EVENT_INPUTRIGHT, RightMotion);
 
+            EventManager.StartListening(Constants.EVENT_OBSTACLEHIT, StopMoving);
+
+            EventManager.StartListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, StopMoving);
             EventManager.StartListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, ResetXYPosition);
         }
 
@@ -132,6 +135,9 @@ namespace TurmoilStudios.BattleDash
             EventManager.StopListening(Constants.EVENT_INPUTLEFT, LeftMotion);
             EventManager.StopListening(Constants.EVENT_INPUTRIGHT, RightMotion);
 
+            EventManager.StopListening(Constants.EVENT_OBSTACLEHIT, StopMoving);
+
+            EventManager.StopListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, StopMoving);
             EventManager.StopListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, ResetXYPosition);
         }
         #endregion
@@ -181,7 +187,6 @@ namespace TurmoilStudios.BattleDash
         public virtual void StopMoving()
         {
             m_CanMove = false;
-            m_Velocity = Vector3.zero;
         }
 
         #region Movement methods
