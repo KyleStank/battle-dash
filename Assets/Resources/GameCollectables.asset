@@ -24,9 +24,3 @@ MonoBehaviour:
         type: 2}
       Frequency: 25
     TotalFrequency: 150
-  - Type: 1
-    PossibleCollectables:
-    - CollectablePrefab: {fileID: 114374027700600702, guid: cfc34d8fa6f4ab640a002733478c68f0,
-        type: 2}
-      Frequency: 100
-    TotalFrequency: 100
