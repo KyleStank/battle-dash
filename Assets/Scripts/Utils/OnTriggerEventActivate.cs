@@ -4,6 +4,7 @@ namespace TurmoilStudios.Utils {
     /// <summary>
     /// Used for invoking an event when an object passes through it's bounadaries.
     /// </summary>
+    [RequireComponent(typeof(Collider))]
     public class OnTriggerEventActivate : MonoBehaviour {
         [SerializeField]
         [Tooltip("Name of the event to invoke.")]
@@ -18,6 +19,7 @@ namespace TurmoilStudios.Utils {
         protected bool ignoreTag = false;
 
         protected Collider thisCollider;
+        private bool m_AlreadyActivated = false;
 
 #if UNITY_EDITOR
         [Header("Debugging")]
@@ -28,27 +30,37 @@ namespace TurmoilStudios.Utils {
         #region Methods
 
         #region Unity methods
-        void Awake() {
+        private void Awake()
+        {
             thisCollider = GetComponent<Collider>();
 
             if(thisCollider != null)
                 thisCollider.isTrigger = true;
         }
 
-        void OnTriggerEnter(Collider col) {
-            if(col.tag == objectTag || ignoreTag) {
+        private void OnEnable()
+        {
+            m_AlreadyActivated = false;
+        }
+
+        private void OnTriggerEnter(Collider col)
+        {
+            if(m_AlreadyActivated)
+            {
+                return;
+            }
+
+            if(col.tag == objectTag || ignoreTag)
+            {
                 print("Trigger the \"" + eventName.ToString() + "\" event!");
                 EventManager.TriggerEvent(eventName.ToString());
-
-                if(disableOnActivation)
-                {
-                    gameObject.SetActive(false);
-                }
+                m_AlreadyActivated = true;
             }
         }
 
 #if UNITY_EDITOR
-        void OnDrawGizmos() {
+        private void OnDrawGizmos()
+        {
             thisCollider = GetComponent<Collider>();
 
             Gizmos.color = boundaryColor;
