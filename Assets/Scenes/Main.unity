@@ -845,6 +845,11 @@ Prefab:
       propertyPath: inGameCoinsText
       value: 
       objectReference: {fileID: 1572496663}
+    - target: {fileID: 114026513464645300, guid: 0d165191ee07ad44c9904808f0941822,
+        type: 2}
+      propertyPath: onlyBosses
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d165191ee07ad44c9904808f0941822, type: 2}
   m_IsPrefabParent: 0
