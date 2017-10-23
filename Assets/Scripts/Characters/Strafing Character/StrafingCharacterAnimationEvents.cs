@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TurmoilStudios.BattleDash;
+using KyleStankovich.BattleDash;
 
 namespace KyleStankovich.BattleDash
 {

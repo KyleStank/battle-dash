@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     /// <summary>
     /// Class responsible for handling chunks throughout the game.
     /// </summary>

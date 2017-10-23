@@ -447,6 +447,7 @@ GameObject:
   - component: {fileID: 54896280303811070}
   - component: {fileID: 114588177622736872}
   - component: {fileID: 114365203598726080}
+  - component: {fileID: 114494439686729440}
   - component: {fileID: 114094804078055296}
   - component: {fileID: 114412759321290862}
   - component: {fileID: 114529287270593406}
@@ -2391,6 +2392,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   IsInvincible: 0
+--- !u!114 &114494439686729440
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1316526217310650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c95de6458ac2345bf1b4391929d9b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SwipeDistance: 100
+  m_InputActive: 0
 --- !u!114 &114529287270593406
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 //note: goes on Player GO
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     [AddComponentMenu("Battle Dash/Collectables/Logic/Bash Logic")]
     public class BashLogic : PowerupLogic {
         

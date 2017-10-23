@@ -1,7 +1,7 @@
-﻿using TurmoilStudios.Utils;
+﻿using KyleStankovich.Utils;
 using UnityEngine;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     /// <summary>
     /// Handles the duration and boss battle pausing of the powerup.
     /// </summary>

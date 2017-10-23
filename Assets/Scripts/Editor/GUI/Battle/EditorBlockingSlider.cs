@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine.UI;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     /// <summary>
     /// Class responsible for handling the editor of the BlockingSlider class.
     /// </summary>

@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
-using TurmoilStudios.Utils;
+using KyleStankovich.Utils;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     /// <summary>
     /// Class used for creating fighters.
     /// Should be extended for custom functionality.
@@ -97,33 +97,6 @@ namespace TurmoilStudios.BattleDash {
             {
                 EventManager.StopListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, () => m_Animator.ResetTrigger("UnsheathL"));
                 EventManager.StopListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, () => m_Animator.SetTrigger("UnsheathL"));
-            }
-        }
-
-        protected virtual void OnAnimatorIK()
-        {
-            if(m_Animator == null)
-            {
-                Debug.LogWarning("Cannot do Inverse Kinematics because no Animator was found!");
-                return;
-            }
-
-            if(true)
-            {
-                // Set the right hand target position and rotation, if one has been assigned
-                if(m_WeaponGameObject != null)
-                {
-                    m_Animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1);
-                    m_Animator.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1);
-                    m_Animator.SetIKPosition(AvatarIKGoal.LeftHand, m_WeaponGameObject.transform.position);
-                    m_Animator.SetIKRotation(AvatarIKGoal.LeftHand, m_WeaponGameObject.transform.rotation);
-                }
-            }
-            else
-            {
-                m_Animator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 0);
-                m_Animator.SetIKRotationWeight(AvatarIKGoal.LeftHand, 0);
-                m_Animator.SetLookAtWeight(0);
             }
         }
         #endregion

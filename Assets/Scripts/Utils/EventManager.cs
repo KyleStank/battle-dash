@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine.Events;
 
-namespace TurmoilStudios.Utils {
+namespace KyleStankovich.Utils {
     /// <summary>
     /// Handles all of the events used in the game.
     /// </summary>

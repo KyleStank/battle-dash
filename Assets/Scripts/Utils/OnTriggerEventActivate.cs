@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TurmoilStudios.Utils {
+namespace KyleStankovich.Utils {
     /// <summary>
     /// Used for invoking an event when an object passes through it's bounadaries.
     /// </summary>

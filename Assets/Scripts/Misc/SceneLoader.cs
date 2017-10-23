@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     public sealed class SceneLoader : MonoBehaviour {
         [SerializeField]
         string sceneName = "";

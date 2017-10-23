@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using TurmoilStudios.Utils;
+using KyleStankovich.Utils;
 
-namespace TurmoilStudios.BattleDash
+namespace KyleStankovich.BattleDash
 {
     /// <summary>
     /// Class of the character that moves left, right, up, and down.
@@ -39,6 +39,7 @@ namespace TurmoilStudios.BattleDash
         private bool m_IsSliding = false;
         private float m_CurrentSlideTimer = 0.0f;
 
+        private float m_RunningDamping = 0.0f;
         private float m_Damping = 0.0f;
 
         #region Methods
@@ -67,10 +68,8 @@ namespace TurmoilStudios.BattleDash
             EventManager.StopListening(Constants.EVENT_OBSTACLEHIT, () => m_LastVelocity = m_MinMoveSpeed);
         }
 
-        protected override void Update()
+        protected void Update()
         {
-            base.Update();
-
             ApplyGravity();
 
             if(m_CanMove)
@@ -79,8 +78,24 @@ namespace TurmoilStudios.BattleDash
                 m_IsJumping = !(m_CharacterController.isGrounded);
 
                 HandleMovement();
+
+                //Update animations
+                m_RunningDamping += (m_Velocity.z) * Time.deltaTime;
+                m_RunningDamping = Mathf.Clamp(m_RunningDamping, 0.0f, 1.0f);
+            }
+            else
+            {
+                m_RunningDamping = 0.0f;
             }
 
+            //Set aniamtion parameters
+            if(m_Animator != null)
+            {
+                m_Animator.SetFloat("MoveSpeed", m_RunningDamping);
+                m_Animator.SetBool("IsJumping", m_IsJumping);
+            }
+
+            //Switch lanes
             if(m_IsSwitchingLanes)
             {
                 m_CurrentLaneSwitchTimer += Time.deltaTime;
@@ -97,6 +112,7 @@ namespace TurmoilStudios.BattleDash
                 transform.position = new Vector3(ipoX, transform.position.y, transform.position.z);
             }
 
+            //Slide
             if(m_IsSliding)
             {
                 m_CurrentSlideTimer += Time.deltaTime;

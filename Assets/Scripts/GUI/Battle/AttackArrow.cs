@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     /// <summary>
     /// Class that handles attacking the boss.
     /// </summary>

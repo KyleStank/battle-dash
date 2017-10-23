@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using TurmoilStudios.Utils;
+using KyleStankovich.Utils;
 
 
 //note: goes on Player GO 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
 
     [AddComponentMenu("Battle Dash/Collectables/Logic/Bomb Logic")]
     public class BombLogic : PowerupLogic {

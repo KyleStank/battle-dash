@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 using UnityEngine;
-using TurmoilStudios.Utils;
+using KyleStankovich.Utils;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     /// <summary>
     /// Class that handles the boss battles.
     /// </summary>

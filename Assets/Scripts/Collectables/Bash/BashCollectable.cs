@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
 
     [AddComponentMenu("Battle Dash/Collectables/Bash Collectable")]
     public class BashCollectable : Collectable {

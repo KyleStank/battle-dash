@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
-using TurmoilStudios.Utils;
+using KyleStankovich.Utils;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     /// <summary>
     /// Abstract class that is used as the basis of any collectable throughout the game.
     /// </summary>

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     [System.Serializable]
     [CreateAssetMenu(fileName = "GameCollectables.asset", menuName = "Battle Dash/Game Collectables")]
     public class GameCollectables : ScriptableObject {

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using TurmoilStudios.Utils;
+using KyleStankovich.Utils;
 
 public class SoundPlayer : MonoBehaviour {
 	#region Public methods
