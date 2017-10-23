@@ -18,11 +18,14 @@ namespace KyleStankovich.BattleDash
 
         protected CharacterController m_CharacterController = null;
         protected Collider m_Collider = null;
-        protected Vector3 m_InitialPosition = Vector3.zero;
         protected Vector3 m_Velocity = Vector3.zero;
         protected bool m_CanMove = false;
 
         [Header("Base Settings")]
+        [SerializeField]
+        protected Vector3 m_InitialPosition = Vector3.zero;
+        [SerializeField]
+        protected Quaternion m_InitialRotation = Quaternion.identity;
         [SerializeField]
         protected float m_MinMoveSpeed = 10.0f;
         [SerializeField]
@@ -39,6 +42,14 @@ namespace KyleStankovich.BattleDash
         public Vector3 InitialPosition
         {
             get { return m_InitialPosition; }
+        }
+
+        /// <summary>
+        /// Returns the initial rotation of the character.
+        /// </summary>
+        public Quaternion InitialRotation
+        {
+            get { return m_InitialRotation; }
         }
 
         /// <summary>
@@ -79,9 +90,6 @@ namespace KyleStankovich.BattleDash
             {
                 Debug.LogError("No collider was found! Make sure to attach on to the GameObject in the inspector!");
             }
-
-            //Set origin of character
-            SetOrigin(transform.position);
         }
 
         protected virtual void OnEnable()
@@ -119,15 +127,6 @@ namespace KyleStankovich.BattleDash
 
         #region Public methods
         /// <summary>
-        /// Sets the origin of the character.
-        /// </summary>
-        /// <param name="pos">The new origin.</param>
-        public virtual void SetOrigin(Vector3 pos)
-        {
-            m_InitialPosition = pos;
-        }
-
-        /// <summary>
         /// Resets the character's position to the initial position.
         /// </summary>
         public virtual void ResetPosition()
@@ -146,6 +145,14 @@ namespace KyleStankovich.BattleDash
             pos.y = m_InitialPosition.y;
 
             transform.position = pos;
+        }
+
+        /// <summary>
+        /// Resets the character's rotation to the initial rotation.
+        /// </summary>
+        public virtual void ResetRotation()
+        {
+            transform.rotation = m_InitialRotation;
         }
 
         /// <summary>

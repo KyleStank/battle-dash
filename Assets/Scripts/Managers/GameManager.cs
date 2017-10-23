@@ -165,6 +165,7 @@ namespace KyleStankovich.BattleDash {
             SetStatus(GameStatus.GameInProgress);
             LevelManager.Instance.ResetLevel();
             LevelManager.Instance.CurrentCharacter.ResetXYPosition();
+            LevelManager.Instance.CurrentCharacter.ResetRotation();
             SetPointsPerSecond(pointsPerSecond);
             StopAllCoroutines();
             AutoIncrementScore(true);

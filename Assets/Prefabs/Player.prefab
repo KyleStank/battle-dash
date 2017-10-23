@@ -1489,8 +1489,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1316526217310650}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1, z: 0}
+  m_LocalRotation: {x: -0, y: -0.65214103, z: -0, w: 0.75809777}
+  m_LocalPosition: {x: 2.079, y: 0.1, z: -11.421}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4469094877797392}
@@ -1503,7 +1503,7 @@ Transform:
   - {fileID: 4779146306089104}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -81.406006, z: 0}
 --- !u!4 &4236080019408930
 Transform:
   m_ObjectHideFlags: 1
@@ -1890,7 +1890,7 @@ Transform:
   m_GameObject: {fileID: 1794567411455232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4511643665249242}
   - {fileID: 4179306807858002}
@@ -2341,6 +2341,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Animator: {fileID: 95351276298469840}
+  m_InitialPosition: {x: 0, y: 0.1, z: 0}
+  m_InitialRotation: {x: 0, y: 0, z: 0, w: 1}
   m_MinMoveSpeed: 10
   m_MaxMoveSpeed: 20
   m_JumpSpeed: 10
@@ -2925,9 +2927,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 3
   m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!136 &136431964227844296
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -5603,10 +5605,10 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 3
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 1.5, z: 0}
