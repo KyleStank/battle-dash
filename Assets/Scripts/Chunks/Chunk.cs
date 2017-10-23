@@ -6,11 +6,13 @@ namespace TurmoilStudios.BattleDash {
     /// Class responsible for handling chunks throughout the game.
     /// </summary>
     [AddComponentMenu("Battle Dash/Misc/Chunk")]
-    public class Chunk : MonoBehaviour {
+    public class Chunk : MonoBehaviour
+    {
         [SerializeField]
-        Collider lengthCollider = null;
+        private Collider lengthCollider = null;
 
-        List<CollectableSpawnPoint> collectableSpawnPoints = new List<CollectableSpawnPoint>();
+        private List<CollectableSpawnPoint> m_CollectableSpawnPoints = new List<CollectableSpawnPoint>();
+        private Vector3 m_InitialPosition = Vector3.zero;
 
         #region Properties
         public float ColliderFullLength { get { return lengthCollider.bounds.size.z; } }
@@ -43,7 +45,7 @@ namespace TurmoilStudios.BattleDash {
         private void InitChunk()
         {
             //Add spawn point to the list
-            collectableSpawnPoints.AddRange(transform.GetComponentsInChildren<CollectableSpawnPoint>());
+            m_CollectableSpawnPoints.AddRange(transform.GetComponentsInChildren<CollectableSpawnPoint>());
         }
 
         /// <summary>
@@ -59,12 +61,12 @@ namespace TurmoilStudios.BattleDash {
                 return;
             }
 
-            for (int i = 0; i < collectableSpawnPoints.Count; i++)
+            for (int i = 0; i < m_CollectableSpawnPoints.Count; i++)
             {
-                Collectable collectablePrefab = collectables.GetRandom(collectableSpawnPoints[i].Type);
+                Collectable collectablePrefab = collectables.GetRandom(m_CollectableSpawnPoints[i].Type);
 
                 if (collectablePrefab != null)
-                    Instantiate(collectablePrefab, collectableSpawnPoints[i].transform.position, Quaternion.identity, transform);
+                    Instantiate(collectablePrefab, m_CollectableSpawnPoints[i].transform.position, Quaternion.identity, transform);
             }
         }
 
