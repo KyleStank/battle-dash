@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using TurmoilStudios.Utils;
+using KyleStankovich.Utils;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     /// <summary>
     /// Class responsible for generating the random levels.
     /// </summary>

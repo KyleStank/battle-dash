@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TurmoilStudios.Utils;
+using KyleStankovich.Utils;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     [RequireComponent(typeof(Text))]
     [RequireComponent(typeof(Animator))]
     [AddComponentMenu("Battle Dash/GUI/Floating Text")]

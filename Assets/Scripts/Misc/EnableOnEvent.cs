@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using TurmoilStudios.Utils;
+using KyleStankovich.Utils;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     /// <summary>
     /// Enables or disables this game object when an event is fired.
     /// </summary>

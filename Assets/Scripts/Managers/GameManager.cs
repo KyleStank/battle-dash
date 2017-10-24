@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TurmoilStudios.Utils;
+using KyleStankovich.Utils;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     /// <summary>
     /// Manages a lot of information about the game.
     /// </summary>
@@ -163,9 +163,9 @@ namespace TurmoilStudios.BattleDash {
             points = 0;
             Time.timeScale = timeScale;
             SetStatus(GameStatus.GameInProgress);
-            InputManager.Instance.EnableInput();
             LevelManager.Instance.ResetLevel();
             LevelManager.Instance.CurrentCharacter.ResetXYPosition();
+            LevelManager.Instance.CurrentCharacter.ResetRotation();
             SetPointsPerSecond(pointsPerSecond);
             StopAllCoroutines();
             AutoIncrementScore(true);
@@ -269,7 +269,6 @@ namespace TurmoilStudios.BattleDash {
 		/// </summary>
 		public void Pause() {	
             if(Time.timeScale > 0.0f) {
-                InputManager.Instance.DisableInput();
                 SetTimeScale(0.0f);
                 statusBeforePause = Instance.status;
                 SetStatus(GameStatus.GamePaused);
@@ -281,7 +280,6 @@ namespace TurmoilStudios.BattleDash {
         /// Unpauses the game.
         /// </summary>
         public void UnPause() {
-            InputManager.Instance.EnableInput();
             ResetTimeScale();
             Instance.SetStatus(statusBeforePause);
         }

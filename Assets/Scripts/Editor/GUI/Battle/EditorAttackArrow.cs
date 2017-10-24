@@ -1,6 +1,6 @@
 ﻿using UnityEditor;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     /// <summary>
     /// Class responsible for handling the editor of the AttackArrow class.
     /// </summary>

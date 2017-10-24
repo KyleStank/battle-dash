@@ -4,7 +4,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     [RequireComponent(typeof(Text))]
     public class TipGenerator : MonoBehaviour {
         [SerializeField]

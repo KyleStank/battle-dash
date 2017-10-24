@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     /// <summary>
     /// Collectable that is the coin, one of the most essential collectables in the game.
     /// </summary>

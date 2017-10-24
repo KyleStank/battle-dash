@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TurmoilStudios.Utils {
+namespace KyleStankovich.Utils {
     [AddComponentMenu("Battle Dash/Managers/Audio Manager")]
     public class AudioManager : Singleton<AudioManager> {
         [Header("Audio Sources")]

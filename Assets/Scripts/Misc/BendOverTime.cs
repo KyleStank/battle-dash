@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TurmoilStudios.BattleDash;
-using TurmoilStudios.Utils;
+using KyleStankovich.BattleDash;
+using KyleStankovich.Utils;
 using VacuumShaders.CurvedWorld;
 
 namespace KyleStankovich.BattleDash

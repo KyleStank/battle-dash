@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     /// <summary>
     /// Collectable that acts as a magnet. This will attract any other collectable to the player for X amount of seconds.
     /// </summary>

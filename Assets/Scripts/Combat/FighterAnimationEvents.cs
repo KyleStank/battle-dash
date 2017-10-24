@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TurmoilStudios.BattleDash;
+using KyleStankovich.BattleDash;
 
 namespace KyleStankovich.BattleDash
 {
@@ -28,6 +28,22 @@ namespace KyleStankovich.BattleDash
             //Attack opponent
             m_Fighter.AttackOpponent();
             m_Fighter.SpawnAttackParticles();
+        }
+
+        /// <summary>
+        /// Invoked when the animation unsheathes a weapon.
+        /// </summary>
+        public void Unsheathe()
+        {
+            m_Fighter.EnableWeapon();
+        }
+
+        /// <summary>
+        /// Invoked when the animation sheathes a weapon.
+        /// </summary>
+        public void Sheathe()
+        {
+            m_Fighter.DisableWeapon();
         }
         #endregion
 

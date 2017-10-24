@@ -1,8 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
-using TurmoilStudios.Utils;
+using KyleStankovich.Utils;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     /// <summary>
     /// Class used for creating fighters.
     /// Should be extended for custom functionality.
@@ -16,15 +16,21 @@ namespace TurmoilStudios.BattleDash {
         [SerializeField]
         protected float attackDamage = 15.0f;
         [SerializeField]
+        protected GameObject m_WeaponGameObject = null;
+        [SerializeField]
+        protected Transform m_CharacterHand = null;
+        [SerializeField]
         protected Transform[] hitParticlesToSpawn = new Transform[0];
         [SerializeField]
         protected Transform hitParticleSpawnLocation = null;
         
         protected Fighter currentOpponent;
+        protected Transform m_InitialWeaponPosition = null;
         protected float health = 100;
         protected float damageMultiplyer = 1.0f;
         protected bool isDefending = false;
         protected bool isVunerable = false;
+        protected bool m_IsHoldingSword = false;
         
         [Tooltip("Percentage of health that should be left when this fighter is ready to be defeated.")]
         public float healthDefeatMultiplyer = 0.0f;
@@ -55,7 +61,22 @@ namespace TurmoilStudios.BattleDash {
         #region Methods
 
         #region Unity methods
-        protected virtual void Awake() {
+        protected virtual void Awake()
+        {
+            if(m_WeaponGameObject == null)
+            {
+                Debug.LogWarning("No weapon game object was assigned in the Inspector! This must be assigned for the weapon animation to work!");
+            }
+            else
+            {
+                m_InitialWeaponPosition = m_WeaponGameObject.transform;
+            }
+
+            if(m_CharacterHand == null)
+            {
+                Debug.LogWarning("No character hand was assigned! This must be assigned for the weapon animation to work!");
+            }
+
             health = maxHealth;
         }
 
@@ -194,6 +215,34 @@ namespace TurmoilStudios.BattleDash {
                 m_Animator.ResetTrigger("Defend");
                 m_Animator.SetTrigger("Defend");
             }
+        }
+
+        public void EnableWeapon()
+        {
+            if(m_WeaponGameObject == null || m_CharacterHand == null)
+            {
+                Debug.LogWarning("Can't enable weapon. Weapon game object or character hand was not assigned in the Inspector.");
+                return;
+            }
+
+            m_WeaponGameObject.transform.SetParent(m_CharacterHand);
+
+            //m_WeaponGameObject.transform.SetPositionAndRotation(m_CharacterHand.position, m_CharacterHand.localRotation);
+            //m_WeaponGameObject.transform.localPosition = Vector3.zero;
+            //m_WeaponGameObject.transform.localRotation = Quaternion.identity;
+            //m_WeaponGameObject.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        }
+
+        public void DisableWeapon()
+        {
+            if(m_WeaponGameObject == null || m_CharacterHand == null)
+            {
+                Debug.LogWarning("Can't disable weapon. Weapon game object or character hand was not assigned in the Inspector.");
+                return;
+            }
+
+            m_WeaponGameObject.transform.SetParent(m_InitialWeaponPosition);
+            //m_WeaponGameObject.transform.SetPositionAndRotation(m_InitialWeaponPosition.position, m_InitialWeaponPosition.rotation);
         }
 
         /// <summary>

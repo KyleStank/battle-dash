@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
 
     [AddComponentMenu("Battle Dash/Collectables/Bomb Collectable")]
     public class BombCollectable : Collectable {

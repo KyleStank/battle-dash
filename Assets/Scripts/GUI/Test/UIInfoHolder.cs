@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TurmoilStudios.BattleDash
+namespace KyleStankovich.BattleDash
 {
 	public class UIInfoHolder : MonoBehaviour {
 		// For more information on this class check BattleManager -- CheckForWin method

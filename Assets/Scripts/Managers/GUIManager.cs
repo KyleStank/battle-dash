@@ -1,9 +1,9 @@
 ﻿using System;
-using TurmoilStudios.Utils;
+using KyleStankovich.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     /// <summary>
     /// Class responsible for handling the game's GUI.
     /// </summary>

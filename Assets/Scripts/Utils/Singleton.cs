@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TurmoilStudios.Utils {
+namespace KyleStankovich.Utils {
     /// <summary>
     /// Singleton pattern class.
     /// </summary>

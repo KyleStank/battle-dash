@@ -1,13 +1,13 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using TurmoilStudios.Utils;
+using KyleStankovich.Utils;
 
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     /// <summary>
     /// Class that handles blocking an attack from a boss.
     /// </summary>

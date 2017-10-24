@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TurmoilStudios.Utils {
+namespace KyleStankovich.Utils {
     /// <summary>
     /// Class for creating a object pool of Unity3D game objects.
     /// </summary>

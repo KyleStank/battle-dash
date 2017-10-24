@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using TurmoilStudios.Utils;
+using KyleStankovich.Utils;
 
 //add to GO: Player.PowerUpColliders.MagnetCollider.
 //note: PowerUpCollider GO has a rigidbody to prevent the Player collider from receiving the magnet collider's trigger event.
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     /// <summary>
     /// Takes care of the logic for the magnet that attracts other power ups to the player during runtime.
     /// </summary>

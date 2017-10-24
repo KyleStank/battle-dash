@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿/*
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using TurmoilStudios.Utils;
+using KyleStankovich.Utils;
 
-namespace TurmoilStudios.BattleDash {
+namespace KyleStankovich.BattleDash {
     /// <summary>
     /// Handles all of the input retrieved from the user.
     /// </summary>
@@ -19,23 +20,14 @@ namespace TurmoilStudios.BattleDash {
         Vector3 touchStartPos = new Vector3(0.0f, 0.0f, 0.0f);
         float swipeDistHorizontal = 0.0f;
         float swipeDistVertical = 0.0f;
-        Button spawnedBtn;
-
-        [Header("UI")]
-        [SerializeField]
-        Button attackButton;
-        [SerializeField]
-        Image boundaryBox;
 
         #region Methods
 
         #region Unity methods
-        protected virtual void Update() {
+        protected virtual void Update()
+        {
             if(GameManager.Instance.Status == GameManager.GameStatus.GameInProgress)
                 HandleRunningInput();
-
-            if(GameManager.Instance.Status == GameManager.GameStatus.BossBattleInProgress)
-                HandleBattleSwiping();
         }
         #endregion
 
@@ -46,14 +38,6 @@ namespace TurmoilStudios.BattleDash {
         public void EnableInput() {
             inputActive = true;
             touchedLastFrame = false;
-        }
-
-        /// <summary>
-        /// Enables the input for the user after X amount of seconds.
-        /// </summary>
-        /// <param name="delay">Amount of seconds to wait before enabling the input.</param>
-        public void EnableInput(float delay) {
-            StartCoroutine(C_EnableInput(delay));
         }
 
         /// <summary>
@@ -90,62 +74,67 @@ namespace TurmoilStudios.BattleDash {
             switch(touch.phase) {
                 case TouchPhase.Began:
                     if(touchedLastFrame)
+                    {
                         break;
+                    }
 
                     touchedLastFrame = true;
                     touchStartPos = touch.position;
-                    Debugger.Instance.WriteLine("Begin touch");
                     break;
-
+                    
                 case TouchPhase.Ended:
                     if(!touchedLastFrame)
+                    {
                         break;
+                    }
 
                     touchedLastFrame = false;
-                    HandleVerticalSwiping(touch.position);
-                    HandleHorizontalSwiping(touch.position);
-                    Debugger.Instance.WriteLine("Touch ended");
+                    HandleSwiping(touch.position);
                     break;
             }
         }
 
-        //Handle the vertical swiping for running
-        void HandleVerticalSwiping(Vector2 touchPos) {
-            swipeDistVertical = Mathf.Abs(touchPos.y - touchStartPos.y);
-
-            //Check if the user swiped the screen enough vertically
-            if(swipeDistVertical > switchLaneTouchDistance) {
-                //Return 1 if positive(swiped up). Returns -1 if negative(swiped down).
-                float swipeValue = Mathf.Sign(touchPos.y - touchStartPos.y);
-                
-                if(swipeValue > 0.0f) //Up swipe
-                    EventManager.TriggerEvent(Constants.EVENT_INPUTUP);
-                else //Down swipe
-                    EventManager.TriggerEvent(Constants.EVENT_INPUTDOWN);
-            }
-        }
-
-        //Handle the horizontal swiping for running
-        void HandleHorizontalSwiping(Vector2 touchPos) {
-            swipeDistHorizontal = Mathf.Abs(touchPos.x - touchStartPos.x);
+        private void HandleSwiping(Vector2 touchPos)
+        {
+            Vector2 swipeDistance = new Vector2(Mathf.Abs(touchPos.x - touchStartPos.x), Mathf.Abs(touchPos.y - touchStartPos.y));
 
             //Check if the user swiped the screen enough horizontally
-            if(swipeDistHorizontal > switchLaneTouchDistance) {
-                //Returns 1 if positive(swiped right). Returns -1 if negative(swiped left).
+            if(swipeDistance.x > switchLaneTouchDistance)
+            {
+                //Returns 1 if positive(swiped right), returns -1 if negative(swiped left).
                 float swipeValue = Mathf.Sign(touchPos.x - touchStartPos.x);
-                
-                if(swipeValue > 0.0f) //Right swipe
-                    EventManager.TriggerEvent(Constants.EVENT_INPUTRIGHT);
-                else //Left swipe
-                    EventManager.TriggerEvent(Constants.EVENT_INPUTLEFT);
-            }
-        }
-        #endregion
 
-        #region Battle input
-        //Handle all of the swiping during boss battles
-        void HandleBattleSwiping() {
+                //Right Swipe
+                if(swipeValue > 0.0f)
+                {
+                    EventManager.TriggerEvent(Constants.EVENT_INPUTRIGHT);
+                }
+                else //Left Swipe
+                {
+                    EventManager.TriggerEvent(Constants.EVENT_INPUTLEFT);
+                }
+
+                return;
+            }
             
+            //Check if the user swiped the screen enough vertically
+            if(swipeDistance.y > switchLaneTouchDistance)
+            {
+                //Returns 1 if positive(swiped up), returns -1 if negative(swiped left).
+                float swipeValue = Mathf.Sign(touchPos.y - touchStartPos.y);
+
+                //Up Swipe
+                if(swipeValue > 0.0f)
+                {
+                    EventManager.TriggerEvent(Constants.EVENT_INPUTUP);
+                }
+                else //Down Swipe
+                {
+                    EventManager.TriggerEvent(Constants.EVENT_INPUTDOWN);
+                }
+
+                return;
+            }
         }
         #endregion
 
@@ -198,3 +187,4 @@ namespace TurmoilStudios.BattleDash {
         #endregion
     }
 }
+*/
