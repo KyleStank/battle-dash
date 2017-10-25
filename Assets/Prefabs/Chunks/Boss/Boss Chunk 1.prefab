@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4878469215408706}
   - component: {fileID: 65931007711320108}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Box Collider 1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 33411172034946554}
   - component: {fileID: 23884227014279512}
   - component: {fileID: 65014341162474366}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SF_Env_Path_Straight_03 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: 33872899598962030}
   - component: {fileID: 23470587826097976}
   - component: {fileID: 95517735629085016}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SF_Bld_Castle_Gate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 4371547760381804}
   - component: {fileID: 33549256815848908}
   - component: {fileID: 23642762041771138}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SF_Bld_Castle_Gate_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -611,7 +611,7 @@ GameObject:
   - component: {fileID: 4985325213808492}
   - component: {fileID: 33553194703578272}
   - component: {fileID: 23596254402553302}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SF_Bld_Goblin_Bridge_01 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -644,7 +644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4927701554732414}
   - component: {fileID: 65309986222892322}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Box Collider 1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -745,7 +745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4767583910876686}
   - component: {fileID: 65517223719968842}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Bridge Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -927,7 +927,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4580423313412854}
   - component: {fileID: 65154775255915688}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1011,7 +1011,7 @@ GameObject:
   - component: {fileID: 33974085767008702}
   - component: {fileID: 23519002075692598}
   - component: {fileID: 65004197505486654}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SF_Env_Path_Straight_03 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1095,7 +1095,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4796757367390580}
   - component: {fileID: 65587676537117866}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Box Collider 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1181,7 +1181,7 @@ GameObject:
   - component: {fileID: 33616478890914398}
   - component: {fileID: 23791261194517084}
   - component: {fileID: 65928777349690004}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SF_Env_Path_Straight_03 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1366,7 +1366,7 @@ GameObject:
   - component: {fileID: 33662813396567504}
   - component: {fileID: 23246756301574390}
   - component: {fileID: 65312456977994478}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SF_Env_Path_Straight_03 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1401,7 +1401,7 @@ GameObject:
   - component: {fileID: 33561680591190986}
   - component: {fileID: 23739203707457672}
   - component: {fileID: 65344318005972796}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SF_Env_Path_Straight_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5641,7 +5641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lengthCollider: {fileID: 65154775255915688}
-  boss: {fileID: 114121294350047024, guid: c87068e1fa11e1d47bb78277d36c68d3, type: 2}
+  boss: {fileID: 114189802450776922, guid: c87068e1fa11e1d47bb78277d36c68d3, type: 2}
   bossSpawnPoint: {fileID: 4815540481925606}
   bossRotation: {x: 0, y: 180, z: 0, w: 1}
 --- !u!114 &114932234406604934

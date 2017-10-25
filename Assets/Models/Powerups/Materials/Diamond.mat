@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Diamond
-  m_Shader: {fileID: 4800000, guid: 8b8b87c8ecebf7943b6ca44e102df26e, type: 3}
+  m_Shader: {fileID: 4800000, guid: f7742757fa2e3d34f860c2a3539f739e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0

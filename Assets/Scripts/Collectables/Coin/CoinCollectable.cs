@@ -19,7 +19,7 @@ namespace KyleStankovich.BattleDash {
             base.OnPickup();
 
             //Add the coin(s)
-            GameManager.Instance.AddCoins(coinsToAdd);
+            GameManager.Instance.AddInGameCoins(coinsToAdd);
         }
         #endregion
 
