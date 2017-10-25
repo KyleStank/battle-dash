@@ -306,17 +306,10 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.6423196
-        functionName: WeaponSwitch
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
       - time: 0.5041152
         functionName: Unsheathe
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 95499c0d412931b4ba0e7c524f561808,
+        objectReferenceParameter: {fileID: 11500000, guid: f4eec15c349427847994aca4403725d7,
           type: 3}
         floatParameter: 0
         intParameter: 0

@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4807447424247212}
   - component: {fileID: 65596026060254424}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 4231885565050406}
   - component: {fileID: 33733945098069626}
   - component: {fileID: 23858488533195866}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SF_Env_Path_Straight_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -335,7 +335,7 @@ GameObject:
   - component: {fileID: 4257868707028204}
   - component: {fileID: 33849963778573032}
   - component: {fileID: 23892086878879348}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SF_Env_Path_Straight_03 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -762,7 +762,7 @@ GameObject:
   - component: {fileID: 4103854089321484}
   - component: {fileID: 33929391523056548}
   - component: {fileID: 23246334719589306}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SF_Env_Path_Straight_03 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -795,7 +795,7 @@ GameObject:
   - component: {fileID: 4406118360139676}
   - component: {fileID: 33623876736463232}
   - component: {fileID: 23370969416484678}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SF_Env_Path_Straight_03 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1092,7 +1092,7 @@ GameObject:
   - component: {fileID: 4049360547110582}
   - component: {fileID: 33973408364736514}
   - component: {fileID: 23466632888010728}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SF_Env_Path_Straight_03 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

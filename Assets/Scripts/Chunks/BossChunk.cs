@@ -30,12 +30,6 @@ namespace KyleStankovich.BattleDash {
             //Spawn the boss
             Instantiate(boss.gameObject, bossSpawnPoint.position, bossRotation, gameObject.transform);
         }
-
-        private void OnEnable() {
-            //Make sure boss is not in the dead animation state
-            if(anim != null)
-                anim.SetTrigger("alive");
-        }
         #endregion
 
         #endregion

@@ -105,6 +105,7 @@ namespace KyleStankovich.BattleDash
             SelectableCharacter character = m_PossibleCharacters[m_CurrentCharacterIndex];
             m_CharacterNameText.text = character.CharacterName;
             m_CharacterPriceText.text = "$: " + character.Price.ToString();
+            m_PurchaseButton.onClick.RemoveAllListeners();
             if(character.IsUnlocked)
             {
                 m_PurchaseButton.GetComponentInChildren<Text>().text = "SELECT";

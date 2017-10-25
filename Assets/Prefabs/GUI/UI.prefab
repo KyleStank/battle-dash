@@ -106,6 +106,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4826628252115912}
   - component: {fileID: 137417373441002754}
+  - component: {fileID: 114393260881935194}
   m_Layer: 8
   m_Name: SF_Character_Knight_Dark
   m_TagString: Untagged
@@ -3045,6 +3046,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4342646371301006}
   - component: {fileID: 137747045588047870}
+  - component: {fileID: 114999358642932916}
   m_Layer: 8
   m_Name: SF_Character_GoblinWarrior
   m_TagString: Untagged
@@ -4084,6 +4086,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4645585077724976}
   - component: {fileID: 137361511602728414}
+  - component: {fileID: 114249011780531876}
   m_Layer: 8
   m_Name: SF_Character_Elf_Assassin
   m_TagString: Untagged
@@ -4927,8 +4930,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1284899233545546}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: -139, z: -49}
-  m_LocalScale: {x: 100, y: 100, z: 100}
+  m_LocalPosition: {x: 0, y: -130, z: -49}
+  m_LocalScale: {x: 90, y: 90, z: 90}
   m_Children:
   - {fileID: 4428209779096978}
   - {fileID: 4631668240811604}
@@ -7210,9 +7213,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PossibleCharacters:
   - {fileID: 114334250986959934}
-  - {fileID: 114100126925894744}
+  - {fileID: 114249011780531876}
+  - {fileID: 114999358642932916}
+  - {fileID: 114393260881935194}
   - {fileID: 114803494445545992}
+  - {fileID: 114100126925894744}
   m_PlayerCharacters:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -7570,7 +7579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CharacterName: Jester
-  m_Price: 250
+  m_Price: 3500
 --- !u!114 &114100786450247320
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8375,6 +8384,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: VIctory
+--- !u!114 &114249011780531876
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1858633950266484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e081dd7dc56749645bd3dac4c10c9c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CharacterName: Assassin
+  m_Price: 250
 --- !u!114 &114252409462637164
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9400,6 +9422,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114393260881935194
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1017231309131522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e081dd7dc56749645bd3dac4c10c9c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CharacterName: Dark Knight
+  m_Price: 1250
 --- !u!114 &114395102093256794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11680,7 +11715,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_MethodName: AddCoins
+        m_MethodName: AddInGameCoins
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12045,7 +12080,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_CharacterName: King
-  m_Price: 1000
+  m_Price: 2000
 --- !u!114 &114804173058360856
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13243,6 +13278,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114999358642932916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1639432136837994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e081dd7dc56749645bd3dac4c10c9c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CharacterName: Goblin
+  m_Price: 650
 --- !u!137 &137016329829128136
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -14142,7 +14190,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 64435493c793d9246a51e75612696437, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14414,7 +14462,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 729ed80b92948ea4ea0ef5fb51590977, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15230,7 +15278,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3ada332c7350e1346b7e760e962e298f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -16948,7 +16996,7 @@ Canvas:
   m_GameObject: {fileID: 1963663509536774}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 1
   m_PixelPerfect: 0

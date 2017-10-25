@@ -16,21 +16,23 @@ namespace KyleStankovich.BattleDash {
         [SerializeField]
         protected float attackDamage = 15.0f;
         [SerializeField]
-        protected GameObject m_WeaponGameObject = null;
+        protected Transform m_WeaponTransform = null;
         [SerializeField]
-        protected Transform m_CharacterHand = null;
+        protected Transform m_WeaponOriginParent = null;
+        [SerializeField]
+        protected Transform m_EquipPoint = null;
         [SerializeField]
         protected Transform[] hitParticlesToSpawn = new Transform[0];
         [SerializeField]
         protected Transform hitParticleSpawnLocation = null;
         
         protected Fighter currentOpponent;
-        protected Transform m_InitialWeaponPosition = null;
+        protected Vector3 m_InitialWeaponPos = Vector3.zero;
+        protected Quaternion m_InitialWeaponRot = Quaternion.identity;
         protected float health = 100;
         protected float damageMultiplyer = 1.0f;
         protected bool isDefending = false;
         protected bool isVunerable = false;
-        protected bool m_IsHoldingSword = false;
         
         [Tooltip("Percentage of health that should be left when this fighter is ready to be defeated.")]
         public float healthDefeatMultiplyer = 0.0f;
@@ -61,18 +63,14 @@ namespace KyleStankovich.BattleDash {
         #region Methods
 
         #region Unity methods
-        protected virtual void Awake()
+        protected virtual void Start()
         {
-            if(m_WeaponGameObject == null)
+            if(m_WeaponTransform == null)
             {
                 Debug.LogWarning("No weapon game object was assigned in the Inspector! This must be assigned for the weapon animation to work!");
             }
-            else
-            {
-                m_InitialWeaponPosition = m_WeaponGameObject.transform;
-            }
 
-            if(m_CharacterHand == null)
+            if(m_EquipPoint == null)
             {
                 Debug.LogWarning("No character hand was assigned! This must be assigned for the weapon animation to work!");
             }
@@ -87,6 +85,8 @@ namespace KyleStankovich.BattleDash {
             {
                 EventManager.StartListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, () => m_Animator.ResetTrigger("UnsheathL"));
                 EventManager.StartListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, () => m_Animator.SetTrigger("UnsheathL"));
+                EventManager.StartListening(Constants.EVENT_BOSSBATTLEENDCOMBAT, () => m_Animator.ResetTrigger("SheathL"));
+                EventManager.StartListening(Constants.EVENT_BOSSBATTLEENDCOMBAT, () => m_Animator.SetTrigger("SheathL"));
             }
         }
 
@@ -97,6 +97,8 @@ namespace KyleStankovich.BattleDash {
             {
                 EventManager.StopListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, () => m_Animator.ResetTrigger("UnsheathL"));
                 EventManager.StopListening(Constants.EVENT_BOSSBATTLEBEGINCOMBAT, () => m_Animator.SetTrigger("UnsheathL"));
+                EventManager.StopListening(Constants.EVENT_BOSSBATTLEENDCOMBAT, () => m_Animator.ResetTrigger("SheathL"));
+                EventManager.StopListening(Constants.EVENT_BOSSBATTLEENDCOMBAT, () => m_Animator.SetTrigger("SheathL"));
             }
         }
         #endregion
@@ -219,30 +221,30 @@ namespace KyleStankovich.BattleDash {
 
         public void EnableWeapon()
         {
-            if(m_WeaponGameObject == null || m_CharacterHand == null)
+            if(m_WeaponTransform == null || m_EquipPoint == null)
             {
                 Debug.LogWarning("Can't enable weapon. Weapon game object or character hand was not assigned in the Inspector.");
                 return;
             }
 
-            m_WeaponGameObject.transform.SetParent(m_CharacterHand);
+            m_InitialWeaponPos = m_WeaponTransform.localPosition;
+            m_InitialWeaponRot = m_WeaponTransform.localRotation;
 
-            //m_WeaponGameObject.transform.SetPositionAndRotation(m_CharacterHand.position, m_CharacterHand.localRotation);
-            //m_WeaponGameObject.transform.localPosition = Vector3.zero;
-            //m_WeaponGameObject.transform.localRotation = Quaternion.identity;
-            //m_WeaponGameObject.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            m_WeaponTransform.SetParent(m_EquipPoint);
+            m_WeaponTransform.SetPositionAndRotation(m_EquipPoint.position, m_EquipPoint.rotation);
         }
 
         public void DisableWeapon()
         {
-            if(m_WeaponGameObject == null || m_CharacterHand == null)
+            if(m_WeaponTransform == null || m_EquipPoint == null)
             {
                 Debug.LogWarning("Can't disable weapon. Weapon game object or character hand was not assigned in the Inspector.");
                 return;
             }
 
-            m_WeaponGameObject.transform.SetParent(m_InitialWeaponPosition);
-            //m_WeaponGameObject.transform.SetPositionAndRotation(m_InitialWeaponPosition.position, m_InitialWeaponPosition.rotation);
+            m_WeaponTransform.SetParent(m_WeaponOriginParent);
+            m_WeaponTransform.localPosition = m_InitialWeaponPos;
+            m_WeaponTransform.localRotation = m_InitialWeaponRot;
         }
 
         /// <summary>

@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 33976242285419238}
   - component: {fileID: 23515395930708174}
   - component: {fileID: 65806558825018890}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SF_Env_Path_Straight_03 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 33399676036077944}
   - component: {fileID: 23837058080693732}
   - component: {fileID: 65071348017514840}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SF_Env_Path_Straight_03 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -243,7 +243,7 @@ GameObject:
   - component: {fileID: 33138290235638832}
   - component: {fileID: 23076282449569760}
   - component: {fileID: 65870795892213252}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SF_Env_Path_Straight_03 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   - component: {fileID: 33934410518405608}
   - component: {fileID: 23239313669169356}
   - component: {fileID: 65460412056790822}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SF_Env_Path_Straight_03 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 33712955360378856}
   - component: {fileID: 23342143825007168}
   - component: {fileID: 65474161553946986}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SF_Env_Path_Straight_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 33994881654219546}
   - component: {fileID: 23114650253594742}
   - component: {fileID: 64058522591725166}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: SF_Bld_Elven_Bridge_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -731,7 +731,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4101449630633204}
   - component: {fileID: 65577028096874310}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3102,7 +3102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lengthCollider: {fileID: 65577028096874310}
-  boss: {fileID: 114297487432682490, guid: cbe6488998ed6754a891d7f92cefb70a, type: 2}
+  boss: {fileID: 114767696289331506, guid: cbe6488998ed6754a891d7f92cefb70a, type: 2}
   bossSpawnPoint: {fileID: 4004633573816856}
   bossRotation: {x: 0, y: 180, z: 0, w: 1}
 --- !u!114 &114727605667789260
