@@ -75,6 +75,24 @@ namespace KyleStankovich.BattleDash {
                 return Mathf.Abs(coins - savedCoins);
             }
         }
+
+        /// <summary>
+        /// Returns the total amount of coins.
+        /// </summary>
+        public int TotalCoins
+        {
+            get
+            {
+                return PlayerPrefs.GetInt(Constants.PREF_CURRENCY);
+            }
+
+            private set
+            {
+                int coins = PlayerPrefs.GetInt(Constants.PREF_CURRENCY);
+                coins = value;
+                PlayerPrefs.SetInt(Constants.PREF_CURRENCY, coins >= 0 ? coins : 0);
+            }
+        }
         #endregion
 
 #if UNITY_EDITOR
@@ -230,7 +248,7 @@ namespace KyleStankovich.BattleDash {
         /// Adds coins to the total amount of coins.
         /// </summary>
         /// <param name="coins">Amount of coins to add.</param>
-        public void AddCoins(int coins) {
+        public void AddInGameCoins(int coins) {
             this.coins += coins;
 
             //Update GUI
@@ -241,11 +259,29 @@ namespace KyleStankovich.BattleDash {
         /// Sets the coins to a certain number.
         /// </summary>
         /// <param name="coins">Number to set coins to.</param>
-        public void SetCoins(int coins) {
+        public void SetInGameCoins(int coins) {
             this.coins = coins;
 
             //Update GUI
             GUIManager.Instance.RefreshCoins();
+        }
+
+        /// <summary>
+        /// Adds X amount of coins to the total amount of coins.
+        /// </summary>
+        /// <param name="amount">Amount of coins to add.</param>
+        public void AddTotalCoins(int amount)
+        {
+            TotalCoins += amount;
+        }
+
+        /// <summary>
+        /// Removes X amount of coins from the total amount of coins.
+        /// </summary>
+        /// <param name="amount">Amount of coins to remove.</param>
+        public void RemoveTotalCoins(int amount)
+        {
+            TotalCoins -= amount;
         }
 
         /// <summary>

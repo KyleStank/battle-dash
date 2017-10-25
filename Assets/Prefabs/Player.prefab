@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4261720464668998}
   - component: {fileID: 137848243758867120}
+  - component: {fileID: 114914006843561942}
   m_Layer: 0
   m_Name: SF_Character_Jester
   m_TagString: Untagged
@@ -470,6 +471,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4215580675258966}
   - component: {fileID: 137256297930292718}
+  - component: {fileID: 114029922778488202}
   m_Layer: 0
   m_Name: SF_Character_Knight_TinMan
   m_TagString: Untagged
@@ -893,7 +895,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4619950523602404}
   m_Layer: 0
-  m_Name: SF_Character_Human_Knight_TinMan
+  m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -939,6 +941,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4521978256702742}
   - component: {fileID: 137922304148328952}
+  - component: {fileID: 114349608307777326}
   m_Layer: 0
   m_Name: SF_Character_King
   m_TagString: Untagged
@@ -1489,7 +1492,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1316526217310650}
-  m_LocalRotation: {x: -0, y: -0.65214103, z: -0, w: 0.75809777}
+  m_LocalRotation: {x: -0, y: -0.6076384, z: -0, w: 0.79421383}
   m_LocalPosition: {x: 2.079, y: 0.1, z: -11.421}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1503,7 +1506,7 @@ Transform:
   - {fileID: 4779146306089104}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -81.406006, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -74.838005, z: 0}
 --- !u!4 &4236080019408930
 Transform:
   m_ObjectHideFlags: 1
@@ -2278,6 +2281,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114029922778488202
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1318620158162328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e081dd7dc56749645bd3dac4c10c9c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CharacterName: Maximus
+  m_Price: 0
 --- !u!114 &114094804078055296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2297,8 +2313,6 @@ MonoBehaviour:
   hitParticlesToSpawn:
   - {fileID: 400002, guid: 6bbb8ec780b04e14089d5889db90227e, type: 2}
   - {fileID: 400002, guid: 27a4fc2d8038d41439665d1004032672, type: 2}
-  - {fileID: 400000, guid: 3d84922c38d7c444782fb1a791d97b21, type: 2}
-  - {fileID: 400002, guid: 1f0960971b0e18743b2f49bb87ae1ca5, type: 2}
   hitParticleSpawnLocation: {fileID: 4053472878649046}
   healthDefeatMultiplyer: 0
 --- !u!114 &114220667627153716
@@ -2329,6 +2343,19 @@ MonoBehaviour:
   isActive: 0
   attractionPoint: {fileID: 4232430915318476}
   lerpPerStep: 0.2
+--- !u!114 &114349608307777326
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1832575386332142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e081dd7dc56749645bd3dac4c10c9c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CharacterName: King
+  m_Price: 1000
 --- !u!114 &114365203598726080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2343,8 +2370,8 @@ MonoBehaviour:
   m_Animator: {fileID: 95351276298469840}
   m_InitialPosition: {x: 0, y: 0.1, z: 0}
   m_InitialRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_MinMoveSpeed: 10
-  m_MaxMoveSpeed: 20
+  m_MinMoveSpeed: 12
+  m_MaxMoveSpeed: 25
   m_JumpSpeed: 10
   m_IsJumping: 0
   m_MoveSpeedAccelerationTime: 100
@@ -2904,6 +2931,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4eec15c349427847994aca4403725d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114914006843561942
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1009411664012966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e081dd7dc56749645bd3dac4c10c9c98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CharacterName: Jester
+  m_Price: 250
 --- !u!136 &136166471443827568
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -5405,7 +5445,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 566dd3f46b66dfd4cb467a8d9fdd7b34, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5541,7 +5581,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: e231f9b331766b043a648dbf4c886cd0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

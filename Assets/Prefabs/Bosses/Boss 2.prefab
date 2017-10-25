@@ -1956,8 +1956,6 @@ MonoBehaviour:
   hitParticlesToSpawn:
   - {fileID: 400002, guid: 6bbb8ec780b04e14089d5889db90227e, type: 2}
   - {fileID: 400002, guid: 27a4fc2d8038d41439665d1004032672, type: 2}
-  - {fileID: 400000, guid: 3d84922c38d7c444782fb1a791d97b21, type: 2}
-  - {fileID: 400002, guid: 1f0960971b0e18743b2f49bb87ae1ca5, type: 2}
   hitParticleSpawnLocation: {fileID: 4098168963723582}
   healthDefeatMultiplyer: 0.05
 --- !u!136 &136763913895913886
