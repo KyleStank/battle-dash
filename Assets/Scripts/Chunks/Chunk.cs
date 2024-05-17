@@ -22,17 +22,17 @@ namespace KyleStankovich.BattleDash {
         #region Methods
 
         #region Unity methods
-        void Awake()
+        protected virtual void Awake()
         {
             InitChunk();
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
             PopulateChunk();
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
             DeleteCollectables();
         }

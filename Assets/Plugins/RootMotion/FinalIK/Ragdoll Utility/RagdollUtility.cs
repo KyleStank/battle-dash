@@ -117,7 +117,7 @@ namespace RootMotion.FinalIK {
 
 				// Transfer velocity from animation
 				if (velocityWeight != 0f) {
-					r.velocity = (deltaPosition / deltaTime) * velocityWeight;
+					r.linearVelocity = (deltaPosition / deltaTime) * velocityWeight;
 				}
 
 				// Transfer angular velocity from animation
@@ -293,7 +293,7 @@ namespace RootMotion.FinalIK {
 
 		void LateUpdate() {
 			// When Mecanim has animated...
-			if (animator.updateMode != AnimatorUpdateMode.AnimatePhysics || (animator.updateMode == AnimatorUpdateMode.AnimatePhysics && fixedFrame)) {
+			if (animator.updateMode != AnimatorUpdateMode.Fixed || (animator.updateMode == AnimatorUpdateMode.Fixed && fixedFrame)) {
 				AfterAnimation();
 			}
 
@@ -344,7 +344,7 @@ namespace RootMotion.FinalIK {
 			}
 			// Switch Animator update mode to AnimatePhysics, so IK is updated in the fixed time step
 			animatorUpdateMode = animator.updateMode;
-			animator.updateMode = AnimatorUpdateMode.AnimatePhysics;
+			animator.updateMode = AnimatorUpdateMode.Fixed;
 
 			// Disable the Animator so it won't overwrite physics
 			animator.enabled = false;

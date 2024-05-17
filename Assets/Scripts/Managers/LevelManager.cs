@@ -99,9 +99,13 @@ namespace KyleStankovich.BattleDash {
 
             //Grab a random chunk
             if(isBossChunk)
+            {
                 chunk = bossChunksPool.GetRandomPooledObject().GetComponent<Chunk>();
+            }
             else
+            {
                 chunk = chunksPool.GetRandomPooledObject().GetComponent<Chunk>();
+            }
 
 #if UNITY_EDITOR
             if(disableAllColliders) {
@@ -229,8 +233,10 @@ namespace KyleStankovich.BattleDash {
 
         #region Private methods
         //Checks to see if a new chunk should be generated
-        void HandleGeneration() {
-            if(activeChunks.Count <= 0) {
+        void HandleGeneration()
+        {
+            if(activeChunks.Count <= 0)
+            {
                 Debug.LogError("There are no active chunks! Make sure you set up the chunks in the inspector.");
                 return;
             }

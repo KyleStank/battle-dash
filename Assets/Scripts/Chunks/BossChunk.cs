@@ -18,10 +18,11 @@ namespace KyleStankovich.BattleDash {
         #region Methods
 
         #region Unity methods
-        new void Awake() {
-            //base.Awake();
 
-            if(boss == null || bossSpawnPoint == null)
+        protected override void Awake() {
+            base.Awake();
+
+            if (boss == null || bossSpawnPoint == null)
                 return;
 
             //Get the boss's animator
@@ -30,6 +31,7 @@ namespace KyleStankovich.BattleDash {
             //Spawn the boss
             Instantiate(boss.gameObject, bossSpawnPoint.position, bossRotation, gameObject.transform);
         }
+
         #endregion
 
         #endregion

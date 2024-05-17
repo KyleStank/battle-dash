@@ -8,7 +8,8 @@ namespace KyleStankovich.BattleDash {
     /// Should be extended for custom functionality.
     /// </summary>
     [AddComponentMenu("Battle Dash/Combat/Fighter (Temp)")]
-	public class Fighter : MonoBehaviour {
+	public class Fighter : MonoBehaviour
+    {
         [SerializeField]
         protected Animator m_Animator = null;
         [SerializeField]
@@ -38,10 +39,12 @@ namespace KyleStankovich.BattleDash {
         public float healthDefeatMultiplyer = 0.0f;
 
         #region Properties
+
         /// <summary>
         /// The current amount of health that the fighter has.
         /// </summary>
-        public float Health {
+        public float Health
+        {
             get { return health; }
             set { health = value; }
         }
@@ -49,20 +52,26 @@ namespace KyleStankovich.BattleDash {
         /// <summary>
         /// The max health that the fighter can have.
         /// </summary>
-        public float MaxHealth { get { return maxHealth; } }
+        public float MaxHealth
+        {
+            get { return maxHealth; }
+        }
 
         /// <summary>
         /// Returns a multiplyer that affects the damage.
         /// </summary>
-        public float DamageMultiplyer {
+        public float DamageMultiplyer
+        {
             get { return damageMultiplyer; }
             set { damageMultiplyer = value; }
         }
+
         #endregion
 
         #region Methods
 
         #region Unity methods
+
         protected virtual void Start()
         {
             if(m_WeaponTransform == null)
@@ -101,14 +110,17 @@ namespace KyleStankovich.BattleDash {
                 EventManager.StopListening(Constants.EVENT_BOSSBATTLEENDCOMBAT, () => m_Animator.SetTrigger("SheathL"));
             }
         }
+
         #endregion
 
         #region Public methods
+
         /// <summary>
         /// Sets the current opponent of this fighter.
         /// </summary>
         /// <param name="fighter">Opponent fighter.</param>
-        public void SetOpponent(Fighter fighter) {
+        public void SetOpponent(Fighter fighter)
+        {
             if(fighter != null)
                 currentOpponent = fighter;
         }
@@ -117,7 +129,8 @@ namespace KyleStankovich.BattleDash {
         /// Heals the health by a certain amount.
         /// </summary>
         /// <param name="health">Amount to heal.</param>
-		public virtual void Heal(int health) {
+		public virtual void Heal(int health)
+        {
             this.health += health;
             this.health = Mathf.Clamp(this.health, 0, maxHealth);
         }
@@ -125,7 +138,8 @@ namespace KyleStankovich.BattleDash {
         /// <summary>
         /// Restores the health back to it's fullest.
         /// </summary>
-        public virtual void RestoreHealth() {
+        public virtual void RestoreHealth()
+        {
             health = maxHealth;
         }
 
@@ -133,7 +147,8 @@ namespace KyleStankovich.BattleDash {
         /// Damage this figher.
         /// </summary>
         /// <param name="damage">Amount of damage to take.</param>
-        public void TakeDamage(float damage) {
+        public void TakeDamage(float damage)
+        {
             float prevHealth = health;
 
             //Remove health
@@ -160,7 +175,8 @@ namespace KyleStankovich.BattleDash {
         /// <summary>
         /// Makes the fighter enter a vunerable state where he can fully die.
         /// </summary>
-        public void Vunerable() {
+        public void Vunerable()
+        {
             isVunerable = true;
 
             /* **Temp** */
@@ -185,7 +201,8 @@ namespace KyleStankovich.BattleDash {
         /// <summary>
         /// Starts an attack of an opponent by playing the attack animation.
         /// </summary>
-        public void StartAttack() {
+        public void StartAttack()
+        {
             //Play the attack animation
             if(m_Animator != null)
             {
@@ -197,7 +214,8 @@ namespace KyleStankovich.BattleDash {
         /// <summary>
         /// Attack this fighter's current opponent.
         /// </summary>
-        public void AttackOpponent() {
+        public void AttackOpponent()
+        {
             //Attack
             if(currentOpponent != null)
             {
@@ -208,7 +226,8 @@ namespace KyleStankovich.BattleDash {
         /// <summary>
         /// Makes the fighter start defending.
         /// </summary>
-        public void Defend() {
+        public void Defend()
+        {
             StartCoroutine(StartDefending());
 
             //Play animation
@@ -250,7 +269,8 @@ namespace KyleStankovich.BattleDash {
         /// <summary>
         /// Spawns attack particles at the opponent.
         /// </summary>
-        public void SpawnAttackParticles() {
+        public void SpawnAttackParticles()
+        {
             if(currentOpponent == null)
                 return;
 
@@ -260,20 +280,24 @@ namespace KyleStankovich.BattleDash {
                 Instantiate(hitParticlesToSpawn[Random.Range(0, hitParticlesToSpawn.Length)].gameObject, currentOpponent.hitParticleSpawnLocation.position, Quaternion.identity);
             }
         }
+
         #endregion
 
         #region IEnumerator methods
+
         /// <summary>
         /// Allows the fighter to defend for one frame.
         /// </summary>
         /// <returns></returns>
-        IEnumerator StartDefending() {
+        IEnumerator StartDefending()
+        {
             isDefending = true;
 
             yield return new WaitForEndOfFrame();
 
             isDefending = false;
         }
+
         #endregion
 
         #endregion

@@ -1,257 +1,1568 @@
 fileFormatVersion: 2
 guid: 56cd13ba7df54ee43b55bebb2c52fc36
-timeCreated: 1494876431
-licenseType: Free
 ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName:
-    100000: _BigBoss1
-    100002: _Boss1
-    100004: _Boss2
-    100006: _Boss3Archer
-    100008: _Boss3ArcherHead
-    100010: _Mage
-    100012: _MageArma
-    100014: _MageHead
-    100016: ArmD_L
-    100018: ArmD_L_0
-    100020: ArmD_L_1
-    100022: ArmD_L_2
-    100024: ArmD_R
-    100026: ArmD_R_0
-    100028: ArmD_R_1
-    100030: ArmD_R_2
-    100032: ArmU_L
-    100034: ArmU_L_0
-    100036: ArmU_L_1
-    100038: ArmU_L_2
-    100040: ArmU_R
-    100042: ArmU_R_0
-    100044: ArmU_R_1
-    100046: ArmU_R_2
-    100048: BigBossarma
-    100050: //RootNode
-    100052: Boss1Head
-    100054: Boss2Head
-    100056: BossArcherarma
-    100058: Bossarma
-    100060: BossBigHead
-    100062: BossTemplate
-    100064: Fing1_L
-    100066: Fing1_L_0
-    100068: Fing1_L_1
-    100070: Fing1_R
-    100072: Fing1_R_0
-    100074: Fing1_R_1
-    100076: Fing2_L
-    100078: Fing2_L_0
-    100080: Fing2_L_1
-    100082: Fing2_R
-    100084: Fing2_R_0
-    100086: Fing2_R_1
-    100088: Fing3_L
-    100090: Fing3_L_0
-    100092: Fing3_L_1
-    100094: Fing3_R
-    100096: Fing3_R_0
-    100098: Fing3_R_1
-    100100: Foot_L
-    100102: Foot_L_0
-    100104: Foot_L_1
-    100106: Foot_L_2
-    100108: Foot_R
-    100110: Foot_R_0
-    100112: Foot_R_1
-    100114: Foot_R_2
-    100116: Hand_L
-    100118: Hand_L_0
-    100120: Hand_L_1
-    100122: Hand_L_2
-    100124: Hand_R
-    100126: Hand_R_0
-    100128: Hand_R_1
-    100130: Hand_R_2
-    100132: Head
-    100134: Head_0
-    100136: Head_1
-    100138: Head_2
-    100140: Hips
-    100142: Hips_0
-    100144: Hips_1
-    100146: Hips_2
-    100148: Item_Shield
-    100150: Item_Sword
-    100152: LegD_L
-    100154: LegD_L_0
-    100156: LegD_L_1
-    100158: LegD_L_2
-    100160: LegD_R
-    100162: LegD_R_0
-    100164: LegD_R_1
-    100166: LegD_R_2
-    100168: LegU_L
-    100170: LegU_L_0
-    100172: LegU_L_1
-    100174: LegU_L_2
-    100176: LegU_R
-    100178: LegU_R_0
-    100180: LegU_R_1
-    100182: LegU_R_2
-    100184: Plane_001
-    100186: Props
-    100188: Thumb_L
-    100190: Thumb_L_0
-    100192: Thumb_L_1
-    100194: Thumb_R
-    100196: Thumb_R_0
-    100198: Thumb_R_1
-    100200: Torso
-    100202: Torso_0
-    100204: Torso_1
-    100206: Torso_2
-    400000: _BigBoss1
-    400002: _Boss1
-    400004: _Boss2
-    400006: _Boss3Archer
-    400008: _Boss3ArcherHead
-    400010: _Mage
-    400012: _MageArma
-    400014: _MageHead
-    400016: ArmD_L
-    400018: ArmD_L_0
-    400020: ArmD_L_1
-    400022: ArmD_L_2
-    400024: ArmD_R
-    400026: ArmD_R_0
-    400028: ArmD_R_1
-    400030: ArmD_R_2
-    400032: ArmU_L
-    400034: ArmU_L_0
-    400036: ArmU_L_1
-    400038: ArmU_L_2
-    400040: ArmU_R
-    400042: ArmU_R_0
-    400044: ArmU_R_1
-    400046: ArmU_R_2
-    400048: BigBossarma
-    400050: //RootNode
-    400052: Boss1Head
-    400054: Boss2Head
-    400056: BossArcherarma
-    400058: Bossarma
-    400060: BossBigHead
-    400062: BossTemplate
-    400064: Fing1_L
-    400066: Fing1_L_0
-    400068: Fing1_L_1
-    400070: Fing1_R
-    400072: Fing1_R_0
-    400074: Fing1_R_1
-    400076: Fing2_L
-    400078: Fing2_L_0
-    400080: Fing2_L_1
-    400082: Fing2_R
-    400084: Fing2_R_0
-    400086: Fing2_R_1
-    400088: Fing3_L
-    400090: Fing3_L_0
-    400092: Fing3_L_1
-    400094: Fing3_R
-    400096: Fing3_R_0
-    400098: Fing3_R_1
-    400100: Foot_L
-    400102: Foot_L_0
-    400104: Foot_L_1
-    400106: Foot_L_2
-    400108: Foot_R
-    400110: Foot_R_0
-    400112: Foot_R_1
-    400114: Foot_R_2
-    400116: Hand_L
-    400118: Hand_L_0
-    400120: Hand_L_1
-    400122: Hand_L_2
-    400124: Hand_R
-    400126: Hand_R_0
-    400128: Hand_R_1
-    400130: Hand_R_2
-    400132: Head
-    400134: Head_0
-    400136: Head_1
-    400138: Head_2
-    400140: Hips
-    400142: Hips_0
-    400144: Hips_1
-    400146: Hips_2
-    400148: Item_Shield
-    400150: Item_Sword
-    400152: LegD_L
-    400154: LegD_L_0
-    400156: LegD_L_1
-    400158: LegD_L_2
-    400160: LegD_R
-    400162: LegD_R_0
-    400164: LegD_R_1
-    400166: LegD_R_2
-    400168: LegU_L
-    400170: LegU_L_0
-    400172: LegU_L_1
-    400174: LegU_L_2
-    400176: LegU_R
-    400178: LegU_R_0
-    400180: LegU_R_1
-    400182: LegU_R_2
-    400184: Plane_001
-    400186: Props
-    400188: Thumb_L
-    400190: Thumb_L_0
-    400192: Thumb_L_1
-    400194: Thumb_R
-    400196: Thumb_R_0
-    400198: Thumb_R_1
-    400200: Torso
-    400202: Torso_0
-    400204: Torso_1
-    400206: Torso_2
-    2300000: Plane_001
-    2300002: Props
-    3300000: Plane_001
-    3300002: Props
-    4300000: Plane_001
-    4300002: Item_Shield
-    4300004: Item_Sword
-    4300006: Boss2Head
-    4300008: _Boss3ArcherHead
-    4300010: _Boss3Archer
-    4300012: _MageHead
-    4300014: _Mage
-    4300016: BossBigHead
-    4300018: _BigBoss1
-    4300020: _Boss2
-    4300022: Boss1Head
-    4300024: _Boss1
-    4300026: BossTemplate
-    4300028: Props
-    7400000: Default Take
-    7400002: PoseLib
-    9500000: //RootNode
-    13700000: _BigBoss1
-    13700002: _Boss1
-    13700004: _Boss2
-    13700006: _Boss3Archer
-    13700008: _Boss3ArcherHead
-    13700010: _Mage
-    13700012: _MageHead
-    13700014: Boss1Head
-    13700016: Boss2Head
-    13700018: BossBigHead
-    13700020: BossTemplate
-    13700022: Item_Shield
-    13700024: Item_Sword
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: _BigBoss1
+  - first:
+      1: 100002
+    second: _Boss1
+  - first:
+      1: 100004
+    second: _Boss2
+  - first:
+      1: 100006
+    second: _Boss3Archer
+  - first:
+      1: 100008
+    second: _Boss3ArcherHead
+  - first:
+      1: 100010
+    second: _Mage
+  - first:
+      1: 100012
+    second: _MageArma
+  - first:
+      1: 100014
+    second: _MageHead
+  - first:
+      1: 100016
+    second: ArmD_L
+  - first:
+      1: 100018
+    second: ArmD_L_0
+  - first:
+      1: 100020
+    second: ArmD_L_1
+  - first:
+      1: 100022
+    second: ArmD_L_2
+  - first:
+      1: 100024
+    second: ArmD_R
+  - first:
+      1: 100026
+    second: ArmD_R_0
+  - first:
+      1: 100028
+    second: ArmD_R_1
+  - first:
+      1: 100030
+    second: ArmD_R_2
+  - first:
+      1: 100032
+    second: ArmU_L
+  - first:
+      1: 100034
+    second: ArmU_L_0
+  - first:
+      1: 100036
+    second: ArmU_L_1
+  - first:
+      1: 100038
+    second: ArmU_L_2
+  - first:
+      1: 100040
+    second: ArmU_R
+  - first:
+      1: 100042
+    second: ArmU_R_0
+  - first:
+      1: 100044
+    second: ArmU_R_1
+  - first:
+      1: 100046
+    second: ArmU_R_2
+  - first:
+      1: 100048
+    second: BigBossarma
+  - first:
+      1: 100050
+    second: //RootNode
+  - first:
+      1: 100052
+    second: Boss1Head
+  - first:
+      1: 100054
+    second: Boss2Head
+  - first:
+      1: 100056
+    second: BossArcherarma
+  - first:
+      1: 100058
+    second: Bossarma
+  - first:
+      1: 100060
+    second: BossBigHead
+  - first:
+      1: 100062
+    second: BossTemplate
+  - first:
+      1: 100064
+    second: Fing1_L
+  - first:
+      1: 100066
+    second: Fing1_L_0
+  - first:
+      1: 100068
+    second: Fing1_L_1
+  - first:
+      1: 100070
+    second: Fing1_R
+  - first:
+      1: 100072
+    second: Fing1_R_0
+  - first:
+      1: 100074
+    second: Fing1_R_1
+  - first:
+      1: 100076
+    second: Fing2_L
+  - first:
+      1: 100078
+    second: Fing2_L_0
+  - first:
+      1: 100080
+    second: Fing2_L_1
+  - first:
+      1: 100082
+    second: Fing2_R
+  - first:
+      1: 100084
+    second: Fing2_R_0
+  - first:
+      1: 100086
+    second: Fing2_R_1
+  - first:
+      1: 100088
+    second: Fing3_L
+  - first:
+      1: 100090
+    second: Fing3_L_0
+  - first:
+      1: 100092
+    second: Fing3_L_1
+  - first:
+      1: 100094
+    second: Fing3_R
+  - first:
+      1: 100096
+    second: Fing3_R_0
+  - first:
+      1: 100098
+    second: Fing3_R_1
+  - first:
+      1: 100100
+    second: Foot_L
+  - first:
+      1: 100102
+    second: Foot_L_0
+  - first:
+      1: 100104
+    second: Foot_L_1
+  - first:
+      1: 100106
+    second: Foot_L_2
+  - first:
+      1: 100108
+    second: Foot_R
+  - first:
+      1: 100110
+    second: Foot_R_0
+  - first:
+      1: 100112
+    second: Foot_R_1
+  - first:
+      1: 100114
+    second: Foot_R_2
+  - first:
+      1: 100116
+    second: Hand_L
+  - first:
+      1: 100118
+    second: Hand_L_0
+  - first:
+      1: 100120
+    second: Hand_L_1
+  - first:
+      1: 100122
+    second: Hand_L_2
+  - first:
+      1: 100124
+    second: Hand_R
+  - first:
+      1: 100126
+    second: Hand_R_0
+  - first:
+      1: 100128
+    second: Hand_R_1
+  - first:
+      1: 100130
+    second: Hand_R_2
+  - first:
+      1: 100132
+    second: Head
+  - first:
+      1: 100134
+    second: Head_0
+  - first:
+      1: 100136
+    second: Head_1
+  - first:
+      1: 100138
+    second: Head_2
+  - first:
+      1: 100140
+    second: Hips
+  - first:
+      1: 100142
+    second: Hips_0
+  - first:
+      1: 100144
+    second: Hips_1
+  - first:
+      1: 100146
+    second: Hips_2
+  - first:
+      1: 100148
+    second: Item_Shield
+  - first:
+      1: 100150
+    second: Item_Sword
+  - first:
+      1: 100152
+    second: LegD_L
+  - first:
+      1: 100154
+    second: LegD_L_0
+  - first:
+      1: 100156
+    second: LegD_L_1
+  - first:
+      1: 100158
+    second: LegD_L_2
+  - first:
+      1: 100160
+    second: LegD_R
+  - first:
+      1: 100162
+    second: LegD_R_0
+  - first:
+      1: 100164
+    second: LegD_R_1
+  - first:
+      1: 100166
+    second: LegD_R_2
+  - first:
+      1: 100168
+    second: LegU_L
+  - first:
+      1: 100170
+    second: LegU_L_0
+  - first:
+      1: 100172
+    second: LegU_L_1
+  - first:
+      1: 100174
+    second: LegU_L_2
+  - first:
+      1: 100176
+    second: LegU_R
+  - first:
+      1: 100178
+    second: LegU_R_0
+  - first:
+      1: 100180
+    second: LegU_R_1
+  - first:
+      1: 100182
+    second: LegU_R_2
+  - first:
+      1: 100184
+    second: Plane_001
+  - first:
+      1: 100186
+    second: Props
+  - first:
+      1: 100188
+    second: Thumb_L
+  - first:
+      1: 100190
+    second: Thumb_L_0
+  - first:
+      1: 100192
+    second: Thumb_L_1
+  - first:
+      1: 100194
+    second: Thumb_R
+  - first:
+      1: 100196
+    second: Thumb_R_0
+  - first:
+      1: 100198
+    second: Thumb_R_1
+  - first:
+      1: 100200
+    second: Torso
+  - first:
+      1: 100202
+    second: Torso_0
+  - first:
+      1: 100204
+    second: Torso_1
+  - first:
+      1: 100206
+    second: Torso_2
+  - first:
+      1: 100208
+    second: '@BigBoss1'
+  - first:
+      1: 100210
+    second: '@Boss1'
+  - first:
+      1: 100212
+    second: '@Boss2'
+  - first:
+      1: 100214
+    second: '@Boss3Archer'
+  - first:
+      1: 100216
+    second: '@Boss3ArcherHead'
+  - first:
+      1: 100218
+    second: '@Mage'
+  - first:
+      1: 100220
+    second: '@MageArma'
+  - first:
+      1: 100222
+    second: '@MageHead'
+  - first:
+      1: 100224
+    second: ArmD.L
+  - first:
+      1: 100226
+    second: ArmD.L 1
+  - first:
+      1: 100228
+    second: ArmD.L 2
+  - first:
+      1: 100230
+    second: ArmD.L 3
+  - first:
+      1: 100232
+    second: ArmD.R
+  - first:
+      1: 100234
+    second: ArmD.R 1
+  - first:
+      1: 100236
+    second: ArmD.R 2
+  - first:
+      1: 100238
+    second: ArmD.R 3
+  - first:
+      1: 100240
+    second: ArmU.L
+  - first:
+      1: 100242
+    second: ArmU.L 1
+  - first:
+      1: 100244
+    second: ArmU.L 2
+  - first:
+      1: 100246
+    second: ArmU.L 3
+  - first:
+      1: 100248
+    second: ArmU.R
+  - first:
+      1: 100250
+    second: ArmU.R 1
+  - first:
+      1: 100252
+    second: ArmU.R 2
+  - first:
+      1: 100254
+    second: ArmU.R 3
+  - first:
+      1: 100256
+    second: Camera
+  - first:
+      1: 100258
+    second: Fing1.L
+  - first:
+      1: 100260
+    second: Fing1.L 1
+  - first:
+      1: 100262
+    second: Fing1.L 2
+  - first:
+      1: 100264
+    second: Fing1.R
+  - first:
+      1: 100266
+    second: Fing1.R 1
+  - first:
+      1: 100268
+    second: Fing1.R 2
+  - first:
+      1: 100270
+    second: Fing2.L
+  - first:
+      1: 100272
+    second: Fing2.L 1
+  - first:
+      1: 100274
+    second: Fing2.L 2
+  - first:
+      1: 100276
+    second: Fing2.R
+  - first:
+      1: 100278
+    second: Fing2.R 1
+  - first:
+      1: 100280
+    second: Fing2.R 2
+  - first:
+      1: 100282
+    second: Fing3.L
+  - first:
+      1: 100284
+    second: Fing3.L 1
+  - first:
+      1: 100286
+    second: Fing3.L 2
+  - first:
+      1: 100288
+    second: Fing3.L_end
+  - first:
+      1: 100290
+    second: Fing3.L_end 1
+  - first:
+      1: 100292
+    second: Fing3.L_end 2
+  - first:
+      1: 100294
+    second: Fing3.R
+  - first:
+      1: 100296
+    second: Fing3.R 1
+  - first:
+      1: 100298
+    second: Fing3.R 2
+  - first:
+      1: 100300
+    second: Fing3.R_end
+  - first:
+      1: 100302
+    second: Fing3.R_end 1
+  - first:
+      1: 100304
+    second: Fing3.R_end 2
+  - first:
+      1: 100306
+    second: Foot.L
+  - first:
+      1: 100308
+    second: Foot.L 1
+  - first:
+      1: 100310
+    second: Foot.L 2
+  - first:
+      1: 100312
+    second: Foot.L 3
+  - first:
+      1: 100314
+    second: Foot.L_end
+  - first:
+      1: 100316
+    second: Foot.L_end 1
+  - first:
+      1: 100318
+    second: Foot.L_end 2
+  - first:
+      1: 100320
+    second: Foot.L_end 3
+  - first:
+      1: 100322
+    second: Foot.R
+  - first:
+      1: 100324
+    second: Foot.R 1
+  - first:
+      1: 100326
+    second: Foot.R 2
+  - first:
+      1: 100328
+    second: Foot.R 3
+  - first:
+      1: 100330
+    second: Foot.R_end
+  - first:
+      1: 100332
+    second: Foot.R_end 1
+  - first:
+      1: 100334
+    second: Foot.R_end 2
+  - first:
+      1: 100336
+    second: Foot.R_end 3
+  - first:
+      1: 100338
+    second: Hand.L
+  - first:
+      1: 100340
+    second: Hand.L 1
+  - first:
+      1: 100342
+    second: Hand.L 2
+  - first:
+      1: 100344
+    second: Hand.L 3
+  - first:
+      1: 100346
+    second: Hand.L_end
+  - first:
+      1: 100348
+    second: Hand.R
+  - first:
+      1: 100350
+    second: Hand.R 1
+  - first:
+      1: 100352
+    second: Hand.R 2
+  - first:
+      1: 100354
+    second: Hand.R 3
+  - first:
+      1: 100356
+    second: Hand.R_end
+  - first:
+      1: 100358
+    second: Head 1
+  - first:
+      1: 100360
+    second: Head 2
+  - first:
+      1: 100362
+    second: Head 3
+  - first:
+      1: 100364
+    second: Head_end
+  - first:
+      1: 100366
+    second: Head_end 1
+  - first:
+      1: 100368
+    second: Head_end 2
+  - first:
+      1: 100370
+    second: Head_end 3
+  - first:
+      1: 100372
+    second: Hips 1
+  - first:
+      1: 100374
+    second: Hips 2
+  - first:
+      1: 100376
+    second: Hips 3
+  - first:
+      1: 100378
+    second: Item Shield
+  - first:
+      1: 100380
+    second: Item Sword
+  - first:
+      1: 100382
+    second: Lamp
+  - first:
+      1: 100384
+    second: LegD.L
+  - first:
+      1: 100386
+    second: LegD.L 1
+  - first:
+      1: 100388
+    second: LegD.L 2
+  - first:
+      1: 100390
+    second: LegD.L 3
+  - first:
+      1: 100392
+    second: LegD.R
+  - first:
+      1: 100394
+    second: LegD.R 1
+  - first:
+      1: 100396
+    second: LegD.R 2
+  - first:
+      1: 100398
+    second: LegD.R 3
+  - first:
+      1: 100400
+    second: LegU.L
+  - first:
+      1: 100402
+    second: LegU.L 1
+  - first:
+      1: 100404
+    second: LegU.L 2
+  - first:
+      1: 100406
+    second: LegU.L 3
+  - first:
+      1: 100408
+    second: LegU.R
+  - first:
+      1: 100410
+    second: LegU.R 1
+  - first:
+      1: 100412
+    second: LegU.R 2
+  - first:
+      1: 100414
+    second: LegU.R 3
+  - first:
+      1: 100416
+    second: Plane.001
+  - first:
+      1: 100418
+    second: Thumb.L
+  - first:
+      1: 100420
+    second: Thumb.L 1
+  - first:
+      1: 100422
+    second: Thumb.L 2
+  - first:
+      1: 100424
+    second: Thumb.L_end
+  - first:
+      1: 100426
+    second: Thumb.L_end 1
+  - first:
+      1: 100428
+    second: Thumb.L_end 2
+  - first:
+      1: 100430
+    second: Thumb.R
+  - first:
+      1: 100432
+    second: Thumb.R 1
+  - first:
+      1: 100434
+    second: Thumb.R 2
+  - first:
+      1: 100436
+    second: Thumb.R_end
+  - first:
+      1: 100438
+    second: Thumb.R_end 1
+  - first:
+      1: 100440
+    second: Thumb.R_end 2
+  - first:
+      1: 100442
+    second: Torso 1
+  - first:
+      1: 100444
+    second: Torso 2
+  - first:
+      1: 100446
+    second: Torso 3
+  - first:
+      4: 400000
+    second: _BigBoss1
+  - first:
+      4: 400002
+    second: _Boss1
+  - first:
+      4: 400004
+    second: _Boss2
+  - first:
+      4: 400006
+    second: _Boss3Archer
+  - first:
+      4: 400008
+    second: _Boss3ArcherHead
+  - first:
+      4: 400010
+    second: _Mage
+  - first:
+      4: 400012
+    second: _MageArma
+  - first:
+      4: 400014
+    second: _MageHead
+  - first:
+      4: 400016
+    second: ArmD_L
+  - first:
+      4: 400018
+    second: ArmD_L_0
+  - first:
+      4: 400020
+    second: ArmD_L_1
+  - first:
+      4: 400022
+    second: ArmD_L_2
+  - first:
+      4: 400024
+    second: ArmD_R
+  - first:
+      4: 400026
+    second: ArmD_R_0
+  - first:
+      4: 400028
+    second: ArmD_R_1
+  - first:
+      4: 400030
+    second: ArmD_R_2
+  - first:
+      4: 400032
+    second: ArmU_L
+  - first:
+      4: 400034
+    second: ArmU_L_0
+  - first:
+      4: 400036
+    second: ArmU_L_1
+  - first:
+      4: 400038
+    second: ArmU_L_2
+  - first:
+      4: 400040
+    second: ArmU_R
+  - first:
+      4: 400042
+    second: ArmU_R_0
+  - first:
+      4: 400044
+    second: ArmU_R_1
+  - first:
+      4: 400046
+    second: ArmU_R_2
+  - first:
+      4: 400048
+    second: BigBossarma
+  - first:
+      4: 400050
+    second: //RootNode
+  - first:
+      4: 400052
+    second: Boss1Head
+  - first:
+      4: 400054
+    second: Boss2Head
+  - first:
+      4: 400056
+    second: BossArcherarma
+  - first:
+      4: 400058
+    second: Bossarma
+  - first:
+      4: 400060
+    second: BossBigHead
+  - first:
+      4: 400062
+    second: BossTemplate
+  - first:
+      4: 400064
+    second: Fing1_L
+  - first:
+      4: 400066
+    second: Fing1_L_0
+  - first:
+      4: 400068
+    second: Fing1_L_1
+  - first:
+      4: 400070
+    second: Fing1_R
+  - first:
+      4: 400072
+    second: Fing1_R_0
+  - first:
+      4: 400074
+    second: Fing1_R_1
+  - first:
+      4: 400076
+    second: Fing2_L
+  - first:
+      4: 400078
+    second: Fing2_L_0
+  - first:
+      4: 400080
+    second: Fing2_L_1
+  - first:
+      4: 400082
+    second: Fing2_R
+  - first:
+      4: 400084
+    second: Fing2_R_0
+  - first:
+      4: 400086
+    second: Fing2_R_1
+  - first:
+      4: 400088
+    second: Fing3_L
+  - first:
+      4: 400090
+    second: Fing3_L_0
+  - first:
+      4: 400092
+    second: Fing3_L_1
+  - first:
+      4: 400094
+    second: Fing3_R
+  - first:
+      4: 400096
+    second: Fing3_R_0
+  - first:
+      4: 400098
+    second: Fing3_R_1
+  - first:
+      4: 400100
+    second: Foot_L
+  - first:
+      4: 400102
+    second: Foot_L_0
+  - first:
+      4: 400104
+    second: Foot_L_1
+  - first:
+      4: 400106
+    second: Foot_L_2
+  - first:
+      4: 400108
+    second: Foot_R
+  - first:
+      4: 400110
+    second: Foot_R_0
+  - first:
+      4: 400112
+    second: Foot_R_1
+  - first:
+      4: 400114
+    second: Foot_R_2
+  - first:
+      4: 400116
+    second: Hand_L
+  - first:
+      4: 400118
+    second: Hand_L_0
+  - first:
+      4: 400120
+    second: Hand_L_1
+  - first:
+      4: 400122
+    second: Hand_L_2
+  - first:
+      4: 400124
+    second: Hand_R
+  - first:
+      4: 400126
+    second: Hand_R_0
+  - first:
+      4: 400128
+    second: Hand_R_1
+  - first:
+      4: 400130
+    second: Hand_R_2
+  - first:
+      4: 400132
+    second: Head
+  - first:
+      4: 400134
+    second: Head_0
+  - first:
+      4: 400136
+    second: Head_1
+  - first:
+      4: 400138
+    second: Head_2
+  - first:
+      4: 400140
+    second: Hips
+  - first:
+      4: 400142
+    second: Hips_0
+  - first:
+      4: 400144
+    second: Hips_1
+  - first:
+      4: 400146
+    second: Hips_2
+  - first:
+      4: 400148
+    second: Item_Shield
+  - first:
+      4: 400150
+    second: Item_Sword
+  - first:
+      4: 400152
+    second: LegD_L
+  - first:
+      4: 400154
+    second: LegD_L_0
+  - first:
+      4: 400156
+    second: LegD_L_1
+  - first:
+      4: 400158
+    second: LegD_L_2
+  - first:
+      4: 400160
+    second: LegD_R
+  - first:
+      4: 400162
+    second: LegD_R_0
+  - first:
+      4: 400164
+    second: LegD_R_1
+  - first:
+      4: 400166
+    second: LegD_R_2
+  - first:
+      4: 400168
+    second: LegU_L
+  - first:
+      4: 400170
+    second: LegU_L_0
+  - first:
+      4: 400172
+    second: LegU_L_1
+  - first:
+      4: 400174
+    second: LegU_L_2
+  - first:
+      4: 400176
+    second: LegU_R
+  - first:
+      4: 400178
+    second: LegU_R_0
+  - first:
+      4: 400180
+    second: LegU_R_1
+  - first:
+      4: 400182
+    second: LegU_R_2
+  - first:
+      4: 400184
+    second: Plane_001
+  - first:
+      4: 400186
+    second: Props
+  - first:
+      4: 400188
+    second: Thumb_L
+  - first:
+      4: 400190
+    second: Thumb_L_0
+  - first:
+      4: 400192
+    second: Thumb_L_1
+  - first:
+      4: 400194
+    second: Thumb_R
+  - first:
+      4: 400196
+    second: Thumb_R_0
+  - first:
+      4: 400198
+    second: Thumb_R_1
+  - first:
+      4: 400200
+    second: Torso
+  - first:
+      4: 400202
+    second: Torso_0
+  - first:
+      4: 400204
+    second: Torso_1
+  - first:
+      4: 400206
+    second: Torso_2
+  - first:
+      4: 400208
+    second: '@BigBoss1'
+  - first:
+      4: 400210
+    second: '@Boss1'
+  - first:
+      4: 400212
+    second: '@Boss2'
+  - first:
+      4: 400214
+    second: '@Boss3Archer'
+  - first:
+      4: 400216
+    second: '@Boss3ArcherHead'
+  - first:
+      4: 400218
+    second: '@Mage'
+  - first:
+      4: 400220
+    second: '@MageArma'
+  - first:
+      4: 400222
+    second: '@MageHead'
+  - first:
+      4: 400224
+    second: ArmD.L
+  - first:
+      4: 400226
+    second: ArmD.L 1
+  - first:
+      4: 400228
+    second: ArmD.L 2
+  - first:
+      4: 400230
+    second: ArmD.L 3
+  - first:
+      4: 400232
+    second: ArmD.R
+  - first:
+      4: 400234
+    second: ArmD.R 1
+  - first:
+      4: 400236
+    second: ArmD.R 2
+  - first:
+      4: 400238
+    second: ArmD.R 3
+  - first:
+      4: 400240
+    second: ArmU.L
+  - first:
+      4: 400242
+    second: ArmU.L 1
+  - first:
+      4: 400244
+    second: ArmU.L 2
+  - first:
+      4: 400246
+    second: ArmU.L 3
+  - first:
+      4: 400248
+    second: ArmU.R
+  - first:
+      4: 400250
+    second: ArmU.R 1
+  - first:
+      4: 400252
+    second: ArmU.R 2
+  - first:
+      4: 400254
+    second: ArmU.R 3
+  - first:
+      4: 400256
+    second: Camera
+  - first:
+      4: 400258
+    second: Fing1.L
+  - first:
+      4: 400260
+    second: Fing1.L 1
+  - first:
+      4: 400262
+    second: Fing1.L 2
+  - first:
+      4: 400264
+    second: Fing1.R
+  - first:
+      4: 400266
+    second: Fing1.R 1
+  - first:
+      4: 400268
+    second: Fing1.R 2
+  - first:
+      4: 400270
+    second: Fing2.L
+  - first:
+      4: 400272
+    second: Fing2.L 1
+  - first:
+      4: 400274
+    second: Fing2.L 2
+  - first:
+      4: 400276
+    second: Fing2.R
+  - first:
+      4: 400278
+    second: Fing2.R 1
+  - first:
+      4: 400280
+    second: Fing2.R 2
+  - first:
+      4: 400282
+    second: Fing3.L
+  - first:
+      4: 400284
+    second: Fing3.L 1
+  - first:
+      4: 400286
+    second: Fing3.L 2
+  - first:
+      4: 400288
+    second: Fing3.L_end
+  - first:
+      4: 400290
+    second: Fing3.L_end 1
+  - first:
+      4: 400292
+    second: Fing3.L_end 2
+  - first:
+      4: 400294
+    second: Fing3.R
+  - first:
+      4: 400296
+    second: Fing3.R 1
+  - first:
+      4: 400298
+    second: Fing3.R 2
+  - first:
+      4: 400300
+    second: Fing3.R_end
+  - first:
+      4: 400302
+    second: Fing3.R_end 1
+  - first:
+      4: 400304
+    second: Fing3.R_end 2
+  - first:
+      4: 400306
+    second: Foot.L
+  - first:
+      4: 400308
+    second: Foot.L 1
+  - first:
+      4: 400310
+    second: Foot.L 2
+  - first:
+      4: 400312
+    second: Foot.L 3
+  - first:
+      4: 400314
+    second: Foot.L_end
+  - first:
+      4: 400316
+    second: Foot.L_end 1
+  - first:
+      4: 400318
+    second: Foot.L_end 2
+  - first:
+      4: 400320
+    second: Foot.L_end 3
+  - first:
+      4: 400322
+    second: Foot.R
+  - first:
+      4: 400324
+    second: Foot.R 1
+  - first:
+      4: 400326
+    second: Foot.R 2
+  - first:
+      4: 400328
+    second: Foot.R 3
+  - first:
+      4: 400330
+    second: Foot.R_end
+  - first:
+      4: 400332
+    second: Foot.R_end 1
+  - first:
+      4: 400334
+    second: Foot.R_end 2
+  - first:
+      4: 400336
+    second: Foot.R_end 3
+  - first:
+      4: 400338
+    second: Hand.L
+  - first:
+      4: 400340
+    second: Hand.L 1
+  - first:
+      4: 400342
+    second: Hand.L 2
+  - first:
+      4: 400344
+    second: Hand.L 3
+  - first:
+      4: 400346
+    second: Hand.L_end
+  - first:
+      4: 400348
+    second: Hand.R
+  - first:
+      4: 400350
+    second: Hand.R 1
+  - first:
+      4: 400352
+    second: Hand.R 2
+  - first:
+      4: 400354
+    second: Hand.R 3
+  - first:
+      4: 400356
+    second: Hand.R_end
+  - first:
+      4: 400358
+    second: Head 1
+  - first:
+      4: 400360
+    second: Head 2
+  - first:
+      4: 400362
+    second: Head 3
+  - first:
+      4: 400364
+    second: Head_end
+  - first:
+      4: 400366
+    second: Head_end 1
+  - first:
+      4: 400368
+    second: Head_end 2
+  - first:
+      4: 400370
+    second: Head_end 3
+  - first:
+      4: 400372
+    second: Hips 1
+  - first:
+      4: 400374
+    second: Hips 2
+  - first:
+      4: 400376
+    second: Hips 3
+  - first:
+      4: 400378
+    second: Item Shield
+  - first:
+      4: 400380
+    second: Item Sword
+  - first:
+      4: 400382
+    second: Lamp
+  - first:
+      4: 400384
+    second: LegD.L
+  - first:
+      4: 400386
+    second: LegD.L 1
+  - first:
+      4: 400388
+    second: LegD.L 2
+  - first:
+      4: 400390
+    second: LegD.L 3
+  - first:
+      4: 400392
+    second: LegD.R
+  - first:
+      4: 400394
+    second: LegD.R 1
+  - first:
+      4: 400396
+    second: LegD.R 2
+  - first:
+      4: 400398
+    second: LegD.R 3
+  - first:
+      4: 400400
+    second: LegU.L
+  - first:
+      4: 400402
+    second: LegU.L 1
+  - first:
+      4: 400404
+    second: LegU.L 2
+  - first:
+      4: 400406
+    second: LegU.L 3
+  - first:
+      4: 400408
+    second: LegU.R
+  - first:
+      4: 400410
+    second: LegU.R 1
+  - first:
+      4: 400412
+    second: LegU.R 2
+  - first:
+      4: 400414
+    second: LegU.R 3
+  - first:
+      4: 400416
+    second: Plane.001
+  - first:
+      4: 400418
+    second: Thumb.L
+  - first:
+      4: 400420
+    second: Thumb.L 1
+  - first:
+      4: 400422
+    second: Thumb.L 2
+  - first:
+      4: 400424
+    second: Thumb.L_end
+  - first:
+      4: 400426
+    second: Thumb.L_end 1
+  - first:
+      4: 400428
+    second: Thumb.L_end 2
+  - first:
+      4: 400430
+    second: Thumb.R
+  - first:
+      4: 400432
+    second: Thumb.R 1
+  - first:
+      4: 400434
+    second: Thumb.R 2
+  - first:
+      4: 400436
+    second: Thumb.R_end
+  - first:
+      4: 400438
+    second: Thumb.R_end 1
+  - first:
+      4: 400440
+    second: Thumb.R_end 2
+  - first:
+      4: 400442
+    second: Torso 1
+  - first:
+      4: 400444
+    second: Torso 2
+  - first:
+      4: 400446
+    second: Torso 3
+  - first:
+      23: 2300000
+    second: Plane_001
+  - first:
+      23: 2300002
+    second: Props
+  - first:
+      23: 2300004
+    second: Item Shield
+  - first:
+      23: 2300006
+    second: Item Sword
+  - first:
+      23: 2300008
+    second: Plane.001
+  - first:
+      33: 3300000
+    second: Plane_001
+  - first:
+      33: 3300002
+    second: Props
+  - first:
+      33: 3300004
+    second: Item Shield
+  - first:
+      33: 3300006
+    second: Item Sword
+  - first:
+      33: 3300008
+    second: Plane.001
+  - first:
+      43: 4300000
+    second: Plane_001
+  - first:
+      43: 4300002
+    second: Item_Shield
+  - first:
+      43: 4300004
+    second: Item_Sword
+  - first:
+      43: 4300006
+    second: Boss2Head
+  - first:
+      43: 4300008
+    second: _Boss3ArcherHead
+  - first:
+      43: 4300010
+    second: _Boss3Archer
+  - first:
+      43: 4300012
+    second: _MageHead
+  - first:
+      43: 4300014
+    second: _Mage
+  - first:
+      43: 4300016
+    second: BossBigHead
+  - first:
+      43: 4300018
+    second: _BigBoss1
+  - first:
+      43: 4300020
+    second: _Boss2
+  - first:
+      43: 4300022
+    second: Boss1Head
+  - first:
+      43: 4300024
+    second: _Boss1
+  - first:
+      43: 4300026
+    second: BossTemplate
+  - first:
+      43: 4300028
+    second: Props
+  - first:
+      43: 4300030
+    second: Plane.001
+  - first:
+      43: 4300032
+    second: Item Shield
+  - first:
+      43: 4300034
+    second: Item Sword
+  - first:
+      43: 4300036
+    second: '@Boss3ArcherHead'
+  - first:
+      43: 4300038
+    second: '@Boss3Archer'
+  - first:
+      43: 4300040
+    second: '@MageHead'
+  - first:
+      43: 4300042
+    second: '@Mage'
+  - first:
+      43: 4300044
+    second: '@BigBoss1'
+  - first:
+      43: 4300046
+    second: '@Boss2'
+  - first:
+      43: 4300048
+    second: '@Boss1'
+  - first:
+      74: 7400000
+    second: Default Take
+  - first:
+      74: 7400002
+    second: PoseLib
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: _BigBoss1
+  - first:
+      137: 13700002
+    second: _Boss1
+  - first:
+      137: 13700004
+    second: _Boss2
+  - first:
+      137: 13700006
+    second: _Boss3Archer
+  - first:
+      137: 13700008
+    second: _Boss3ArcherHead
+  - first:
+      137: 13700010
+    second: _Mage
+  - first:
+      137: 13700012
+    second: _MageHead
+  - first:
+      137: 13700014
+    second: Boss1Head
+  - first:
+      137: 13700016
+    second: Boss2Head
+  - first:
+      137: 13700018
+    second: BossBigHead
+  - first:
+      137: 13700020
+    second: BossTemplate
+  - first:
+      137: 13700022
+    second: Item_Shield
+  - first:
+      137: 13700024
+    second: Item_Sword
+  - first:
+      137: 13700026
+    second: '@BigBoss1'
+  - first:
+      137: 13700028
+    second: '@Boss1'
+  - first:
+      137: 13700030
+    second: '@Boss2'
+  - first:
+      137: 13700032
+    second: '@Boss3Archer'
+  - first:
+      137: 13700034
+    second: '@Boss3ArcherHead'
+  - first:
+      137: 13700036
+    second: '@Mage'
+  - first:
+      137: 13700038
+    second: '@MageHead'
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
+  - first:
+      74: -623603649343465320
+    second: Scene
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Main
+    second: {fileID: 2100000, guid: 375287898e65a374994ef76425d34686, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: b7fe35f5c4199fc49948f475113f8663, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: ae377e8e7925fbf439c20f429bd85962, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: 00f178f2f0a78b8438d20a83a3ded8a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.007
+    second: {fileID: 2100000, guid: 869e12139f03f9048afa30e7c2f7904c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 1df73faa94c45f447a3748cb7e857e70, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -264,12 +1575,15 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -277,13 +1591,24 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -293,10 +1618,14 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -306,14 +1635,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

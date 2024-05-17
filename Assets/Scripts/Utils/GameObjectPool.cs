@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 namespace KyleStankovich.Utils {
     /// <summary>
@@ -85,6 +86,7 @@ namespace KyleStankovich.Utils {
         #endregion
 
         #region Override methods
+
         /// <summary>
         /// Randomly finds a game object in the object pool, and returns it. If game object returned is null or in-active, it will add a new
         /// game object to the object pool if it is allowed.
@@ -93,16 +95,16 @@ namespace KyleStankovich.Utils {
         public override GameObject GetRandomPooledObject() {
             byte choice = (byte)Random.Range(0, PooledObjects.Count);
 
-            //Loop through all items looking for a non-null and in-active game object.
-            for(int i = 0; i < PooledObjects.Count; i++) {
-                if(!PooledObjects[choice].activeInHierarchy)
+            // Loop through all items looking for a non-null and in-active game object.
+            for (int i = 0; i < PooledObjects.Count; i++) {
+                if (!PooledObjects[choice].activeInHierarchy)
                     return PooledObjects[choice];
                 else
                     choice = (byte)Random.Range(0, PooledObjects.Count);
             }
 
-            //This code is already in the ObjectPool class, but we want to add the Instantiate method to it here, so we rewrite it :)
-            if(WillGrow)
+            // This code is already in the ObjectPool class, but we want to add the Instantiate method to it here, so we rewrite it :)
+            if (WillGrow)
                 return AddRandomObject();
 
             return base.GetRandomPooledObject();

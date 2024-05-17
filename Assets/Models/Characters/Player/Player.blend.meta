@@ -1,125 +1,628 @@
 fileFormatVersion: 2
 guid: 0b774f8d94ca9304c82e4305b16e3fc8
-timeCreated: 1487572370
-licenseType: Free
 ModelImporter:
-  serializedVersion: 19
-  fileIDToRecycleName:
-    100000: Armature
-    100002: ArmD_L
-    100004: ArmD_R
-    100006: ArmU_L
-    100008: ArmU_R
-    100010: BodyTemplate
-    100012: Fing1_L
-    100014: Fing1_R
-    100016: Fing2_L
-    100018: Fing2_R
-    100020: Fing3_L
-    100022: Fing3_R
-    100024: Foot_L
-    100026: Foot_R
-    100028: Hand_L
-    100030: Hand_R
-    100032: Head
-    100034: Hips
-    100036: LegD_L
-    100038: LegD_R
-    100040: LegU_L
-    100042: LegU_R
-    100044: //RootNode
-    100046: Thumb_L
-    100048: Thumb_R
-    100050: Torso
-    100052: _Archer_Armor_1
-    100054: _Warrior_Armor_1
-    100056: Head_0
-    100058: Item_Shield
-    100060: Item_Sword
-    100062: Plane_001
-    100064: Props
-    100066: _Mage_Armor_1
-    100068: Head_001
-    400000: Armature
-    400002: ArmD_L
-    400004: ArmD_R
-    400006: ArmU_L
-    400008: ArmU_R
-    400010: BodyTemplate
-    400012: Fing1_L
-    400014: Fing1_R
-    400016: Fing2_L
-    400018: Fing2_R
-    400020: Fing3_L
-    400022: Fing3_R
-    400024: Foot_L
-    400026: Foot_R
-    400028: Hand_L
-    400030: Hand_R
-    400032: Head
-    400034: Hips
-    400036: LegD_L
-    400038: LegD_R
-    400040: LegU_L
-    400042: LegU_R
-    400044: //RootNode
-    400046: Thumb_L
-    400048: Thumb_R
-    400050: Torso
-    400052: _Archer_Armor_1
-    400054: _Warrior_Armor_1
-    400056: Head_0
-    400058: Item_Shield
-    400060: Item_Sword
-    400062: Plane_001
-    400064: Props
-    400066: _Mage_Armor_1
-    400068: Head_001
-    2300000: Plane_001
-    2300002: Props
-    3300000: Plane_001
-    3300002: Props
-    4300000: BodyTemplate
-    4300002: Plane_001
-    4300004: Item_Shield
-    4300006: Item_Sword
-    4300008: _Archer_Armor_1
-    4300010: Head
-    4300012: _Warrior_Armor_1
-    4300014: Props
-    4300016: Head_001
-    4300018: _Mage_Armor_1
-    7400000: Default Take
-    7400002: PoseLib
-    9500000: //RootNode
-    13700000: BodyTemplate
-    13700002: _Archer_Armor_1
-    13700004: _Warrior_Armor_1
-    13700006: Head
-    13700008: Item_Shield
-    13700010: Item_Sword
-    13700012: _Mage_Armor_1
-    13700014: Head_001
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: Armature
+  - first:
+      1: 100002
+    second: ArmD_L
+  - first:
+      1: 100004
+    second: ArmD_R
+  - first:
+      1: 100006
+    second: ArmU_L
+  - first:
+      1: 100008
+    second: ArmU_R
+  - first:
+      1: 100010
+    second: BodyTemplate
+  - first:
+      1: 100012
+    second: Fing1_L
+  - first:
+      1: 100014
+    second: Fing1_R
+  - first:
+      1: 100016
+    second: Fing2_L
+  - first:
+      1: 100018
+    second: Fing2_R
+  - first:
+      1: 100020
+    second: Fing3_L
+  - first:
+      1: 100022
+    second: Fing3_R
+  - first:
+      1: 100024
+    second: Foot_L
+  - first:
+      1: 100026
+    second: Foot_R
+  - first:
+      1: 100028
+    second: Hand_L
+  - first:
+      1: 100030
+    second: Hand_R
+  - first:
+      1: 100032
+    second: Head
+  - first:
+      1: 100034
+    second: Hips
+  - first:
+      1: 100036
+    second: LegD_L
+  - first:
+      1: 100038
+    second: LegD_R
+  - first:
+      1: 100040
+    second: LegU_L
+  - first:
+      1: 100042
+    second: LegU_R
+  - first:
+      1: 100044
+    second: //RootNode
+  - first:
+      1: 100046
+    second: Thumb_L
+  - first:
+      1: 100048
+    second: Thumb_R
+  - first:
+      1: 100050
+    second: Torso
+  - first:
+      1: 100052
+    second: _Archer_Armor_1
+  - first:
+      1: 100054
+    second: _Warrior_Armor_1
+  - first:
+      1: 100056
+    second: Head_0
+  - first:
+      1: 100058
+    second: Item_Shield
+  - first:
+      1: 100060
+    second: Item_Sword
+  - first:
+      1: 100062
+    second: Plane_001
+  - first:
+      1: 100064
+    second: Props
+  - first:
+      1: 100066
+    second: _Mage_Armor_1
+  - first:
+      1: 100068
+    second: Head_001
+  - first:
+      1: 100070
+    second: '@Archer Armor 1'
+  - first:
+      1: 100072
+    second: '@Mage Armor 1'
+  - first:
+      1: 100074
+    second: '@Warrior Armor 1'
+  - first:
+      1: 100076
+    second: ArmD.L
+  - first:
+      1: 100078
+    second: ArmD.R
+  - first:
+      1: 100080
+    second: ArmU.L
+  - first:
+      1: 100082
+    second: ArmU.R
+  - first:
+      1: 100084
+    second: Camera
+  - first:
+      1: 100086
+    second: Fing1.L
+  - first:
+      1: 100088
+    second: Fing1.R
+  - first:
+      1: 100090
+    second: Fing2.L
+  - first:
+      1: 100092
+    second: Fing2.R
+  - first:
+      1: 100094
+    second: Fing3.L
+  - first:
+      1: 100096
+    second: Fing3.L_end
+  - first:
+      1: 100098
+    second: Fing3.R
+  - first:
+      1: 100100
+    second: Fing3.R_end
+  - first:
+      1: 100102
+    second: Foot.L
+  - first:
+      1: 100104
+    second: Foot.L_end
+  - first:
+      1: 100106
+    second: Foot.R
+  - first:
+      1: 100108
+    second: Foot.R_end
+  - first:
+      1: 100110
+    second: Hand.L
+  - first:
+      1: 100112
+    second: Hand.R
+  - first:
+      1: 100114
+    second: Head.001
+  - first:
+      1: 100116
+    second: Head_end
+  - first:
+      1: 100118
+    second: Item Shield
+  - first:
+      1: 100120
+    second: Item Sword
+  - first:
+      1: 100122
+    second: Lamp
+  - first:
+      1: 100124
+    second: LegD.L
+  - first:
+      1: 100126
+    second: LegD.R
+  - first:
+      1: 100128
+    second: LegU.L
+  - first:
+      1: 100130
+    second: LegU.R
+  - first:
+      1: 100132
+    second: Plane.001
+  - first:
+      1: 100134
+    second: Thumb.L
+  - first:
+      1: 100136
+    second: Thumb.L_end
+  - first:
+      1: 100138
+    second: Thumb.R
+  - first:
+      1: 100140
+    second: Thumb.R_end
+  - first:
+      4: 400000
+    second: Armature
+  - first:
+      4: 400002
+    second: ArmD_L
+  - first:
+      4: 400004
+    second: ArmD_R
+  - first:
+      4: 400006
+    second: ArmU_L
+  - first:
+      4: 400008
+    second: ArmU_R
+  - first:
+      4: 400010
+    second: BodyTemplate
+  - first:
+      4: 400012
+    second: Fing1_L
+  - first:
+      4: 400014
+    second: Fing1_R
+  - first:
+      4: 400016
+    second: Fing2_L
+  - first:
+      4: 400018
+    second: Fing2_R
+  - first:
+      4: 400020
+    second: Fing3_L
+  - first:
+      4: 400022
+    second: Fing3_R
+  - first:
+      4: 400024
+    second: Foot_L
+  - first:
+      4: 400026
+    second: Foot_R
+  - first:
+      4: 400028
+    second: Hand_L
+  - first:
+      4: 400030
+    second: Hand_R
+  - first:
+      4: 400032
+    second: Head
+  - first:
+      4: 400034
+    second: Hips
+  - first:
+      4: 400036
+    second: LegD_L
+  - first:
+      4: 400038
+    second: LegD_R
+  - first:
+      4: 400040
+    second: LegU_L
+  - first:
+      4: 400042
+    second: LegU_R
+  - first:
+      4: 400044
+    second: //RootNode
+  - first:
+      4: 400046
+    second: Thumb_L
+  - first:
+      4: 400048
+    second: Thumb_R
+  - first:
+      4: 400050
+    second: Torso
+  - first:
+      4: 400052
+    second: _Archer_Armor_1
+  - first:
+      4: 400054
+    second: _Warrior_Armor_1
+  - first:
+      4: 400056
+    second: Head_0
+  - first:
+      4: 400058
+    second: Item_Shield
+  - first:
+      4: 400060
+    second: Item_Sword
+  - first:
+      4: 400062
+    second: Plane_001
+  - first:
+      4: 400064
+    second: Props
+  - first:
+      4: 400066
+    second: _Mage_Armor_1
+  - first:
+      4: 400068
+    second: Head_001
+  - first:
+      4: 400070
+    second: '@Archer Armor 1'
+  - first:
+      4: 400072
+    second: '@Mage Armor 1'
+  - first:
+      4: 400074
+    second: '@Warrior Armor 1'
+  - first:
+      4: 400076
+    second: ArmD.L
+  - first:
+      4: 400078
+    second: ArmD.R
+  - first:
+      4: 400080
+    second: ArmU.L
+  - first:
+      4: 400082
+    second: ArmU.R
+  - first:
+      4: 400084
+    second: Camera
+  - first:
+      4: 400086
+    second: Fing1.L
+  - first:
+      4: 400088
+    second: Fing1.R
+  - first:
+      4: 400090
+    second: Fing2.L
+  - first:
+      4: 400092
+    second: Fing2.R
+  - first:
+      4: 400094
+    second: Fing3.L
+  - first:
+      4: 400096
+    second: Fing3.L_end
+  - first:
+      4: 400098
+    second: Fing3.R
+  - first:
+      4: 400100
+    second: Fing3.R_end
+  - first:
+      4: 400102
+    second: Foot.L
+  - first:
+      4: 400104
+    second: Foot.L_end
+  - first:
+      4: 400106
+    second: Foot.R
+  - first:
+      4: 400108
+    second: Foot.R_end
+  - first:
+      4: 400110
+    second: Hand.L
+  - first:
+      4: 400112
+    second: Hand.R
+  - first:
+      4: 400114
+    second: Head.001
+  - first:
+      4: 400116
+    second: Head_end
+  - first:
+      4: 400118
+    second: Item Shield
+  - first:
+      4: 400120
+    second: Item Sword
+  - first:
+      4: 400122
+    second: Lamp
+  - first:
+      4: 400124
+    second: LegD.L
+  - first:
+      4: 400126
+    second: LegD.R
+  - first:
+      4: 400128
+    second: LegU.L
+  - first:
+      4: 400130
+    second: LegU.R
+  - first:
+      4: 400132
+    second: Plane.001
+  - first:
+      4: 400134
+    second: Thumb.L
+  - first:
+      4: 400136
+    second: Thumb.L_end
+  - first:
+      4: 400138
+    second: Thumb.R
+  - first:
+      4: 400140
+    second: Thumb.R_end
+  - first:
+      23: 2300000
+    second: Plane_001
+  - first:
+      23: 2300002
+    second: Props
+  - first:
+      23: 2300004
+    second: Item Shield
+  - first:
+      23: 2300006
+    second: Item Sword
+  - first:
+      23: 2300008
+    second: Plane.001
+  - first:
+      33: 3300000
+    second: Plane_001
+  - first:
+      33: 3300002
+    second: Props
+  - first:
+      33: 3300004
+    second: Item Shield
+  - first:
+      33: 3300006
+    second: Item Sword
+  - first:
+      33: 3300008
+    second: Plane.001
+  - first:
+      43: 4300000
+    second: BodyTemplate
+  - first:
+      43: 4300002
+    second: Plane_001
+  - first:
+      43: 4300004
+    second: Item_Shield
+  - first:
+      43: 4300006
+    second: Item_Sword
+  - first:
+      43: 4300008
+    second: _Archer_Armor_1
+  - first:
+      43: 4300010
+    second: Head
+  - first:
+      43: 4300012
+    second: _Warrior_Armor_1
+  - first:
+      43: 4300014
+    second: Props
+  - first:
+      43: 4300016
+    second: Head_001
+  - first:
+      43: 4300018
+    second: _Mage_Armor_1
+  - first:
+      43: 4300020
+    second: Plane.001
+  - first:
+      43: 4300022
+    second: Item Shield
+  - first:
+      43: 4300024
+    second: Item Sword
+  - first:
+      43: 4300026
+    second: Head.001
+  - first:
+      43: 4300028
+    second: '@Mage Armor 1'
+  - first:
+      43: 4300030
+    second: '@Archer Armor 1'
+  - first:
+      43: 4300032
+    second: '@Warrior Armor 1'
+  - first:
+      74: 7400000
+    second: Default Take
+  - first:
+      74: 7400002
+    second: PoseLib
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: BodyTemplate
+  - first:
+      137: 13700002
+    second: _Archer_Armor_1
+  - first:
+      137: 13700004
+    second: _Warrior_Armor_1
+  - first:
+      137: 13700006
+    second: Head
+  - first:
+      137: 13700008
+    second: Item_Shield
+  - first:
+      137: 13700010
+    second: Item_Sword
+  - first:
+      137: 13700012
+    second: _Mage_Armor_1
+  - first:
+      137: 13700014
+    second: Head_001
+  - first:
+      137: 13700016
+    second: '@Archer Armor 1'
+  - first:
+      137: 13700018
+    second: '@Mage Armor 1'
+  - first:
+      137: 13700020
+    second: '@Warrior Armor 1'
+  - first:
+      137: 13700022
+    second: Head.001
+  - first:
+      41386430: 2186277476908879412
+    second: ImportLogs
+  - first:
+      74: -623603649343465320
+    second: Scene
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: a42820b36e9adee40b4c6b4d76f58994, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 94ce56642f689264195919b97ddef86b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 627ac7eddb1bd244ea0d8092085a19ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: fb351ae0596f83447b29c16aa904e33e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: 0e81f53456a77a3488e304fc9f690e36, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.007
+    second: {fileID: 2100000, guid: f9c38b28e4a82c9429e6e795651d818c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 1b205c804b25f384b8ab4bbc15b46692, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
@@ -127,13 +630,24 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
@@ -143,10 +657,14 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -156,14 +674,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 

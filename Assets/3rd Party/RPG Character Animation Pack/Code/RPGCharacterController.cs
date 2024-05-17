@@ -394,7 +394,7 @@ public class RPGCharacterController : MonoBehaviour{
 				AirControl();
 			}
 			//check if falling
-			if(rb.velocity.y < fallingVelocity && rpgCharacterState != RPGCharacterState.CLIMBING){
+			if(rb.linearVelocity.y < fallingVelocity && rpgCharacterState != RPGCharacterState.CLIMBING){
 				isFalling = true;
 				animator.SetInteger("Jumping", 2);
 				canJump = false;
@@ -412,8 +412,8 @@ public class RPGCharacterController : MonoBehaviour{
 	//get velocity of rigid body and pass the value to the animator to control the animations
 	void LateUpdate(){
 		//Get local velocity of charcter
-		float velocityXel = transform.InverseTransformDirection(rb.velocity).x;
-		float velocityZel = transform.InverseTransformDirection(rb.velocity).z;
+		float velocityXel = transform.InverseTransformDirection(rb.linearVelocity).x;
+		float velocityZel = transform.InverseTransformDirection(rb.linearVelocity).z;
 		//Update animator with movement values
 		animator.SetFloat("Velocity X", velocityXel / runSpeed);
 		animator.SetFloat("Velocity Z", velocityZel / runSpeed);
@@ -467,10 +467,10 @@ public class RPGCharacterController : MonoBehaviour{
 		else{
 			if(rpgCharacterState != RPGCharacterState.SWIMMING){
 				//if we are falling use momentum
-				newVelocity = rb.velocity;
+				newVelocity = rb.linearVelocity;
 			}
 			else{
-				newVelocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
+				newVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
 			}
 		}
 		if(isStrafing && !isRelax){
@@ -489,8 +489,8 @@ public class RPGCharacterController : MonoBehaviour{
 			}
 		}
 		//if we are falling use momentum
-		newVelocity.y = rb.velocity.y;
-		rb.velocity = newVelocity;
+		newVelocity.y = rb.linearVelocity.y;
+		rb.linearVelocity = newVelocity;
 		//return a movement value for the animator
 		return inputVec.magnitude;
 	}
@@ -617,47 +617,47 @@ public class RPGCharacterController : MonoBehaviour{
 		AscendDescend();
 		Vector3 motion = inputVec;
 		//dampen vertical water movement
-		Vector3 dampenVertical = new Vector3(rb.velocity.x, (rb.velocity.y * 0.985f), rb.velocity.z);
-		rb.velocity = dampenVertical;
-		Vector3 waterDampen = new Vector3((rb.velocity.x * 0.98f), rb.velocity.y, (rb.velocity.z * 0.98f));
+		Vector3 dampenVertical = new Vector3(rb.linearVelocity.x, (rb.linearVelocity.y * 0.985f), rb.linearVelocity.z);
+		rb.linearVelocity = dampenVertical;
+		Vector3 waterDampen = new Vector3((rb.linearVelocity.x * 0.98f), rb.linearVelocity.y, (rb.linearVelocity.z * 0.98f));
 		//If swimming, don't dampen movement, and scale capsule collider
 		if(moveSpeed < 0.1f){
-			rb.velocity = waterDampen;
+			rb.linearVelocity = waterDampen;
 			capCollider.radius = 0.5f;
 		}
 		else{
 			capCollider.radius = 1.5f;
 		}
-		rb.velocity = waterDampen;
+		rb.linearVelocity = waterDampen;
 		//clamp diagonal movement so its not faster
 		motion *= (Mathf.Abs(inputVec.x) == 1 && Mathf.Abs(inputVec.z) == 1) ? 0.7f : 1;
 		rb.AddForce(motion * inWaterSpeed, ForceMode.Acceleration);
 		//limit the amount of velocity we can achieve to water speed
 		float velocityX = 0;
 		float velocityZ = 0;
-		if(rb.velocity.x > inWaterSpeed){
-			velocityX = GetComponent<Rigidbody>().velocity.x - inWaterSpeed;
+		if(rb.linearVelocity.x > inWaterSpeed){
+			velocityX = GetComponent<Rigidbody>().linearVelocity.x - inWaterSpeed;
 			if(velocityX < 0){
 				velocityX = 0;
 			}
 			rb.AddForce(new Vector3(-velocityX, 0, 0), ForceMode.Acceleration);
 		}
-		if(rb.velocity.x < minVelocity){
-			velocityX = rb.velocity.x - minVelocity;
+		if(rb.linearVelocity.x < minVelocity){
+			velocityX = rb.linearVelocity.x - minVelocity;
 			if(velocityX > 0){
 				velocityX = 0;
 			}
 			rb.AddForce(new Vector3(-velocityX, 0, 0), ForceMode.Acceleration);
 		}
-		if(rb.velocity.z > inWaterSpeed){
-			velocityZ = rb.velocity.z - maxVelocity;
+		if(rb.linearVelocity.z > inWaterSpeed){
+			velocityZ = rb.linearVelocity.z - maxVelocity;
 			if(velocityZ < 0){
 				velocityZ = 0;
 			}
 			rb.AddForce(new Vector3(0, 0, -velocityZ), ForceMode.Acceleration);
 		}
-		if(rb.velocity.z < minVelocity){
-			velocityZ = rb.velocity.z - minVelocity;
+		if(rb.linearVelocity.z < minVelocity){
+			velocityZ = rb.linearVelocity.z - minVelocity;
 			if(velocityZ > 0){
 				velocityZ = 0;
 			}
@@ -671,11 +671,11 @@ public class RPGCharacterController : MonoBehaviour{
 			if(isStrafing){
 				animator.SetBool("Strafing", true);
 				animator.SetTrigger("JumpTrigger");
-				rb.velocity -= inWaterSpeed * Vector3.up;
+				rb.linearVelocity -= inWaterSpeed * Vector3.up;
 			}
 			else{
 				animator.SetTrigger("JumpTrigger");
-				rb.velocity += inWaterSpeed * Vector3.up;
+				rb.linearVelocity += inWaterSpeed * Vector3.up;
 			}
 		}
 	}
@@ -736,7 +736,7 @@ public class RPGCharacterController : MonoBehaviour{
 			}
 			if(canDoubleJump && doublejumping && Input.GetButtonDown("Jump") && !doublejumped && isFalling){
 				// Apply the current movement to launch velocity
-				rb.velocity += doublejumpSpeed * Vector3.up;
+				rb.linearVelocity += doublejumpSpeed * Vector3.up;
 				animator.SetInteger("Jumping", 3);
 				doublejumped = true;
 			}
@@ -748,7 +748,7 @@ public class RPGCharacterController : MonoBehaviour{
 		animator.SetInteger("Jumping", 1);
 		animator.SetTrigger("JumpTrigger");
 		// Apply the current movement to launch velocity
-		rb.velocity += jumpSpeed * Vector3.up;
+		rb.linearVelocity += jumpSpeed * Vector3.up;
 		canJump = false;
 		yield return new WaitForSeconds(0.5f);
 		isJumping = false;
@@ -762,29 +762,29 @@ public class RPGCharacterController : MonoBehaviour{
 			//limit the amount of velocity we can achieve
 			float velocityX = 0;
 			float velocityZ = 0;
-			if(rb.velocity.x > maxVelocity){
-				velocityX = GetComponent<Rigidbody>().velocity.x - maxVelocity;
+			if(rb.linearVelocity.x > maxVelocity){
+				velocityX = GetComponent<Rigidbody>().linearVelocity.x - maxVelocity;
 				if(velocityX < 0){
 					velocityX = 0;
 				}
 				rb.AddForce(new Vector3(-velocityX, 0, 0), ForceMode.Acceleration);
 			}
-			if(rb.velocity.x < minVelocity){
-				velocityX = rb.velocity.x - minVelocity;
+			if(rb.linearVelocity.x < minVelocity){
+				velocityX = rb.linearVelocity.x - minVelocity;
 				if(velocityX > 0){
 					velocityX = 0;
 				}
 				rb.AddForce(new Vector3(-velocityX, 0, 0), ForceMode.Acceleration);
 			}
-			if(rb.velocity.z > maxVelocity){
-				velocityZ = rb.velocity.z - maxVelocity;
+			if(rb.linearVelocity.z > maxVelocity){
+				velocityZ = rb.linearVelocity.z - maxVelocity;
 				if(velocityZ < 0){
 					velocityZ = 0;
 				}
 				rb.AddForce(new Vector3(0, 0, -velocityZ), ForceMode.Acceleration);
 			}
-			if(rb.velocity.z < minVelocity){
-				velocityZ = rb.velocity.z - minVelocity;
+			if(rb.linearVelocity.z < minVelocity){
+				velocityZ = rb.linearVelocity.z - minVelocity;
 				if(velocityZ > 0){
 					velocityZ = 0;
 				}
@@ -1030,7 +1030,7 @@ public class RPGCharacterController : MonoBehaviour{
 			isBlocking = true;
 			canJump = false;
 			animator.SetBool("Blocking", true);
-			rb.velocity = Vector3.zero;
+			rb.linearVelocity = Vector3.zero;
 			rb.angularVelocity = Vector3.zero;
 			inputVec = Vector3.zero;
 		}
@@ -1184,7 +1184,7 @@ public class RPGCharacterController : MonoBehaviour{
 		}
 		canMove = false;
 		animator.SetBool("Moving", false);
-		rb.velocity = Vector3.zero;
+		rb.linearVelocity = Vector3.zero;
 		rb.angularVelocity = Vector3.zero;
 		inputVec = new Vector3(0, 0, 0);
 		animator.applyRootMotion = true;
